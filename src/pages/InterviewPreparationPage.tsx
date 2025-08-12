@@ -4,8 +4,8 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Textarea } from '../components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
-import { Bot, Upload, FileText, Type, Eye, X } from 'lucide-react';
-import { DocumentViewerModal } from '../components/DocumentViewerModal';
+import { Bot, Upload, FileText, Type, X } from 'lucide-react';
+
 import { useInterviewStore } from '../store/useInterviewStore';
 import { 
   analyzeSkillGap, 
@@ -46,9 +46,8 @@ export default function InterviewPreparationPage() {
 
   const [resumeInputMode, setResumeInputMode] = useState<'text' | 'file'>('text');
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
-  const [fileContent, setFileContent] = useState<string>('');
-  const [showPreview, setShowPreview] = useState(false);
-  const [showPDFModal, setShowPDFModal] = useState(false);
+
+
   const [uploadError, setUploadError] = useState<string>('');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -100,7 +99,7 @@ Skills:
 - MongoDB, PostgreSQL
 - Docker, AWS`;
     
-    setFileContent(mockContent);
+
     setFormData(prev => ({ ...prev, resume: mockContent }));
   };
 
@@ -125,9 +124,8 @@ Skills:
 
   const removeUploadedFile = () => {
     setUploadedFile(null);
-    setFileContent('');
-    setShowPreview(false);
-    setShowPDFModal(false);
+
+
     setUploadError('');
     setFormData(prev => ({ ...prev, resume: '' }));
     if (fileInputRef.current) {
@@ -145,14 +143,7 @@ Skills:
     setFormData(prev => ({ ...prev, resume: '' }));
   };
 
-  const handlePreviewClick = () => {
-    if (uploadedFile?.type === 'application/pdf' || 
-        uploadedFile?.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
-      setShowPDFModal(true);
-    } else {
-      setShowPreview(!showPreview);
-    }
-  };
+
 
   const handleSubmit = async () => {
     if (!formData.jobDescription.trim() || !formData.resume.trim()) {
@@ -364,21 +355,7 @@ Skills:
                             </div>
                           </div>
                           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 sm:space-x-0">
-                            <Button
-                              type="button"
-                              variant="outline"
-                              size="sm"
-                              onClick={handlePreviewClick}
-                              className="flex items-center space-x-1 w-full sm:w-auto"
-                            >
-                              <Eye className="w-4 h-4" />
-                              <span>
-                                {uploadedFile?.type === 'application/pdf' 
-                                  ? 'View PDF' 
-                                  : (showPreview ? 'Hide' : 'Preview')
-                                }
-                              </span>
-                            </Button>
+
                             <Button
                               type="button"
                               variant="outline"
@@ -391,14 +368,7 @@ Skills:
                             </Button>
                           </div>
                         </div>
-                        {showPreview && (
-                          <div className="mt-3 p-3 bg-white border rounded border-gray-200">
-                            <h4 className="text-sm font-medium text-gray-700 mb-2">File Content Preview:</h4>
-                            <pre className="text-xs text-gray-600 whitespace-pre-wrap max-h-32 overflow-y-auto">
-                              {fileContent}
-                            </pre>
-                          </div>
-                        )}
+
                       </div>
                     )}
                     {uploadError && (
@@ -485,12 +455,7 @@ Skills:
         </Card>
       </main>
 
-      {/* Document Viewer Modal */}
-      <DocumentViewerModal
-        isOpen={showPDFModal}
-        onClose={() => setShowPDFModal(false)}
-        file={uploadedFile}
-      />
+
     </div>
   );
 }
