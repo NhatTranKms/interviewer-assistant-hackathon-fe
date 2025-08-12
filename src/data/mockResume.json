@@ -1,0 +1,40 @@
+{
+  "personalInfo": {
+    "name": "John Smith",
+    "title": "Software Developer"
+  },
+  "experience": [
+    {
+      "position": "Software Developer",
+      "company": "TechCorp",
+      "period": "2022-Present",
+      "responsibilities": [
+        "Developed web applications using React.js and Node.js",
+        "Built and consumed RESTful APIs",
+        "Worked with MongoDB for data storage",
+        "Implemented CI/CD pipelines using Jenkins",
+        "Collaborated using Git version control"
+      ]
+    },
+    {
+      "position": "Junior Developer",
+      "company": "StartupInc",
+      "period": "2020-2022",
+      "responsibilities": [
+        "Created frontend interfaces using React and JavaScript",
+        "Integrated with backend services via REST APIs",
+        "Participated in Agile development processes",
+        "Wrote unit tests using Jest"
+      ]
+    }
+  ],
+  "skills": {
+    "frontend": ["React.js", "JavaScript", "HTML", "CSS"],
+    "backend": ["Node.js", "Express.js"],
+    "databases": ["MongoDB", "MySQL"],
+    "tools": ["Git", "Jenkins", "Docker"],
+    "testing": ["Jest", "React Testing Library"],
+    "other": ["RESTful APIs", "Agile methodologies"]
+  },
+  "fullText": "John Smith\nSoftware Developer\n\nExperience:\nSoftware Developer at TechCorp (2022-Present)\n- Developed web applications using React.js and Node.js\n- Built and consumed RESTful APIs\n- Worked with MongoDB for data storage\n- Implemented CI/CD pipelines using Jenkins\n- Collaborated using Git version control\n\nJunior Developer at StartupInc (2020-2022)\n- Created frontend interfaces using React and JavaScript\n- Integrated with backend services via REST APIs\n- Participated in Agile development processes\n- Wrote unit tests using Jest\n\nSkills:\n- Frontend: React.js, JavaScript, HTML, CSS\n- Backend: Node.js, Express.js\n- Databases: MongoDB, MySQL\n- Tools: Git, Jenkins, Docker\n- Testing: Jest, React Testing Library\n- Other: RESTful APIs, Agile methodologies"
+}

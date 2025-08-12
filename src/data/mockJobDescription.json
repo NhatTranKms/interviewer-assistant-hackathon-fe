@@ -1,0 +1,29 @@
+{
+  "title": "Software Engineer Position",
+  "description": "We are seeking a skilled Software Engineer to join our dynamic development team. The ideal candidate will have experience with:",
+  "requiredSkills": [
+    "Node.js and JavaScript/TypeScript",
+    "React.js and modern frontend frameworks",
+    "RESTful API development and integration",
+    "Database design and management (PostgreSQL preferred)",
+    "Version control with Git",
+    "Agile/Scrum methodologies",
+    "Unit testing and test-driven development"
+  ],
+  "niceToHave": [
+    "AWS cloud services (Lambda, EC2, S3)",
+    "Docker containerization",
+    "CI/CD pipeline setup with GitHub Actions",
+    "Microservices architecture",
+    "GraphQL"
+  ],
+  "responsibilities": [
+    "Develop and maintain scalable web applications",
+    "Collaborate with cross-functional teams",
+    "Write clean, maintainable, and well-documented code",
+    "Participate in code reviews and technical discussions",
+    "Troubleshoot and debug applications"
+  ],
+  "benefits": "We offer competitive compensation, comprehensive benefits, and opportunities for professional growth in a collaborative environment.",
+  "fullText": "We are seeking a skilled Software Engineer to join our dynamic development team. The ideal candidate will have experience with:\n\nRequired Skills:\n- Node.js and JavaScript/TypeScript\n- React.js and modern frontend frameworks\n- RESTful API development and integration\n- Database design and management (PostgreSQL preferred)\n- Version control with Git\n- Agile/Scrum methodologies\n- Unit testing and test-driven development\n\nNice to Have:\n- AWS cloud services (Lambda, EC2, S3)\n- Docker containerization\n- CI/CD pipeline setup with GitHub Actions\n- Microservices architecture\n- GraphQL\n\nResponsibilities:\n- Develop and maintain scalable web applications\n- Collaborate with cross-functional teams\n- Write clean, maintainable, and well-documented code\n- Participate in code reviews and technical discussions\n- Troubleshoot and debug applications\n\nWe offer competitive compensation, comprehensive benefits, and opportunities for professional growth in a collaborative environment."
+}

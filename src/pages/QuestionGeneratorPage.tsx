@@ -1,0 +1,220 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '../components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+import { Badge } from '../components/ui/badge';
+import { Bot, Download, ChevronDown, ChevronUp, FileText } from 'lucide-react';
+import { useInterviewStore } from '../store/useInterviewStore';
+
+export default function QuestionGeneratorPage() {
+  const navigate = useNavigate();
+  const { questions, candidateInfo } = useInterviewStore();
+  const [activeTab, setActiveTab] = useState<'Technical' | 'Behavioral' | 'Screening'>('Technical');
+  const [expandedQuestions, setExpandedQuestions] = useState<Set<string>>(new Set());
+
+  if (!questions.length) {
+    navigate('/preparation');
+    return null;
+  }
+
+  const questionsByCategory = {
+    'Technical': questions.filter(q => q.category === 'Technical'),
+    'Behavioral': questions.filter(q => q.category === 'Behavioral'),
+    'Screening': questions.filter(q => q.category === 'Screening')
+  };
+
+  const toggleQuestionExpansion = (questionId: string) => {
+    const newExpanded = new Set(expandedQuestions);
+    if (newExpanded.has(questionId)) {
+      newExpanded.delete(questionId);
+    } else {
+      newExpanded.add(questionId);
+    }
+    setExpandedQuestions(newExpanded);
+  };
+
+  const handleSaveAsPDF = () => {
+    alert('PDF generation feature will be implemented with a PDF library like jsPDF or react-pdf');
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center space-x-2">
+              <Bot className="w-8 h-8 text-blue-600" />
+              <span className="text-xl font-bold text-gray-900">Interview Questions</span>
+            </div>
+            <div className="flex space-x-3">
+              <Button 
+                variant="outline" 
+                onClick={handleSaveAsPDF}
+                className="flex items-center space-x-2"
+              >
+                <Download className="w-4 h-4" />
+                <span>Save as PDF</span>
+              </Button>
+              <Button variant="ghost" onClick={() => navigate('/analysis')}>
+                Back to Analysis
+              </Button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Header Section */}
+        <div className="mb-8">
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+            Interview Questions for {candidateInfo.title} ({candidateInfo.seniorityLevel})
+          </h1>
+          <p className="text-gray-600">
+            {candidateInfo.roundNumber} Round - {candidateInfo.interviewPersona} Style | Tailored Questions Based on Candidate's Resume & JD
+          </p>
+        </div>
+
+        {/* Question Categories Tabs */}
+        <div className="mb-6">
+          <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg w-fit">
+            {(['Technical', 'Behavioral', 'Screening'] as const).map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveTab(category)}
+                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                  activeTab === category
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-white'
+                }`}
+              >
+                {category} ({questionsByCategory[category].length})
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Questions List */}
+        <div className="space-y-4">
+          {questionsByCategory[activeTab].map((question, index) => {
+            const isExpanded = expandedQuestions.has(question.id);
+            return (
+              <Card key={question.id} className="border-gray-200">
+                <CardHeader 
+                  className="cursor-pointer hover:bg-gray-50 transition-colors"
+                  onClick={() => toggleQuestionExpansion(question.id)}
+                >
+                  <div className="flex justify-between items-start">
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Badge 
+                          variant="outline" 
+                          className={`text-xs ${
+                            question.category === 'Technical' ? 'border-blue-300 text-blue-700' :
+                            question.category === 'Behavioral' ? 'border-green-300 text-green-700' :
+                            question.category === 'Screening' ? 'border-orange-300 text-orange-700' :
+                            'border-purple-300 text-purple-700'
+                          }`}
+                        >
+                          {question.category}
+                        </Badge>
+                        <span className="text-sm text-gray-500">Q{index + 1}</span>
+                      </div>
+                      <CardTitle className="text-base font-medium text-gray-900 leading-relaxed">
+                        {question.question}
+                      </CardTitle>
+                    </div>
+                    <div className="ml-4 flex-shrink-0">
+                      {isExpanded ? (
+                        <ChevronUp className="w-5 h-5 text-gray-400" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5 text-gray-400" />
+                      )}
+                    </div>
+                  </div>
+                </CardHeader>
+                
+                                 {isExpanded && (
+                   <CardContent className="pt-0 border-t bg-gray-50">
+                     <div className="space-y-4">
+                       <div>
+                         <h4 className="text-sm font-semibold text-gray-700 mb-2">Expected Answer:</h4>
+                         <p className="text-sm text-gray-600 leading-relaxed bg-white p-3 rounded border">
+                           {question.expectedAnswer}
+                         </p>
+                       </div>
+                       <div>
+                         <h4 className="text-sm font-semibold text-gray-700 mb-2">Evaluation Criteria:</h4>
+                         <div className="bg-white p-3 rounded border">
+                           {Array.isArray(question.evaluationCriteria) ? (
+                             <ul className="space-y-1">
+                               {question.evaluationCriteria.map((criteria, idx) => (
+                                 <li key={idx} className="flex items-start space-x-2">
+                                   <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                   <span className="text-sm text-gray-600">{criteria}</span>
+                                 </li>
+                               ))}
+                             </ul>
+                           ) : (
+                             <p className="text-sm text-gray-600 leading-relaxed">
+                               {question.evaluationCriteria}
+                             </p>
+                           )}
+                         </div>
+                       </div>
+                       {question.scoringGuide && (
+                         <div>
+                           <h4 className="text-sm font-semibold text-gray-700 mb-2">Scoring Guide:</h4>
+                           <div className="bg-white p-3 rounded border space-y-2">
+                             {question.scoringGuide.map((score, idx) => (
+                               <div key={idx} className="flex items-center space-x-3">
+                                 <div className="flex space-x-1">
+                                   {[1, 2, 3, 4, 5].map((star) => (
+                                     <span
+                                       key={star}
+                                       className={`text-sm ${
+                                         star <= score.stars ? 'text-orange-400' : 'text-gray-300'
+                                       }`}
+                                     >
+                                       ★
+                                     </span>
+                                   ))}
+                                 </div>
+                                 <span className="text-sm text-gray-600">{score.description}</span>
+                               </div>
+                             ))}
+                           </div>
+                         </div>
+                       )}
+                     </div>
+                   </CardContent>
+                 )}
+              </Card>
+            );
+          })}
+        </div>
+
+        {/* Footer Actions */}
+        <div className="mt-8 flex justify-center space-x-4">
+          <Button 
+            variant="outline"
+            onClick={() => navigate('/preparation')}
+            className="flex items-center space-x-2"
+          >
+            <FileText className="w-4 h-4" />
+            <span>New Preparation</span>
+          </Button>
+          <Button 
+            onClick={handleSaveAsPDF}
+            className="bg-blue-600 hover:bg-blue-700 text-white flex items-center space-x-2"
+          >
+            <Download className="w-4 h-4" />
+            <span>Save as PDF</span>
+          </Button>
+        </div>
+      </main>
+    </div>
+  );
+}
+

@@ -1,0 +1,80 @@
+{
+  "titles": [
+    {
+      "value": "Software Engineer",
+      "label": "Software Engineer",
+      "category": "Development"
+    },
+    {
+      "value": "Frontend Developer",
+      "label": "Frontend Developer", 
+      "category": "Development"
+    },
+    {
+      "value": "Backend Developer",
+      "label": "Backend Developer",
+      "category": "Development"
+    },
+    {
+      "value": "Full Stack Developer",
+      "label": "Full Stack Developer",
+      "category": "Development"
+    },
+    {
+      "value": "Mobile Developer",
+      "label": "Mobile Developer",
+      "category": "Development"
+    },
+    {
+      "value": "DevOps Engineer",
+      "label": "DevOps Engineer",
+      "category": "Infrastructure"
+    },
+    {
+      "value": "Data Engineer",
+      "label": "Data Engineer",
+      "category": "Data"
+    },
+    {
+      "value": "Data Scientist",
+      "label": "Data Scientist",
+      "category": "Data"
+    },
+    {
+      "value": "QA Engineer",
+      "label": "QA Engineer",
+      "category": "Quality Assurance"
+    },
+    {
+      "value": "Test Automation Engineer",
+      "label": "Test Automation Engineer",
+      "category": "Quality Assurance"
+    },
+    {
+      "value": "Business Analyst",
+      "label": "Business Analyst",
+      "category": "Analysis"
+    },
+    {
+      "value": "Product Manager",
+      "label": "Product Manager",
+      "category": "Management"
+    },
+    {
+      "value": "Technical Lead",
+      "label": "Technical Lead",
+      "category": "Leadership"
+    },
+    {
+      "value": "Solution Architect",
+      "label": "Solution Architect",
+      "category": "Architecture"
+    },
+    {
+      "value": "Security Engineer",
+      "label": "Security Engineer",
+      "category": "Security"
+    }
+  ],
+  "defaultTitle": "Software Engineer"
+}
