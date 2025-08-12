@@ -45,21 +45,14 @@ export default function QuestionGeneratorPage() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <Bot className="w-8 h-8 text-blue-600" />
-              <span className="text-xl font-bold text-gray-900">Interview Questions</span>
+              <span className="text-lg sm:text-xl font-bold text-gray-900">AI Interview Assistant</span>
             </div>
-            <div className="flex space-x-3">
-              <Button 
-                variant="outline" 
-                onClick={handleSaveAsPDF}
-                className="flex items-center space-x-2"
-              >
-                <Download className="w-4 h-4" />
-                <span>Save as PDF</span>
-              </Button>
-              <Button variant="ghost" onClick={() => navigate('/analysis')}>
-                Back to Analysis
-              </Button>
-            </div>
+            <Button 
+              variant="ghost" 
+              onClick={() => navigate('/analysis')}
+            >
+              Back to Analysis
+            </Button>
           </div>
         </div>
       </header>
@@ -68,22 +61,22 @@ export default function QuestionGeneratorPage() {
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header Section */}
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 break-words">
             Interview Questions for {candidateInfo.title} ({candidateInfo.seniorityLevel})
           </h1>
-          <p className="text-gray-600">
+          <p className="text-sm sm:text-base text-gray-600 break-words">
             {candidateInfo.roundNumber} Round - {candidateInfo.interviewPersona} Style | Tailored Questions Based on Candidate's Resume & JD
           </p>
         </div>
 
         {/* Question Categories Tabs */}
-        <div className="mb-6">
-          <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg w-fit">
+        <div className="mb-6 overflow-x-auto">
+          <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg w-fit min-w-full sm:min-w-0">
             {(['Technical', 'Behavioral', 'Screening'] as const).map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveTab(category)}
-                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap flex-1 sm:flex-none ${
                   activeTab === category
                     ? 'bg-blue-600 text-white shadow-sm'
                     : 'text-gray-600 hover:text-gray-900 hover:bg-white'
@@ -105,12 +98,12 @@ export default function QuestionGeneratorPage() {
                   className="cursor-pointer hover:bg-gray-50 transition-colors"
                   onClick={() => toggleQuestionExpansion(question.id)}
                 >
-                  <div className="flex justify-between items-start">
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-2 mb-2">
+                  <div className="flex justify-between items-start gap-4">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center space-x-2 mb-2 flex-wrap">
                         <Badge 
                           variant="outline" 
-                          className={`text-xs ${
+                          className={`text-xs flex-shrink-0 ${
                             question.category === 'Technical' ? 'border-blue-300 text-blue-700' :
                             question.category === 'Behavioral' ? 'border-green-300 text-green-700' :
                             question.category === 'Screening' ? 'border-orange-300 text-orange-700' :
@@ -119,13 +112,13 @@ export default function QuestionGeneratorPage() {
                         >
                           {question.category}
                         </Badge>
-                        <span className="text-sm text-gray-500">Q{index + 1}</span>
+                        <span className="text-sm text-gray-500 flex-shrink-0">Q{index + 1}</span>
                       </div>
-                      <CardTitle className="text-base font-medium text-gray-900 leading-relaxed">
+                      <CardTitle className="text-sm sm:text-base font-medium text-gray-900 leading-relaxed break-words">
                         {question.question}
                       </CardTitle>
                     </div>
-                    <div className="ml-4 flex-shrink-0">
+                    <div className="flex-shrink-0">
                       {isExpanded ? (
                         <ChevronUp className="w-5 h-5 text-gray-400" />
                       ) : (
@@ -196,18 +189,18 @@ export default function QuestionGeneratorPage() {
         </div>
 
         {/* Footer Actions */}
-        <div className="mt-8 flex justify-center space-x-4">
+        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
           <Button 
             variant="outline"
             onClick={() => navigate('/preparation')}
-            className="flex items-center space-x-2"
+            className="flex items-center justify-center space-x-2 w-full sm:w-auto"
           >
             <FileText className="w-4 h-4" />
             <span>New Preparation</span>
           </Button>
           <Button 
             onClick={handleSaveAsPDF}
-            className="bg-blue-600 hover:bg-blue-700 text-white flex items-center space-x-2"
+            className="bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center space-x-2 w-full sm:w-auto"
           >
             <Download className="w-4 h-4" />
             <span>Save as PDF</span>
