@@ -9,8 +9,8 @@ import { DocumentViewerModal } from '../components/DocumentViewerModal';
 import { useInterviewStore } from '../store/useInterviewStore';
 import { 
   analyzeSkillGap, 
-  mockJobDescription, 
-  mockResume,
+  // mockJobDescription, 
+  // mockResume,
   jobTitles,
   seniorityLevels,
   roundNumbers,
@@ -197,16 +197,16 @@ Skills:
     removeUploadedFile();
   };
 
-  const handleLoadMockData = () => {
-    setFormData({
-      title: defaultJobTitle,
-      seniorityLevel: 'Mid-level',
-      roundNumber: defaultRoundNumber,
-      interviewPersona: defaultInterviewPersona,
-      jobDescription: mockJobDescription,
-      resume: mockResume
-    });
-  };
+  // const handleLoadMockData = () => {
+  //   setFormData({
+  //     title: defaultJobTitle,
+  //     seniorityLevel: 'Mid-level',
+  //     roundNumber: defaultRoundNumber,
+  //     interviewPersona: defaultInterviewPersona,
+  //     jobDescription: mockJobDescription,
+  //     resume: mockResume
+  //   });
+  // };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -363,13 +363,13 @@ Skills:
                               </p>
                             </div>
                           </div>
-                          <div className="flex items-center space-x-2">
+                          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 sm:space-x-0">
                             <Button
                               type="button"
                               variant="outline"
                               size="sm"
                               onClick={handlePreviewClick}
-                              className="flex items-center space-x-1"
+                              className="flex items-center space-x-1 w-full sm:w-auto"
                             >
                               <Eye className="w-4 h-4" />
                               <span>
@@ -384,7 +384,7 @@ Skills:
                               variant="outline"
                               size="sm"
                               onClick={removeUploadedFile}
-                              className="flex items-center space-x-1 text-red-600 hover:text-red-700"
+                              className="flex items-center space-x-1 text-red-600 hover:text-red-700 w-full sm:w-auto"
                             >
                               <X className="w-4 h-4" />
                               <span>Remove</span>
@@ -454,27 +454,28 @@ Skills:
             </div>
 
             {/* Action Buttons */}
-            <div className="flex justify-between items-center pt-4">
-              <Button 
+            <div className="flex flex-col sm:flex-row gap-3 pt-4">
+              {/* <Button 
                 variant="outline" 
                 onClick={handleLoadMockData}
                 disabled={isLoading}
-                className="text-blue-600 border-blue-300 hover:bg-blue-50"
+                className="text-blue-600 border-blue-300 hover:bg-blue-50 w-full sm:w-auto"
               >
                 Load Test Data
-              </Button>
-              <div className="flex space-x-3">
+              </Button> */}
+              <div className="flex gap-3 sm:ml-auto">
                 <Button 
                   variant="outline" 
                   onClick={handleReset}
                   disabled={isLoading}
+                  className="flex-1 sm:flex-none"
                 >
                   Reset
                 </Button>
                 <Button 
                   onClick={handleSubmit}
                   disabled={isLoading || !formData.jobDescription.trim() || !formData.resume.trim()}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 flex-1 sm:flex-none"
                 >
                   {isLoading ? 'Analyzing...' : 'Submit'}
                 </Button>

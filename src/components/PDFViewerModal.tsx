@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useMemo } from 'react';
 import { usePdf } from '@mikecousins/react-pdf';
 import { Modal } from './ui/modal';
 import { Button } from './ui/button';
-import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, RotateCw } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from 'lucide-react';
 
 interface PDFViewerModalProps {
   isOpen: boolean;
@@ -13,7 +13,6 @@ interface PDFViewerModalProps {
 export function PDFViewerModal({ isOpen, onClose, file }: PDFViewerModalProps) {
   const [page, setPage] = useState(1);
   const [scale, setScale] = useState(1.0);
-  const [rotation, setRotation] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   // Create URL for the PDF file - memoized to prevent re-creation on every render
@@ -21,12 +20,11 @@ export function PDFViewerModal({ isOpen, onClose, file }: PDFViewerModalProps) {
     return file ? URL.createObjectURL(file) : null;
   }, [file]);
 
-  const { pdfDocument, pdfPage } = usePdf({
-    file: isOpen && fileUrl ? fileUrl : null, // Only load PDF when modal is open and file exists
+  const { pdfDocument } = usePdf({
+    file: (isOpen && fileUrl) ? fileUrl : '', // Only load PDF when modal is open and file exists
     page,
     canvasRef,
     scale,
-    rotation,
   });
 
   // Clean up object URL when component unmounts or file changes
@@ -43,7 +41,6 @@ export function PDFViewerModal({ isOpen, onClose, file }: PDFViewerModalProps) {
     if (file) {
       setPage(1);
       setScale(1.0);
-      setRotation(0);
     }
   }, [file]);
 
@@ -52,7 +49,6 @@ export function PDFViewerModal({ isOpen, onClose, file }: PDFViewerModalProps) {
     if (!isOpen) {
       setPage(1);
       setScale(1.0);
-      setRotation(0);
     }
   }, [isOpen]);
 
@@ -74,10 +70,6 @@ export function PDFViewerModal({ isOpen, onClose, file }: PDFViewerModalProps) {
 
   const handleZoomOut = () => {
     setScale(prev => Math.max(prev - 0.25, 0.5));
-  };
-
-  const handleRotate = () => {
-    setRotation(prev => (prev + 90) % 360);
   };
 
   // Don't render if no file, wrong file type, or modal is closed
@@ -124,7 +116,7 @@ export function PDFViewerModal({ isOpen, onClose, file }: PDFViewerModalProps) {
             </div>
           </div>
 
-          {/* Zoom and Rotation Controls */}
+          {/* Zoom Controls */}
           <div className="flex items-center space-x-2">
             <Button
               variant="outline"
@@ -146,14 +138,6 @@ export function PDFViewerModal({ isOpen, onClose, file }: PDFViewerModalProps) {
               className="flex items-center space-x-1"
             >
               <ZoomIn className="w-4 h-4" />
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleRotate}
-              className="flex items-center space-x-1"
-            >
-              <RotateCw className="w-4 h-4" />
             </Button>
           </div>
         </div>

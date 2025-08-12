@@ -53,10 +53,10 @@ export default function SkillAnalysisPage() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <Bot className="w-8 h-8 text-blue-600" />
-              <span className="text-xl font-bold text-gray-900">Skill Gap Analyzer</span>
+              <span className="text-xl font-bold text-gray-900">AI Interview Assistant</span>
             </div>
             <Button variant="ghost" onClick={() => navigate('/preparation')}>
-              Back to Preparation
+              Back to Prep
             </Button>
           </div>
         </div>
@@ -234,9 +234,9 @@ export default function SkillAnalysisPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="flex justify-between items-center">
-              <div className="space-y-2">
-                <div className="flex space-x-4 text-sm">
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+              <div className="space-y-2 w-full lg:w-auto">
+                <div className="flex flex-wrap gap-2 text-sm">
                   <Badge variant="outline" className="bg-white border-purple-300 text-purple-700">
                     Technical Questions (5)
                   </Badge>
@@ -251,7 +251,7 @@ export default function SkillAnalysisPage() {
               <Button 
                 onClick={handleGenerateQuestions}
                 disabled={isLoading}
-                className="bg-purple-600 hover:bg-purple-700 text-white"
+                className="bg-purple-600 hover:bg-purple-700 text-white w-full lg:w-auto"
               >
                 {isLoading ? 'Generating...' : (
                   <>
