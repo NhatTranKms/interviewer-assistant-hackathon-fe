@@ -9,8 +9,8 @@ import { DocumentViewerModal } from '../components/DocumentViewerModal';
 import { useInterviewStore } from '../store/useInterviewStore';
 import { 
   analyzeSkillGap, 
-  mockJobDescription, 
-  mockResume,
+  // mockJobDescription, 
+  // mockResume,
   jobTitles,
   seniorityLevels,
   roundNumbers,
@@ -197,16 +197,16 @@ Skills:
     removeUploadedFile();
   };
 
-  const handleLoadMockData = () => {
-    setFormData({
-      title: defaultJobTitle,
-      seniorityLevel: 'Mid-level',
-      roundNumber: defaultRoundNumber,
-      interviewPersona: defaultInterviewPersona,
-      jobDescription: mockJobDescription,
-      resume: mockResume
-    });
-  };
+  // const handleLoadMockData = () => {
+  //   setFormData({
+  //     title: defaultJobTitle,
+  //     seniorityLevel: 'Mid-level',
+  //     roundNumber: defaultRoundNumber,
+  //     interviewPersona: defaultInterviewPersona,
+  //     jobDescription: mockJobDescription,
+  //     resume: mockResume
+  //   });
+  // };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -455,14 +455,14 @@ Skills:
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 pt-4">
-              <Button 
+              {/* <Button 
                 variant="outline" 
                 onClick={handleLoadMockData}
                 disabled={isLoading}
                 className="text-blue-600 border-blue-300 hover:bg-blue-50 w-full sm:w-auto"
               >
                 Load Test Data
-              </Button>
+              </Button> */}
               <div className="flex gap-3 sm:ml-auto">
                 <Button 
                   variant="outline" 
