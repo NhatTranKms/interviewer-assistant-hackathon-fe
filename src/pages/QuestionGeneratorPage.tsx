@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { Bot, Download, ChevronDown, ChevronUp, FileText } from 'lucide-react';
+import { Download, ChevronDown, ChevronUp, FileText } from 'lucide-react';
 import { useInterviewStore } from '../store/useInterviewStore';
+import { PDFExportService } from '../services/pdfExportService';
 
 export default function QuestionGeneratorPage() {
   const navigate = useNavigate();
@@ -34,7 +35,8 @@ export default function QuestionGeneratorPage() {
   };
 
   const handleSaveAsPDF = () => {
-    alert('PDF generation feature will be implemented with a PDF library like jsPDF or react-pdf');
+    const pdfService = new PDFExportService();
+    pdfService.exportInterviewQuestions(candidateInfo, questionsByCategory);
   };
 
   return (
