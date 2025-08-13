@@ -1,532 +1,526 @@
-{
-  "technical": [
-    {
-      "id": "1",
-      "question": "Explain the difference between PostgreSQL and MongoDB. How would you approach migrating from MongoDB to PostgreSQL in an existing application?",
-      "category": "Technical",
-      "expectedAnswer": "PostgreSQL is a relational database with ACID compliance and strong consistency, while MongoDB is a NoSQL document database. Migration would involve schema design, data transformation, updating queries, and ensuring application compatibility.",
-      "evaluationCriteria": [
-        "Understands fundamental differences between SQL and NoSQL",
-        "Explains ACID compliance and consistency models",
-        "Discusses migration planning and strategy",
-        "Considers data transformation challenges",
-        "Mentions application compatibility and testing"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Comprehensive understanding of databases and migration strategies"
-        },
-        {
-          "stars": 4,
-          "description": "Good database knowledge with minor gaps in migration approach"
-        },
-        {
-          "stars": 3,
-          "description": "Basic understanding of database differences"
-        },
-        {
-          "stars": 2,
-          "description": "Limited database knowledge"
-        },
-        {
-          "stars": 1,
-          "description": "Poor understanding of database concepts"
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "question": "How do you handle database schema migrations in production?",
-      "category": "Technical",
-      "expectedAnswer": "Should discuss migration strategies, backward compatibility, rollback plans, testing in staging environments, and coordination with deployment processes.",
-      "evaluationCriteria": [
-        "Understands migration best practices",
-        "Considers production safety",
-        "Mentions testing and validation",
-        "Discusses rollback strategies"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Comprehensive production-ready approach"
-        },
-        {
-          "stars": 4,
-          "description": "Good practices with minor considerations missing"
-        },
-        {
-          "stars": 3,
-          "description": "Basic understanding of migrations"
-        },
-        {
-          "stars": 2,
-          "description": "Limited production experience"
-        },
-        {
-          "stars": 1,
-          "description": "Poor understanding of database operations"
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "question": "What's your approach to designing scalable RESTful APIs?",
-      "category": "Technical",
-      "expectedAnswer": "Should discuss API design principles, versioning strategies, pagination, caching, rate limiting, error handling, and documentation. Mention REST conventions, status codes, and security considerations.",
-      "evaluationCriteria": [
-        "Understands REST principles and best practices",
-        "Considers scalability from the design phase",
-        "Mentions versioning and backward compatibility",
-        "Discusses performance optimization techniques",
-        "Addresses security and documentation"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Comprehensive API design expertise"
-        },
-        {
-          "stars": 4,
-          "description": "Strong understanding with minor gaps"
-        },
-        {
-          "stars": 3,
-          "description": "Good grasp of API fundamentals"
-        },
-        {
-          "stars": 2,
-          "description": "Basic API knowledge"
-        },
-        {
-          "stars": 1,
-          "description": "Limited understanding of API design"
-        }
-      ]
-    },
-    {
-      "id": "4",
-      "question": "How do you implement proper error handling in a Node.js REST API?",
-      "category": "Technical",
-      "expectedAnswer": "Use try-catch blocks, middleware for centralized error handling, proper HTTP status codes, logging, and structured error responses. Implement both synchronous and asynchronous error handling.",
-      "evaluationCriteria": [
-        "Understands different types of errors in Node.js",
-        "Mentions centralized error handling middleware",
-        "Discusses proper HTTP status codes",
-        "Considers logging and monitoring",
-        "Addresses both sync and async error handling"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Expert-level error handling knowledge"
-        },
-        {
-          "stars": 4,
-          "description": "Strong error handling practices"
-        },
-        {
-          "stars": 3,
-          "description": "Good understanding of basic error handling"
-        },
-        {
-          "stars": 2,
-          "description": "Basic error handling awareness"
-        },
-        {
-          "stars": 1,
-          "description": "Poor error handling understanding"
-        }
-      ]
-    },
-    {
-      "id": "5",
-      "question": "How would you optimize the performance of a React application that is rendering slowly?",
-      "category": "Technical",
-      "expectedAnswer": "Use React.memo, useMemo, useCallback for memoization, lazy loading, code splitting, optimize bundle size, minimize re-renders, and use performance profiling tools.",
-      "evaluationCriteria": [
-        "Understands React performance optimization techniques",
-        "Mentions memoization strategies (memo, useMemo, useCallback)",
-        "Discusses code splitting and lazy loading",
-        "Considers bundle optimization",
-        "Uses performance profiling tools"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Advanced React performance optimization expertise"
-        },
-        {
-          "stars": 4,
-          "description": "Good understanding of React optimization"
-        },
-        {
-          "stars": 3,
-          "description": "Basic React performance knowledge"
-        },
-        {
-          "stars": 2,
-          "description": "Limited optimization experience"
-        },
-        {
-          "stars": 1,
-          "description": "Poor understanding of React performance"
-        }
-      ]
-    }
-  ],
-  "behavioral": [
-    {
-      "id": "6",
-      "question": "Tell me about a time when you had to learn a new technology quickly for a project.",
-      "category": "Behavioral",
-      "expectedAnswer": "Should demonstrate learning strategy, resourcefulness, time management, and practical application of new knowledge. Look for specific examples, challenges faced, and outcomes achieved.",
-      "evaluationCriteria": [
-        "Provides specific example with context",
-        "Demonstrates effective learning strategy",
-        "Shows resourcefulness and initiative", 
-        "Discusses challenges and how they overcame them",
-        "Explains practical application and results"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Excellent learning agility with clear methodology"
-        },
-        {
-          "stars": 4,
-          "description": "Good learning approach with minor gaps"
-        },
-        {
-          "stars": 3,
-          "description": "Adequate learning ability"
-        },
-        {
-          "stars": 2,
-          "description": "Basic learning approach"
-        },
-        {
-          "stars": 1,
-          "description": "Poor learning strategy or no clear example"
-        }
-      ]
-    },
-    {
-      "id": "7",
-      "question": "Describe a situation where you disagreed with a technical decision made by your team. How did you handle it?",
-      "category": "Behavioral",
-      "expectedAnswer": "Should show ability to communicate concerns professionally, provide alternatives, collaborate on solutions, and accept team decisions when appropriate.",
-      "evaluationCriteria": [
-        "Demonstrates professional communication skills",
-        "Shows ability to present technical arguments",
-        "Displays collaborative problem-solving approach",
-        "Exhibits flexibility and team-first mindset",
-        "Provides specific example with clear outcome"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Excellent conflict resolution and teamwork skills"
-        },
-        {
-          "stars": 4,
-          "description": "Good collaboration with minor communication gaps"
-        },
-        {
-          "stars": 3,
-          "description": "Adequate teamwork and communication"
-        },
-        {
-          "stars": 2,
-          "description": "Basic collaboration skills"
-        },
-        {
-          "stars": 1,
-          "description": "Poor teamwork or communication approach"
-        }
-      ]
-    },
-    {
-      "id": "8",
-      "question": "Tell me about a challenging bug you encountered. How did you approach debugging and resolving it?",
-      "category": "Behavioral",
-      "expectedAnswer": "Should demonstrate systematic debugging approach, persistence, use of tools, and learning from the experience.",
-      "evaluationCriteria": [
-        "Describes systematic debugging methodology",
-        "Shows persistence and problem-solving skills",
-        "Mentions appropriate debugging tools and techniques",
-        "Demonstrates learning from the experience",
-        "Provides clear example with technical details"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Expert debugging skills with methodical approach"
-        },
-        {
-          "stars": 4,
-          "description": "Strong debugging abilities with good process"
-        },
-        {
-          "stars": 3,
-          "description": "Adequate debugging skills"
-        },
-        {
-          "stars": 2,
-          "description": "Basic debugging approach"
-        },
-        {
-          "stars": 1,
-          "description": "Poor debugging methodology or no clear example"
-        }
-      ]
-    },
-    {
-      "id": "9",
-      "question": "How do you stay updated with the latest developments in web development and programming?",
-      "category": "Behavioral",
-      "expectedAnswer": "Should mention various learning resources, community engagement, practical application, and continuous learning mindset.",
-      "evaluationCriteria": [
-        "Shows commitment to continuous learning",
-        "Mentions diverse learning resources and methods",
-        "Demonstrates community engagement",
-        "Explains practical application of new knowledge",
-        "Shows awareness of industry trends"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Excellent continuous learning mindset and practices"
-        },
-        {
-          "stars": 4,
-          "description": "Good learning habits with active engagement"
-        },
-        {
-          "stars": 3,
-          "description": "Adequate professional development approach"
-        },
-        {
-          "stars": 2,
-          "description": "Basic learning efforts"
-        },
-        {
-          "stars": 1,
-          "description": "Limited commitment to learning and growth"
-        }
-      ]
-    },
-    {
-      "id": "10",
-      "question": "Describe a time when you had to work under a tight deadline. How did you manage your time and priorities?",
-      "category": "Behavioral",
-      "expectedAnswer": "Should demonstrate time management skills, prioritization, communication with stakeholders, and ability to deliver under pressure.",
-      "evaluationCriteria": [
-        "Demonstrates effective time management strategies",
-        "Shows clear prioritization methodology",
-        "Exhibits good communication with stakeholders",
-        "Handles pressure and stress effectively",
-        "Delivers results within constraints"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Excellent time management and pressure handling"
-        },
-        {
-          "stars": 4,
-          "description": "Good organizational skills with minor gaps"
-        },
-        {
-          "stars": 3,
-          "description": "Adequate time management abilities"
-        },
-        {
-          "stars": 2,
-          "description": "Basic time management skills"
-        },
-        {
-          "stars": 1,
-          "description": "Poor time management or stress handling"
-        }
-      ]
-    }
-  ],
-  "screening": [
-    {
-      "id": "11",
-      "question": "Can you walk me through your resume and tell me about your current role?",
-      "category": "Screening",
-      "expectedAnswer": "Clear, concise overview of career progression, current responsibilities, and key achievements. Should highlight relevant experience for the position.",
-      "evaluationCriteria": [
-        "Provides clear and organized career overview",
-        "Highlights relevant experience and skills",
-        "Demonstrates good communication skills",
-        "Shows career progression and growth",
-        "Connects background to the target role"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Excellent presentation with strong relevant background"
-        },
-        {
-          "stars": 4,
-          "description": "Good background with clear communication"
-        },
-        {
-          "stars": 3,
-          "description": "Adequate experience with reasonable fit"
-        },
-        {
-          "stars": 2,
-          "description": "Limited relevant experience"
-        },
-        {
-          "stars": 1,
-          "description": "Poor communication or irrelevant background"
-        }
-      ]
-    },
-    {
-      "id": "12",
-      "question": "What programming languages and technologies do you have experience with?",
-      "category": "Screening",
-      "expectedAnswer": "List of technologies from their resume with brief context about where and how they used them. Should align with job requirements.",
-      "evaluationCriteria": [
-        "Lists technologies that match job requirements",
-        "Provides context for technology usage",
-        "Demonstrates depth vs breadth appropriately",
-        "Shows recent and relevant experience",
-        "Honest about skill levels and experience duration"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Strong technical match with deep experience"
-        },
-        {
-          "stars": 4,
-          "description": "Good technical fit with solid experience"
-        },
-        {
-          "stars": 3,
-          "description": "Adequate technical background"
-        },
-        {
-          "stars": 2,
-          "description": "Limited relevant technical experience"
-        },
-        {
-          "stars": 1,
-          "description": "Poor technical match or unrealistic claims"
-        }
-      ]
-    },
-    {
-      "id": "13",
-      "question": "Tell me about the most recent project you worked on. What was your role and what technologies did you use?",
-      "category": "Screening",
-      "expectedAnswer": "Detailed description of a recent project including their specific contributions, technologies used, challenges faced, and outcomes achieved.",
-      "evaluationCriteria": [
-        "Provides specific project details and context",
-        "Clearly explains their individual role and contributions",
-        "Mentions relevant technologies and tools",
-        "Discusses challenges and problem-solving",
-        "Shows impact and measurable outcomes"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Impressive project with clear impact and strong contribution"
-        },
-        {
-          "stars": 4,
-          "description": "Good project experience with solid contributions"
-        },
-        {
-          "stars": 3,
-          "description": "Adequate project experience"
-        },
-        {
-          "stars": 2,
-          "description": "Limited project complexity or contribution"
-        },
-        {
-          "stars": 1,
-          "description": "Poor project example or unclear contributions"
-        }
-      ]
-    },
-    {
-      "id": "14",
-      "question": "What interests you about this position and our company?",
-      "category": "Screening",
-      "expectedAnswer": "Demonstrates research about the company, understanding of the role, and genuine interest. Should connect their background to the opportunity.",
-      "evaluationCriteria": [
-        "Shows research and knowledge about the company",
-        "Demonstrates understanding of the role requirements",
-        "Connects their background to the opportunity",
-        "Expresses genuine interest and enthusiasm",
-        "Aligns personal goals with company objectives"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Excellent research and strong alignment with role"
-        },
-        {
-          "stars": 4,
-          "description": "Good preparation with clear interest"
-        },
-        {
-          "stars": 3,
-          "description": "Adequate interest with some research"
-        },
-        {
-          "stars": 2,
-          "description": "Limited research or generic responses"
-        },
-        {
-          "stars": 1,
-          "description": "No preparation or poor fit indication"
-        }
-      ]
-    },
-    {
-      "id": "15",
-      "question": "What are your salary expectations for this role?",
-      "category": "Screening",
-      "expectedAnswer": "Should provide a reasonable range based on market research, experience level, and role requirements. May ask about company's budget or defer to later stages.",
-      "evaluationCriteria": [
-        "Provides realistic salary expectations",
-        "Shows market awareness and research",
-        "Considers experience level and role requirements",
-        "Demonstrates flexibility in negotiations",
-        "Professional approach to compensation discussion"
-      ],
-      "scoringGuide": [
-        {
-          "stars": 5,
-          "description": "Realistic expectations with good market awareness"
-        },
-        {
-          "stars": 4,
-          "description": "Reasonable range with some flexibility"
-        },
-        {
-          "stars": 3,
-          "description": "Acceptable expectations within budget"
-        },
-        {
-          "stars": 2,
-          "description": "Slightly high expectations but negotiable"
-        },
-        {
-          "stars": 1,
-          "description": "Unrealistic expectations or poor approach"
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "id": "1",
+    "question": "Explain the difference between PostgreSQL and MongoDB. How would you approach migrating from MongoDB to PostgreSQL in an existing application?",
+    "category": "Core Knowledge",
+    "expectedAnswer": "PostgreSQL is a relational database with ACID compliance and strong consistency, while MongoDB is a NoSQL document database. Migration would involve schema design, data transformation, updating queries, and ensuring application compatibility.",
+    "evaluationCriteria": [
+      "Understands fundamental differences between SQL and NoSQL",
+      "Explains ACID compliance and consistency models",
+      "Discusses migration planning and strategy",
+      "Considers data transformation challenges",
+      "Mentions application compatibility and testing"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Comprehensive understanding of databases and migration strategies"
+      },
+      {
+        "stars": 4,
+        "description": "Good database knowledge with minor gaps in migration approach"
+      },
+      {
+        "stars": 3,
+        "description": "Basic understanding of database differences"
+      },
+      {
+        "stars": 2,
+        "description": "Limited database knowledge"
+      },
+      {
+        "stars": 1,
+        "description": "Poor understanding of database concepts"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "question": "How do you handle database schema migrations in production?",
+    "category": "Process & Best Practices",
+    "expectedAnswer": "Should discuss migration strategies, backward compatibility, rollback plans, testing in staging environments, and coordination with deployment processes.",
+    "evaluationCriteria": [
+      "Understands migration best practices",
+      "Considers production safety",
+      "Mentions testing and validation",
+      "Discusses rollback strategies"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Comprehensive production-ready approach"
+      },
+      {
+        "stars": 4,
+        "description": "Good practices with minor considerations missing"
+      },
+      {
+        "stars": 3,
+        "description": "Basic understanding of migrations"
+      },
+      {
+        "stars": 2,
+        "description": "Limited production experience"
+      },
+      {
+        "stars": 1,
+        "description": "Poor understanding of database operations"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "question": "What's your approach to designing scalable RESTful APIs?",
+    "category": "Practical Skills",
+    "expectedAnswer": "Should discuss API design principles, versioning strategies, pagination, caching, rate limiting, error handling, and documentation. Mention REST conventions, status codes, and security considerations.",
+    "evaluationCriteria": [
+      "Understands REST principles and best practices",
+      "Considers scalability from the design phase",
+      "Mentions versioning and backward compatibility",
+      "Discusses performance optimization techniques",
+      "Addresses security and documentation"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Comprehensive API design expertise"
+      },
+      {
+        "stars": 4,
+        "description": "Strong understanding with minor gaps"
+      },
+      {
+        "stars": 3,
+        "description": "Good grasp of API fundamentals"
+      },
+      {
+        "stars": 2,
+        "description": "Basic API knowledge"
+      },
+      {
+        "stars": 1,
+        "description": "Limited understanding of API design"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "question": "How do you implement proper error handling in a Node.js REST API?",
+    "category": "Practical Skills",
+    "expectedAnswer": "Use try-catch blocks, middleware for centralized error handling, proper HTTP status codes, logging, and structured error responses. Implement both synchronous and asynchronous error handling.",
+    "evaluationCriteria": [
+      "Understands different types of errors in Node.js",
+      "Mentions centralized error handling middleware",
+      "Discusses proper HTTP status codes",
+      "Considers logging and monitoring",
+      "Addresses both sync and async error handling"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Expert-level error handling knowledge"
+      },
+      {
+        "stars": 4,
+        "description": "Strong error handling practices"
+      },
+      {
+        "stars": 3,
+        "description": "Good understanding of basic error handling"
+      },
+      {
+        "stars": 2,
+        "description": "Basic error handling awareness"
+      },
+      {
+        "stars": 1,
+        "description": "Poor error handling understanding"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "question": "How would you optimize the performance of a React application that is rendering slowly?",
+    "category": "Tools & Technology",
+    "expectedAnswer": "Use React.memo, useMemo, useCallback for memoization, lazy loading, code splitting, optimize bundle size, minimize re-renders, and use performance profiling tools.",
+    "evaluationCriteria": [
+      "Understands React performance optimization techniques",
+      "Mentions memoization strategies (memo, useMemo, useCallback)",
+      "Discusses code splitting and lazy loading",
+      "Considers bundle optimization",
+      "Uses performance profiling tools"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Advanced React performance optimization expertise"
+      },
+      {
+        "stars": 4,
+        "description": "Good understanding of React optimization"
+      },
+      {
+        "stars": 3,
+        "description": "Basic React performance knowledge"
+      },
+      {
+        "stars": 2,
+        "description": "Limited optimization experience"
+      },
+      {
+        "stars": 1,
+        "description": "Poor understanding of React performance"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "question": "Tell me about a time when you had to learn a new technology quickly for a project.",
+    "category": "Scenario-Based",
+    "expectedAnswer": "Should demonstrate learning strategy, resourcefulness, time management, and practical application of new knowledge. Look for specific examples, challenges faced, and outcomes achieved.",
+    "evaluationCriteria": [
+      "Provides specific example with context",
+      "Demonstrates effective learning strategy",
+      "Shows resourcefulness and initiative", 
+      "Discusses challenges and how they overcame them",
+      "Explains practical application and results"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Excellent learning agility with clear methodology"
+      },
+      {
+        "stars": 4,
+        "description": "Good learning approach with minor gaps"
+      },
+      {
+        "stars": 3,
+        "description": "Adequate learning ability"
+      },
+      {
+        "stars": 2,
+        "description": "Basic learning approach"
+      },
+      {
+        "stars": 1,
+        "description": "Poor learning strategy or no clear example"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "question": "Describe a situation where you disagreed with a technical decision made by your team. How did you handle it?",
+    "category": "Scenario-Based",
+    "expectedAnswer": "Should show ability to communicate concerns professionally, provide alternatives, collaborate on solutions, and accept team decisions when appropriate.",
+    "evaluationCriteria": [
+      "Demonstrates professional communication skills",
+      "Shows ability to present technical arguments",
+      "Displays collaborative problem-solving approach",
+      "Exhibits flexibility and team-first mindset",
+      "Provides specific example with clear outcome"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Excellent conflict resolution and teamwork skills"
+      },
+      {
+        "stars": 4,
+        "description": "Good collaboration with minor communication gaps"
+      },
+      {
+        "stars": 3,
+        "description": "Adequate teamwork and communication"
+      },
+      {
+        "stars": 2,
+        "description": "Basic collaboration skills"
+      },
+      {
+        "stars": 1,
+        "description": "Poor teamwork or communication approach"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "question": "Tell me about a challenging bug you encountered. How did you approach debugging and resolving it?",
+    "category": "Scenario-Based",
+    "expectedAnswer": "Should demonstrate systematic debugging approach, persistence, use of tools, and learning from the experience.",
+    "evaluationCriteria": [
+      "Describes systematic debugging methodology",
+      "Shows persistence and problem-solving skills",
+      "Mentions appropriate debugging tools and techniques",
+      "Demonstrates learning from the experience",
+      "Provides clear example with technical details"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Expert debugging skills with methodical approach"
+      },
+      {
+        "stars": 4,
+        "description": "Strong debugging abilities with good process"
+      },
+      {
+        "stars": 3,
+        "description": "Adequate debugging skills"
+      },
+      {
+        "stars": 2,
+        "description": "Basic debugging approach"
+      },
+      {
+        "stars": 1,
+        "description": "Poor debugging methodology or no clear example"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "question": "How do you stay updated with the latest developments in web development and programming?",
+    "category": "Process & Best Practices",
+    "expectedAnswer": "Should mention various learning resources, community engagement, practical application, and continuous learning mindset.",
+    "evaluationCriteria": [
+      "Shows commitment to continuous learning",
+      "Mentions diverse learning resources and methods",
+      "Demonstrates community engagement",
+      "Explains practical application of new knowledge",
+      "Shows awareness of industry trends"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Excellent continuous learning mindset and practices"
+      },
+      {
+        "stars": 4,
+        "description": "Good learning habits with active engagement"
+      },
+      {
+        "stars": 3,
+        "description": "Adequate professional development approach"
+      },
+      {
+        "stars": 2,
+        "description": "Basic learning efforts"
+      },
+      {
+        "stars": 1,
+        "description": "Limited commitment to learning and growth"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "question": "Describe a time when you had to work under a tight deadline. How did you manage your time and priorities?",
+    "category": "Scenario-Based",
+    "expectedAnswer": "Should demonstrate time management skills, prioritization, communication with stakeholders, and ability to deliver under pressure.",
+    "evaluationCriteria": [
+      "Demonstrates effective time management strategies",
+      "Shows clear prioritization methodology",
+      "Exhibits good communication with stakeholders",
+      "Handles pressure and stress effectively",
+      "Delivers results within constraints"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Excellent time management and pressure handling"
+      },
+      {
+        "stars": 4,
+        "description": "Good organizational skills with minor gaps"
+      },
+      {
+        "stars": 3,
+        "description": "Adequate time management abilities"
+      },
+      {
+        "stars": 2,
+        "description": "Basic time management skills"
+      },
+      {
+        "stars": 1,
+        "description": "Poor time management or stress handling"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "question": "Can you walk me through your resume and tell me about your current role?",
+    "category": "Core Knowledge",
+    "expectedAnswer": "Clear, concise overview of career progression, current responsibilities, and key achievements. Should highlight relevant experience for the position.",
+    "evaluationCriteria": [
+      "Provides clear and organized career overview",
+      "Highlights relevant experience and skills",
+      "Demonstrates good communication skills",
+      "Shows career progression and growth",
+      "Connects background to the target role"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Excellent presentation with strong relevant background"
+      },
+      {
+        "stars": 4,
+        "description": "Good background with clear communication"
+      },
+      {
+        "stars": 3,
+        "description": "Adequate experience with reasonable fit"
+      },
+      {
+        "stars": 2,
+        "description": "Limited relevant experience"
+      },
+      {
+        "stars": 1,
+        "description": "Poor communication or irrelevant background"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "question": "What programming languages and technologies do you have experience with?",
+    "category": "Tools & Technology",
+    "expectedAnswer": "List of technologies from their resume with brief context about where and how they used them. Should align with job requirements.",
+    "evaluationCriteria": [
+      "Lists technologies that match job requirements",
+      "Provides context for technology usage",
+      "Demonstrates depth vs breadth appropriately",
+      "Shows recent and relevant experience",
+      "Honest about skill levels and experience duration"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Strong technical match with deep experience"
+      },
+      {
+        "stars": 4,
+        "description": "Good technical fit with solid experience"
+      },
+      {
+        "stars": 3,
+        "description": "Adequate technical background"
+      },
+      {
+        "stars": 2,
+        "description": "Limited relevant technical experience"
+      },
+      {
+        "stars": 1,
+        "description": "Poor technical match or unrealistic claims"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "question": "Tell me about the most recent project you worked on. What was your role and what technologies did you use?",
+    "category": "Practical Skills",
+    "expectedAnswer": "Detailed description of a recent project including their specific contributions, technologies used, challenges faced, and outcomes achieved.",
+    "evaluationCriteria": [
+      "Provides specific project details and context",
+      "Clearly explains their individual role and contributions",
+      "Mentions relevant technologies and tools",
+      "Discusses challenges and problem-solving",
+      "Shows impact and measurable outcomes"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Impressive project with clear impact and strong contribution"
+      },
+      {
+        "stars": 4,
+        "description": "Good project experience with solid contributions"
+      },
+      {
+        "stars": 3,
+        "description": "Adequate project experience"
+      },
+      {
+        "stars": 2,
+        "description": "Limited project complexity or contribution"
+      },
+      {
+        "stars": 1,
+        "description": "Poor project example or unclear contributions"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "question": "What interests you about this position and our company?",
+    "category": "Core Knowledge",
+    "expectedAnswer": "Demonstrates research about the company, understanding of the role, and genuine interest. Should connect their background to the opportunity.",
+    "evaluationCriteria": [
+      "Shows research and knowledge about the company",
+      "Demonstrates understanding of the role requirements",
+      "Connects their background to the opportunity",
+      "Expresses genuine interest and enthusiasm",
+      "Aligns personal goals with company objectives"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Excellent research and strong alignment with role"
+      },
+      {
+        "stars": 4,
+        "description": "Good preparation with clear interest"
+      },
+      {
+        "stars": 3,
+        "description": "Adequate interest with some research"
+      },
+      {
+        "stars": 2,
+        "description": "Limited research or generic responses"
+      },
+      {
+        "stars": 1,
+        "description": "No preparation or poor fit indication"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "question": "What are your salary expectations for this role?",
+    "category": "Process & Best Practices",
+    "expectedAnswer": "Should provide a reasonable range based on market research, experience level, and role requirements. May ask about company's budget or defer to later stages.",
+    "evaluationCriteria": [
+      "Provides realistic salary expectations",
+      "Shows market awareness and research",
+      "Considers experience level and role requirements",
+      "Demonstrates flexibility in negotiations",
+      "Professional approach to compensation discussion"
+    ],
+    "scoringGuide": [
+      {
+        "stars": 5,
+        "description": "Realistic expectations with good market awareness"
+      },
+      {
+        "stars": 4,
+        "description": "Reasonable range with some flexibility"
+      },
+      {
+        "stars": 3,
+        "description": "Acceptable expectations within budget"
+      },
+      {
+        "stars": 2,
+        "description": "Slightly high expectations but negotiable"
+      },
+      {
+        "stars": 1,
+        "description": "Unrealistic expectations or poor approach"
+      }
+    ]
+  }
+]

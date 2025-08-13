@@ -28,6 +28,7 @@ interface InterviewStore {
 
 const initialState = {
   candidateInfo: {
+    name: '',
     title: '',
     seniorityLevel: '',
     interviewSimulator: '',

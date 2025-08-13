@@ -7,7 +7,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Upload, FileText, Type, X } from 'lucide-react';
 
 import { useInterviewStore } from '../store/useInterviewStore';
-// import { analyzeSkillGap } from '../services/mockLLMService';
 import { useJobTitles, useSeniorityLevels, useInterviewSimulators } from '../hooks/useApi';
 
 export default function InterviewPreparationPage() {
@@ -233,6 +232,7 @@ export default function InterviewPreparationPage() {
 
     // Update store
     setCandidateInfo({
+      name: '', // Name will be extracted from resume analysis
       title: formData.title,
       seniorityLevel: formData.seniorityLevel,
       interviewSimulator: formData.interviewSimulator

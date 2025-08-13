@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useFloating, autoUpdate, offset, flip, shift, useHover, useFocus, useDismiss, useRole, useInteractions, FloatingPortal } from '@floating-ui/react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
@@ -16,10 +16,23 @@ export default function ResumeFitAnalysisPage() {
     resume,
     setQuestions,
     setIsLoading,
-    isLoading
+    isLoading,
+    setCandidateInfo
   } = useInterviewStore();
   
   const { data: analysisData, error } = useAnalysis();
+
+  // Save candidate info to global state when analysis data is loaded
+  useEffect(() => {
+    if (analysisData && analysisData.candidate) {
+      setCandidateInfo({
+        name: analysisData.candidate.name,
+        title: analysisData.candidate.title,
+        seniorityLevel: analysisData.candidate.seniorityLevel,
+        interviewSimulator: candidateInfo.interviewSimulator // Keep existing simulator selection
+      });
+    }
+  }, [analysisData, setCandidateInfo, candidateInfo.interviewSimulator]);
 
   // Floating UI Tooltip component
   const Tooltip = ({ children, content, showTooltip }: { children: React.ReactNode; content: string; showTooltip: boolean }) => {
