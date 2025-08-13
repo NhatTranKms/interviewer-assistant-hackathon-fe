@@ -49,7 +49,7 @@ export default function QuestionGeneratorPage() {
             Interview Questions for {candidateInfo.title} ({candidateInfo.seniorityLevel})
           </h1>
           <p className="text-sm sm:text-base text-gray-600 break-words">
-            {candidateInfo.roundNumber} Round - {candidateInfo.interviewPersona} Style | Tailored Questions Based on Candidate's Resume & JD
+            {candidateInfo.interviewSimulator ? `${candidateInfo.interviewSimulator} Style | ` : ''}Tailored Questions Based on Candidate's Resume & JD
           </p>
         </div>
 

@@ -1,5 +1,5 @@
 import jsPDF from 'jspdf';
-import type { InterviewQuestion, CandidateInfo } from '../store/useInterviewStore';
+import type { InterviewQuestion, CandidateInfo } from '../models';
 
 interface PDFConfig {
   pageHeight: number;
@@ -83,13 +83,17 @@ export class PDFExportService {
     );
     this.yPosition += 3;
     
-    this.addText(
-      `${candidateInfo.roundNumber} Round - ${candidateInfo.interviewPersona} Style`,
-      12,
-      false,
-      this.config.colors.secondary
-    );
-    this.yPosition += 8;
+    if (candidateInfo.interviewSimulator) {
+      this.addText(
+        `${candidateInfo.interviewSimulator} Style`,
+        12,
+        false,
+        this.config.colors.secondary
+      );
+      this.yPosition += 5;
+    } else {
+      this.yPosition += 3;
+    }
   }
 
   private getCategoryColor(category: string): [number, number, number] {

@@ -31,8 +31,7 @@ export default function ResumeFitAnalysisPage() {
         skillAnalysis,
         candidateInfo.title,
         candidateInfo.seniorityLevel,
-        candidateInfo.roundNumber,
-        candidateInfo.interviewPersona
+        candidateInfo.interviewSimulator
       );
       setQuestions(questions);
       navigate('/questions');

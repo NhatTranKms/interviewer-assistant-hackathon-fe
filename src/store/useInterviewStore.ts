@@ -1,34 +1,7 @@
 import { create } from 'zustand';
+import type { CandidateInfo, SkillAnalysis, InterviewQuestion } from '../models';
 
-export interface CandidateInfo {
-  title: string;
-  seniorityLevel: string;
-  roundNumber: string;
-  interviewPersona: string;
-}
-
-export interface SkillAnalysis {
-  matchedSkills: string[];
-  missingSkills: string[];
-  potentialRedFlags: string[];
-  strongAreas: string[];
-}
-
-export interface ScoringItem {
-  stars: number;
-  description: string;
-}
-
-export interface InterviewQuestion {
-  id: string;
-  question: string;
-  category: 'Technical' | 'Behavioral' | 'Screening';
-  expectedAnswer: string;
-  evaluationCriteria: string | string[];
-  scoringGuide?: ScoringItem[];
-}
-
-export interface InterviewStore {
+interface InterviewStore {
   // Form data
   candidateInfo: CandidateInfo;
   jobDescription: string;
@@ -57,8 +30,7 @@ const initialState = {
   candidateInfo: {
     title: '',
     seniorityLevel: '',
-    roundNumber: '',
-    interviewPersona: '',
+    interviewSimulator: '',
   },
   jobDescription: '',
   resume: '',
