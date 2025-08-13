@@ -7,7 +7,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Upload, FileText, Type, X } from 'lucide-react';
 
 import { useInterviewStore } from '../store/useInterviewStore';
-import { analyzeSkillGap } from '../services/mockLLMService';
 import { useJobTitles, useSeniorityLevels, useInterviewSimulators } from '../hooks/useApi';
 
 export default function InterviewPreparationPage() {
@@ -19,7 +18,7 @@ export default function InterviewPreparationPage() {
     setCandidateInfo,
     setJobDescription,
     setResume,
-    setSkillAnalysis,
+    // setSkillAnalysis,
     setIsLoading,
     isLoading
   } = useInterviewStore();
@@ -233,6 +232,7 @@ export default function InterviewPreparationPage() {
 
     // Update store
     setCandidateInfo({
+      name: '', // Name will be extracted from resume analysis
       title: formData.title,
       seniorityLevel: formData.seniorityLevel,
       interviewSimulator: formData.interviewSimulator
@@ -240,15 +240,15 @@ export default function InterviewPreparationPage() {
     setJobDescription(formData.jobDescription);
     setResume(formData.resume);
 
-    // Start analysis
+    // Navigate to analysis page
     setIsLoading(true);
     try {
-      const analysis = await analyzeSkillGap(formData.jobDescription, formData.resume);
-      setSkillAnalysis(analysis);
+      // Simulate processing time
+      await new Promise(resolve => setTimeout(resolve, 2000));
       navigate('/analysis');
     } catch (error) {
-      console.error('Error analyzing skills:', error);
-      alert('Error analyzing skills. Please try again.');
+      console.error('Error:', error);
+      alert('Error processing. Please try again.');
     } finally {
       setIsLoading(false);
     }

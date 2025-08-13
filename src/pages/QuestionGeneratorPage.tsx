@@ -10,7 +10,7 @@ import { PDFExportService } from '../services/pdfExportService';
 export default function QuestionGeneratorPage() {
   const navigate = useNavigate();
   const { questions, candidateInfo } = useInterviewStore();
-  const [activeTab, setActiveTab] = useState<'Technical' | 'Behavioral' | 'Screening'>('Technical');
+  const [activeTab, setActiveTab] = useState<'Core Knowledge' | 'Practical Skills' | 'Tools & Technology' | 'Scenario-Based' | 'Process & Best Practices'>('Core Knowledge');
   const [expandedQuestions, setExpandedQuestions] = useState<Set<string>>(new Set());
 
   if (!questions.length) {
@@ -19,9 +19,11 @@ export default function QuestionGeneratorPage() {
   }
 
   const questionsByCategory = {
-    'Technical': questions.filter(q => q.category === 'Technical'),
-    'Behavioral': questions.filter(q => q.category === 'Behavioral'),
-    'Screening': questions.filter(q => q.category === 'Screening')
+    'Core Knowledge': questions.filter(q => q.category === 'Core Knowledge'),
+    'Practical Skills': questions.filter(q => q.category === 'Practical Skills'),
+    'Tools & Technology': questions.filter(q => q.category === 'Tools & Technology'),
+    'Scenario-Based': questions.filter(q => q.category === 'Scenario-Based'),
+    'Process & Best Practices': questions.filter(q => q.category === 'Process & Best Practices')
   };
 
   const toggleQuestionExpansion = (questionId: string) => {
@@ -46,17 +48,17 @@ export default function QuestionGeneratorPage() {
         {/* Header Section */}
         <div className="mb-8">
           <h1 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 break-words">
-            Interview Questions for {candidateInfo.title} ({candidateInfo.seniorityLevel})
+            {candidateInfo.name ? `${candidateInfo.name} – ${candidateInfo.title} – ${candidateInfo.seniorityLevel}` : `Technical Interview Questions for ${candidateInfo.title} (${candidateInfo.seniorityLevel})`}
           </h1>
           <p className="text-sm sm:text-base text-gray-600 break-words">
-            {candidateInfo.interviewSimulator ? `${candidateInfo.interviewSimulator} Style | ` : ''}Tailored Questions Based on Candidate's Resume & JD
+            {candidateInfo.interviewSimulator ? `${candidateInfo.interviewSimulator} Style | ` : ''}15 AI-Generated Questions Across 5 Technical Categories
           </p>
         </div>
 
         {/* Question Categories Tabs */}
         <div className="mb-6 overflow-x-auto">
           <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg w-fit min-w-full sm:min-w-0">
-            {(['Technical', 'Behavioral', 'Screening'] as const).map((category) => (
+            {(['Core Knowledge', 'Practical Skills', 'Tools & Technology', 'Scenario-Based', 'Process & Best Practices'] as const).map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveTab(category)}
@@ -88,10 +90,12 @@ export default function QuestionGeneratorPage() {
                         <Badge 
                           variant="outline" 
                           className={`text-xs flex-shrink-0 ${
-                            question.category === 'Technical' ? 'border-blue-300 text-blue-700' :
-                            question.category === 'Behavioral' ? 'border-green-300 text-green-700' :
-                            question.category === 'Screening' ? 'border-orange-300 text-orange-700' :
-                            'border-purple-300 text-purple-700'
+                            question.category === 'Core Knowledge' ? 'border-blue-300 text-blue-700' :
+                            question.category === 'Practical Skills' ? 'border-green-300 text-green-700' :
+                            question.category === 'Tools & Technology' ? 'border-purple-300 text-purple-700' :
+                            question.category === 'Scenario-Based' ? 'border-orange-300 text-orange-700' :
+                            question.category === 'Process & Best Practices' ? 'border-teal-300 text-teal-700' :
+                            'border-gray-300 text-gray-700'
                           }`}
                         >
                           {question.category}
@@ -116,14 +120,15 @@ export default function QuestionGeneratorPage() {
                    <CardContent className="pt-0 border-t bg-gray-50">
                      <div className="space-y-4">
                        <div>
-                         <h4 className="text-sm font-semibold text-gray-700 mb-2">Expected Answer:</h4>
+                         <h4 className="text-sm font-semibold text-gray-700 mb-2">Expected Answer (Ideal Sample):</h4>
                          <p className="text-sm text-gray-600 leading-relaxed bg-white p-3 rounded border">
                            {question.expectedAnswer}
                          </p>
                        </div>
                        <div>
-                         <h4 className="text-sm font-semibold text-gray-700 mb-2">Evaluation Criteria:</h4>
+                         <h4 className="text-sm font-semibold text-gray-700 mb-2">Evaluation Rubric (What to Look For):</h4>
                          <div className="bg-white p-3 rounded border">
+                           <div className="mb-2 text-xs text-gray-500 italic">Assess for: Clarity, Accuracy, Depth</div>
                            {Array.isArray(question.evaluationCriteria) ? (
                              <ul className="space-y-1">
                                {question.evaluationCriteria.map((criteria, idx) => (
@@ -142,7 +147,7 @@ export default function QuestionGeneratorPage() {
                        </div>
                        {question.scoringGuide && (
                          <div>
-                           <h4 className="text-sm font-semibold text-gray-700 mb-2">Scoring Guide:</h4>
+                           <h4 className="text-sm font-semibold text-gray-700 mb-2">Scoring Guide (1-5 Stars):</h4>
                            <div className="bg-white p-3 rounded border space-y-2">
                              {question.scoringGuide.map((score, idx) => (
                                <div key={idx} className="flex items-center space-x-3">

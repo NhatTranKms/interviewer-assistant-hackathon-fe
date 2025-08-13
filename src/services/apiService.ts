@@ -5,7 +5,8 @@ import type {
   SeniorityLevel, 
   SeniorityLevelsResponse, 
   InterviewSimulator, 
-  InterviewSimulatorsResponse 
+  InterviewSimulatorsResponse,
+  AnalysisResponse
 } from '../models';
 
 const API_BASE_URL = 'http://localhost:3000';
@@ -28,4 +29,9 @@ export const fetchSeniorityLevels = async (): Promise<SeniorityLevel[]> => {
 export const fetchInterviewSimulators = async (): Promise<InterviewSimulator[]> => {
   const response = await apiClient.get<InterviewSimulatorsResponse>('/interview-simulators');
   return response.data.data;
+};
+
+export const fetchAnalysis = async (): Promise<AnalysisResponse> => {
+  const response = await apiClient.get<AnalysisResponse>('/analysis');
+  return response.data;
 };

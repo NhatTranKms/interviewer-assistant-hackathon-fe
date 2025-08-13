@@ -75,8 +75,12 @@ export class PDFExportService {
   }
 
   private addHeader(candidateInfo: CandidateInfo): void {
+    const headerText = candidateInfo.name 
+      ? `${candidateInfo.name} – ${candidateInfo.title} – ${candidateInfo.seniorityLevel}`
+      : `Interview Questions for ${candidateInfo.title} (${candidateInfo.seniorityLevel})`;
+    
     this.addText(
-      `Interview Questions for ${candidateInfo.title} (${candidateInfo.seniorityLevel})`,
+      headerText,
       16,
       true,
       this.config.colors.primary
@@ -98,9 +102,11 @@ export class PDFExportService {
 
   private getCategoryColor(category: string): [number, number, number] {
     switch (category) {
-      case 'Technical': return this.config.colors.technical;
-      case 'Behavioral': return this.config.colors.behavioral;
-      case 'Screening': return this.config.colors.screening;
+      case 'Core Knowledge': return this.config.colors.technical;
+      case 'Practical Skills': return this.config.colors.behavioral;
+      case 'Tools & Technology': return this.config.colors.screening;
+      case 'Scenario-Based': return [255, 165, 0]; // Orange
+      case 'Process & Best Practices': return [0, 128, 128]; // Teal
       default: return [0, 0, 0];
     }
   }
@@ -176,11 +182,13 @@ export class PDFExportService {
   ): void {
     this.addHeader(candidateInfo);
 
-    (['Technical', 'Behavioral', 'Screening'] as const).forEach((category) => {
+    (['Core Knowledge', 'Practical Skills', 'Tools & Technology', 'Scenario-Based', 'Process & Best Practices'] as const).forEach((category) => {
       this.addCategorySection(category, questionsByCategory[category]);
     });
 
-    const fileName = `Interview_Questions_${candidateInfo.title}_${candidateInfo.seniorityLevel}.pdf`;
+    const fileName = candidateInfo.name 
+      ? `Technical_Interview_Questions_${candidateInfo.name.replace(/\s+/g, '_')}_${candidateInfo.title}_${candidateInfo.seniorityLevel}.pdf`
+      : `Technical_Interview_Questions_${candidateInfo.title}_${candidateInfo.seniorityLevel}.pdf`;
     this.pdf.save(fileName);
   }
 }

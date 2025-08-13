@@ -1,4 +1,5 @@
 export interface CandidateInfo {
+  name: string;
   title: string;
   seniorityLevel: string;
   interviewSimulator?: string;
@@ -19,7 +20,7 @@ export interface ScoringItem {
 export interface InterviewQuestion {
   id: string;
   question: string;
-  category: 'Technical' | 'Behavioral' | 'Screening';
+  category: 'Core Knowledge' | 'Practical Skills' | 'Tools & Technology' | 'Scenario-Based' | 'Process & Best Practices';
   expectedAnswer: string;
   evaluationCriteria: string | string[];
   scoringGuide?: ScoringItem[];
