@@ -1,0 +1,19 @@
+{
+  "simulators": [
+    {
+      "value": "Tough Technical Lead",
+      "label": "Tough Technical Lead",
+      "description": "Challenging technical questions with deep architectural focus",
+      "characteristics": "Direct, demanding, focuses on technical depth and system design",
+      "questionStyle": "Deep technical probing, architecture decisions, scalability concerns"
+    },
+    {
+      "value": "Engineering Manager",
+      "label": "Engineering Manager",
+      "description": "Balance of technical and behavioral questions with leadership focus",
+      "characteristics": "Professional, thorough, evaluates both technical skills and team fit",
+      "questionStyle": "Technical competency, team collaboration, project management approach"
+    }
+  ],
+  "defaultSimulator": ""
+}

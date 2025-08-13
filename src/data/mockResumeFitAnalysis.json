@@ -1,0 +1,61 @@
+{
+  "candidate": {
+    "name": "My Do",
+    "title": "Software Engineer",
+    "seniorityLevel": "Senior"
+  },
+  "matchScore": 78,
+  "summary": "Strong technical skills in Java and AWS. Missing Agile Project Management and Docker experience.",
+  "skills": {
+    "matched": [
+      "Java",
+      "AWS",
+      "REST APIs",
+      "Spring Boot"
+    ],
+    "extra": [
+      "Kubernetes",
+      "Machine Learning"
+    ],
+    "missing": [
+      "Agile Project Management",
+      "Docker"
+    ],
+    "gaps": [
+      "Python - JD: Advanced | CV: Basic"
+    ]
+  },
+  "criteriaMatch": [
+    {
+      "requirement": "5+ years Java",
+      "evidence": "7 years Java at XYZ Corp",
+      "status": "matched"
+    },
+    {
+      "requirement": "Agile Project Management",
+      "evidence": "Not mentioned",
+      "status": "missing"
+    },
+    {
+      "requirement": "AWS Certification",
+      "evidence": "AWS Certified Developer",
+      "status": "matched"
+    },
+    {
+      "requirement": "Docker experience",
+      "evidence": "Not mentioned",
+      "status": "missing"
+    }
+  ],
+  "education": {
+    "degree": "Bachelor in Computer Science (meets requirement)",
+    "certifications": [
+      "AWS Certified Developer",
+      "PMP"
+    ]
+  },
+  "redFlags": [
+    "2-year employment gap (2018-2020)",
+    "Two short-term roles (< 6 months each)"
+  ]
+}

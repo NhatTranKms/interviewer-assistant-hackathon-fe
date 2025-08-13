@@ -86,10 +86,10 @@ html {
   scrollbar-color: transparent transparent;
 }
 
-h1 {
+/* h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
+} */
 
 /* Remove default button styles to let shadcn/ui handle them */
 
