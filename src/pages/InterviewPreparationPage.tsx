@@ -285,15 +285,15 @@ export default function InterviewPreparationPage() {
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Card className="bg-white">
-          <CardHeader className="border-b">
-            <CardTitle className="text-xl font-semibold text-gray-900">
+          <CardHeader className="border-b px-4 sm:px-6">
+            <CardTitle className="text-lg sm:text-xl font-semibold text-gray-900 leading-tight">
               I will help you prepare for the interview. Please provide the following information
             </CardTitle>
           </CardHeader>
           
-          <CardContent className="p-6 space-y-6">
+          <CardContent className="p-4 sm:p-6 space-y-6">
             {/* Row 1: Title and Seniority Level */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-700">
                   Title <span className="text-red-500">*</span>
@@ -347,23 +347,23 @@ export default function InterviewPreparationPage() {
 
             {/* Job Description */}
             <div className="space-y-3">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <label className="text-sm font-medium text-gray-700">
                   Job Description <span className="text-red-500">*</span>
                 </label>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 flex-shrink-0">
                   <Button
                     type="button"
                     variant={jobDescInputMode === 'text' ? 'default' : 'outline'}
                     size="sm"
                     onClick={switchJobDescToTextMode}
-                    className={`flex items-center space-x-1 ${
+                    className={`flex items-center space-x-1 text-xs sm:text-sm ${
                       jobDescInputMode === 'text' 
                         ? 'bg-blue-600 hover:bg-blue-700 text-white' 
                         : 'border-blue-300 text-blue-600 hover:bg-blue-50'
                     }`}
                   >
-                    <Type className="w-4 h-4" />
+                    <Type className="w-3 h-3 sm:w-4 sm:h-4" />
                     <span>Text Input</span>
                   </Button>
                   <Button
@@ -371,13 +371,13 @@ export default function InterviewPreparationPage() {
                     variant={jobDescInputMode === 'file' ? 'default' : 'outline'}
                     size="sm"
                     onClick={switchJobDescToFileMode}
-                    className={`flex items-center space-x-1 ${
+                    className={`flex items-center space-x-1 text-xs sm:text-sm ${
                       jobDescInputMode === 'file' 
                         ? 'bg-blue-600 hover:bg-blue-700 text-white' 
                         : 'border-blue-300 text-blue-600 hover:bg-blue-50'
                     }`}
                   >
-                    <Upload className="w-4 h-4" />
+                    <Upload className="w-3 h-3 sm:w-4 sm:h-4" />
                     <span>File Upload</span>
                   </Button>
                 </div>
@@ -456,23 +456,23 @@ export default function InterviewPreparationPage() {
 
             {/* Resume */}
             <div className="space-y-3">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <label className="text-sm font-medium text-gray-700">
                   Resume <span className="text-red-500">*</span>
                 </label>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 flex-shrink-0">
                   <Button
                     type="button"
                     variant={resumeInputMode === 'text' ? 'default' : 'outline'}
                     size="sm"
                     onClick={switchResumeToTextMode}
-                    className={`flex items-center space-x-1 ${
+                    className={`flex items-center space-x-1 text-xs sm:text-sm ${
                       resumeInputMode === 'text' 
                         ? 'bg-blue-600 hover:bg-blue-700 text-white' 
                         : 'border-blue-300 text-blue-600 hover:bg-blue-50'
                     }`}
                   >
-                    <Type className="w-4 h-4" />
+                    <Type className="w-3 h-3 sm:w-4 sm:h-4" />
                     <span>Text Input</span>
                   </Button>
                   <Button
@@ -480,13 +480,13 @@ export default function InterviewPreparationPage() {
                     variant={resumeInputMode === 'file' ? 'default' : 'outline'}
                     size="sm"
                     onClick={switchResumeToFileMode}
-                    className={`flex items-center space-x-1 ${
+                    className={`flex items-center space-x-1 text-xs sm:text-sm ${
                       resumeInputMode === 'file' 
                         ? 'bg-blue-600 hover:bg-blue-700 text-white' 
                         : 'border-blue-300 text-blue-600 hover:bg-blue-50'
                     }`}
                   >
-                    <Upload className="w-4 h-4" />
+                    <Upload className="w-3 h-3 sm:w-4 sm:h-4" />
                     <span>File Upload</span>
                   </Button>
                 </div>
