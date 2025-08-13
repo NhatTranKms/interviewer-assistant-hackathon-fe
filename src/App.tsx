@@ -1,20 +1,21 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import InterviewPreparationPage from '@/pages/InterviewPreparationPage';
-import SkillAnalysisPage from '@/pages/SkillAnalysisPage';
+import ResumeFitAnalysisPage from '@/pages/ResumeFitAnalysisPage';
 import QuestionGeneratorPage from '@/pages/QuestionGeneratorPage';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/preparation" element={<InterviewPreparationPage />} />
-          <Route path="/analysis" element={<SkillAnalysisPage />} />
+          <Route path="/analysis" element={<ResumeFitAnalysisPage />} />
           <Route path="/questions" element={<QuestionGeneratorPage />} />
         </Routes>
-      </div>
+      </Layout>
     </Router>
   );
 }

@@ -1,28 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { FileText, Mic, Menu, Bot } from 'lucide-react';
+import { FileText, Mic } from 'lucide-react';
 
 export default function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <Bot className="w-8 h-8 text-blue-600" />
-              <span className="text-xl font-bold text-gray-900">AI Interview Assistant</span>
-            </div>
-            <Button variant="ghost" size="sm">
-              <Menu className="w-5 h-5" />
-            </Button>
-          </div>
-        </div>
-      </header>
-
+    <div>
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Welcome Section */}
