@@ -1,12 +1,60 @@
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useFloating, autoUpdate, offset, flip, shift, useHover, useFocus, useDismiss, useRole, useInteractions, FloatingPortal } from '@floating-ui/react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { CheckCircle, XCircle, AlertTriangle, TrendingUp, User, Database } from 'lucide-react';
 import { useInterviewStore } from '../store/useInterviewStore';
-import { generateInterviewQuestions } from '../services/mockLLMService';
 import { useAnalysis } from '../hooks/useAnalysis';
+import type { LegacyAnalysisResponse } from '../models/api';
+
+// Tooltip component - defined outside to prevent recreation on every render
+const Tooltip = ({ children, content, showTooltip }: { children: React.ReactNode; content: string; showTooltip: boolean }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const { refs, floatingStyles, context } = useFloating({
+    open: isOpen,
+    onOpenChange: setIsOpen,
+    middleware: [offset(10), flip(), shift()],
+    whileElementsMounted: autoUpdate,
+  });
+
+  const hover = useHover(context);
+  const focus = useFocus(context);
+  const dismiss = useDismiss(context);
+  const role = useRole(context, { role: 'tooltip' });
+
+  const { getReferenceProps, getFloatingProps } = useInteractions([
+    hover,
+    focus,
+    dismiss,
+    role,
+  ]);
+
+  if (showTooltip) {
+    return (
+      <>
+        <div ref={refs.setReference} {...getReferenceProps()}>
+          {children}
+        </div>
+        {isOpen && (
+          <FloatingPortal>
+            <div
+              className="bg-gray-900 text-white text-sm px-3 py-2 rounded-lg shadow-lg z-50 max-w-xs"
+              ref={refs.setFloating}
+              style={floatingStyles}
+              {...getFloatingProps()}
+            >
+              {content}
+            </div>
+          </FloatingPortal>
+        )}
+      </>
+    );
+  }
+
+  return <>{children}</>;
+};
 
 export default function ResumeFitAnalysisPage() {
   const navigate = useNavigate();
@@ -14,13 +62,13 @@ export default function ResumeFitAnalysisPage() {
     candidateInfo,
     jobDescription,
     resume,
-    setQuestions,
-    setIsLoading,
-    isLoading,
     setCandidateInfo
   } = useInterviewStore();
   
-  const { data: analysisData, error } = useAnalysis();
+  const { data: analysisData, error } = useAnalysis() as { 
+    data: LegacyAnalysisResponse | undefined, 
+    error: Error | null 
+  };
 
   // Save candidate info to global state when analysis data is loaded
   useEffect(() => {
@@ -29,61 +77,25 @@ export default function ResumeFitAnalysisPage() {
         name: analysisData.candidate.name,
         title: analysisData.candidate.title,
         seniorityLevel: analysisData.candidate.seniorityLevel,
-        interviewSimulator: candidateInfo.interviewSimulator // Keep existing simulator selection
+        interviewSimulator: currentInterviewSimulator.current // Keep existing simulator selection
       });
     }
-  }, [analysisData, setCandidateInfo, candidateInfo.interviewSimulator]);
+  }, [analysisData, setCandidateInfo]);
 
-  // Floating UI Tooltip component
-  const Tooltip = ({ children, content, showTooltip }: { children: React.ReactNode; content: string; showTooltip: boolean }) => {
-    const [isOpen, setIsOpen] = useState(false);
+  // Stable reference to current interview simulator to avoid dependency loops
+  const currentInterviewSimulator = useRef(candidateInfo.interviewSimulator);
+  useEffect(() => {
+    currentInterviewSimulator.current = candidateInfo.interviewSimulator;
+  }, [candidateInfo.interviewSimulator]);
 
-    const { refs, floatingStyles, context } = useFloating({
-      open: isOpen,
-      onOpenChange: setIsOpen,
-      middleware: [offset(10), flip(), shift()],
-      whileElementsMounted: autoUpdate,
-    });
-
-    const hover = useHover(context);
-    const focus = useFocus(context);
-    const dismiss = useDismiss(context);
-    const role = useRole(context, { role: 'tooltip' });
-
-    const { getReferenceProps, getFloatingProps } = useInteractions([
-      hover,
-      focus,
-      dismiss,
-      role,
-    ]);
-
-    if (showTooltip) {
-      return (
-        <>
-          <div ref={refs.setReference} {...getReferenceProps()}>
-            {children}
-          </div>
-          {isOpen && (
-            <FloatingPortal>
-              <div
-                className="bg-gray-900 text-white text-sm px-3 py-2 rounded-lg shadow-lg z-50 max-w-xs"
-                ref={refs.setFloating}
-                style={floatingStyles}
-                {...getFloatingProps()}
-              >
-                {content}
-              </div>
-            </FloatingPortal>
-          )}
-        </>
-      );
+  // Navigate to preparation page if missing required data
+  useEffect(() => {
+    if (!jobDescription || !resume) {
+      navigate('/preparation');
     }
-
-    return <>{children}</>;
-  };
+  }, [jobDescription, resume, navigate]);
 
   if (!jobDescription || !resume) {
-    navigate('/preparation');
     return null;
   }
 
@@ -118,30 +130,10 @@ export default function ResumeFitAnalysisPage() {
   const matchScore = analysisData.matchScore || 0;
   const isEligibleForInterview = matchScore >= 80;
 
-  const handleGenerateQuestions = async () => {
-    setIsLoading(true);
-    try {
-      const questions = await generateInterviewQuestions(
-        jobDescription,
-        resume,
-        {
-          matchedSkills: analysisData.skills?.matched || [],
-          missingSkills: analysisData.skills?.missing || [],
-          potentialRedFlags: analysisData.redFlags || [],
-          strongAreas: analysisData.skills?.extra || []
-        },
-        candidateInfo.title,
-        candidateInfo.seniorityLevel,
-        candidateInfo.interviewSimulator
-      );
-      setQuestions(questions);
-      navigate('/questions');
-    } catch (error) {
-      console.error('Error generating questions:', error);
-      alert('Error generating questions. Please try again.');
-    } finally {
-      setIsLoading(false);
-    }
+  const handleGenerateQuestions = () => {
+    // Questions are already available from the analysis API
+    // Just navigate to the questions page
+    navigate('/questions');
   };
 
   const handleReset = () => {
@@ -288,9 +280,9 @@ export default function ResumeFitAnalysisPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-gray-200">
-                    <th className="text-left py-2 font-medium text-gray-900">JD Requirement</th>
-                    <th className="text-left py-2 font-medium text-gray-900">CV Evidence</th>
-                    <th className="text-center py-2 font-medium text-gray-900">Status</th>
+                    <th className="text-left py-2 font-semibold text-gray-900">JD Requirement</th>
+                    <th className="text-left py-2 font-semibold text-gray-900">CV Evidence</th>
+                    <th className="text-center py-2 font-semibold text-gray-900">Status</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
@@ -371,21 +363,21 @@ export default function ResumeFitAnalysisPage() {
           
           <Tooltip 
             content={!isEligibleForInterview 
-                ? "Match score must be 80% or higher to generate interview questions. Current score is below the threshold." 
+                ? "Match score must be 80% or higher to view interview questions. Current score is below the threshold." 
                 : ""
             }
             showTooltip={!isEligibleForInterview}
           >
             <Button 
               onClick={handleGenerateQuestions}
-              disabled={isLoading || !isEligibleForInterview}
+              disabled={!isEligibleForInterview}
               className={`px-6 py-2 w-full sm:w-auto ${
                 isEligibleForInterview 
                   ? 'bg-blue-600 hover:bg-blue-700 text-white' 
                   : 'bg-gray-300 text-gray-500 cursor-not-allowed hover:bg-gray-300'
               }`}
             >
-              {isLoading ? 'Generating...' : 'Generate Interview Questions'}
+              View Interview Questions
             </Button>
           </Tooltip>
         </div>

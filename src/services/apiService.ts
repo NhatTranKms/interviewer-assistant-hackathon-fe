@@ -32,6 +32,7 @@ export const fetchInterviewSimulators = async (): Promise<InterviewSimulator[]> 
 };
 
 export const fetchAnalysis = async (): Promise<AnalysisResponse> => {
+  // GET analysis mock data from backend
   const response = await apiClient.get<AnalysisResponse>('/analysis');
   return response.data;
 };

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
@@ -9,12 +9,64 @@ import { PDFExportService } from '../services/pdfExportService';
 
 export default function QuestionGeneratorPage() {
   const navigate = useNavigate();
-  const { questions, candidateInfo } = useInterviewStore();
+  const { candidateInfo, questionData, skillAnalysisData } = useInterviewStore();
+  
+  // Memoize the questions transformation to prevent infinite re-renders
+  const questions = useMemo(() => {
+    if (!questionData?.interview_questions) {
+      return [];
+    }
+    
+    // Transform API questions to UI format inline
+    return questionData.interview_questions.map(apiQuestion => {
+      const categoryMap: Record<string, 'Core Knowledge' | 'Practical Skills' | 'Tools & Technology' | 'Scenario-Based' | 'Process & Best Practices'> = {
+        'CORE KNOWLEDGE': 'Core Knowledge',
+        'PRACTICAL SKILLS': 'Practical Skills', 
+        'TOOLS & TECHNOLOGY': 'Tools & Technology',
+        'SCENARIO-BASED / PROBLEM-SOLVING': 'Scenario-Based',
+        'PROCESS & BEST PRACTICES': 'Process & Best Practices'
+      };
+
+      const scoringGuide = [
+        { stars: 1, description: apiQuestion.scoring_guide["1_star"] },
+        { stars: 2, description: apiQuestion.scoring_guide["2_star"] },
+        { stars: 3, description: apiQuestion.scoring_guide["3_star"] },
+        { stars: 4, description: apiQuestion.scoring_guide["4_star"] },
+        { stars: 5, description: apiQuestion.scoring_guide["5_star"] }
+      ];
+
+      const evaluationCriteria = [
+        apiQuestion.evaluation_rubric.clarity,
+        apiQuestion.evaluation_rubric.accuracy,
+        apiQuestion.evaluation_rubric.depth,
+        apiQuestion.evaluation_rubric.practical_application
+      ];
+
+      return {
+        id: apiQuestion.id,
+        question: apiQuestion.question,
+        category: categoryMap[apiQuestion.category] || 'Core Knowledge',
+        expectedAnswer: apiQuestion.expected_answer,
+        evaluationCriteria,
+        scoringGuide
+      };
+    });
+  }, [questionData]);
+  
+  // Get match score from skill analysis data
+  const matchScore = skillAnalysisData?.overall_matching_score || 0;
   const [activeTab, setActiveTab] = useState<'Core Knowledge' | 'Practical Skills' | 'Tools & Technology' | 'Scenario-Based' | 'Process & Best Practices'>('Core Knowledge');
   const [expandedQuestions, setExpandedQuestions] = useState<Set<string>>(new Set());
 
+  // Navigate to preparation page if no questions available
+  useEffect(() => {
+    if (!questions.length) {
+      navigate('/preparation');
+    }
+  }, [questions.length, navigate]);
+
+  // Return early if no questions (but don't navigate during render)
   if (!questions.length) {
-    navigate('/preparation');
     return null;
   }
 
@@ -61,11 +113,11 @@ export default function QuestionGeneratorPage() {
               {candidateInfo.name ? `${candidateInfo.name} - ${candidateInfo.title} - ${candidateInfo.seniorityLevel}` : `${candidateInfo.title} (${candidateInfo.seniorityLevel})`}
             </span>
             <span className="text-xl sm:text-2xl font-bold text-blue-600">
-              Match Score: 78%
+              Match Score: {matchScore}%
             </span>
           </div>
           <p className="text-sm sm:text-lg text-gray-600 break-words mt-2">
-            {candidateInfo.interviewSimulator ? `${candidateInfo.interviewSimulator} Style | ` : ''}15 AI-Generated Questions Across 5 Technical Categories
+            {candidateInfo.interviewSimulator ? `${candidateInfo.interviewSimulator} Style | ` : ''}{questions.length} AI-Generated Questions Across 5 Technical Categories
           </p>
         </div>
 

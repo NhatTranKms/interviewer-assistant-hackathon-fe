@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import type { CandidateInfo, SkillAnalysis, InterviewQuestion } from '../models';
+import type { AnalysisResponse, SkillMatcherResponse, QuestionGeneratorResponse } from '../models/api';
 
 interface InterviewStore {
   // Form data
@@ -7,7 +8,11 @@ interface InterviewStore {
   jobDescription: string;
   resume: string;
   
-  // Analysis results
+  // Analysis results - Split into two parts for better performance
+  skillAnalysisData: SkillMatcherResponse | null; // For ResumeFitAnalysisPage
+  questionData: QuestionGeneratorResponse | null; // For QuestionGeneratorPage
+  
+  // Legacy fields (keeping for compatibility)
   skillAnalysis: SkillAnalysis | null;
   questions: InterviewQuestion[];
   
@@ -21,6 +26,8 @@ interface InterviewStore {
   setResume: (resume: string) => void;
   setSkillAnalysis: (analysis: SkillAnalysis) => void;
   setQuestions: (questions: InterviewQuestion[]) => void;
+  setSkillAnalysisData: (data: SkillMatcherResponse) => void; // New: For skill analysis
+  setQuestionData: (data: QuestionGeneratorResponse) => void; // New: For questions
   setCurrentStep: (step: number) => void;
   setIsLoading: (loading: boolean) => void;
   reset: () => void;
@@ -35,6 +42,10 @@ const initialState = {
   },
   jobDescription: '',
   resume: '',
+  // Split data for better performance
+  skillAnalysisData: null,
+  questionData: null,
+  // Legacy fields
   skillAnalysis: null,
   questions: [],
   currentStep: 0,
@@ -58,6 +69,12 @@ export const useInterviewStore = create<InterviewStore>((set) => ({
   
   setQuestions: (questions: InterviewQuestion[]) =>
     set({ questions }),
+  
+  setSkillAnalysisData: (data: SkillMatcherResponse) =>
+    set({ skillAnalysisData: data }),
+  
+  setQuestionData: (data: QuestionGeneratorResponse) =>
+    set({ questionData: data }),
   
   setCurrentStep: (step: number) =>
     set({ currentStep: step }),
