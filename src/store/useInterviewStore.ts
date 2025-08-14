@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import type { CandidateInfo, SkillAnalysis, InterviewQuestion } from '../models';
-import type { AnalysisResponse, SkillMatcherResponse, QuestionGeneratorResponse } from '../models/api';
+import type { SkillMatcherResponse, QuestionGeneratorResponse } from '../models/api';
 
 interface InterviewStore {
   // Form data
