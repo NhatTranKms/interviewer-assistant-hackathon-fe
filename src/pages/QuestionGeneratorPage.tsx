@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { Download, ChevronDown, ChevronUp, FileText } from 'lucide-react';
+import { Download, ChevronDown, ChevronUp, Save } from 'lucide-react';
 import { useInterviewStore } from '../store/useInterviewStore';
 import { PDFExportService } from '../services/pdfExportService';
 
@@ -41,16 +41,30 @@ export default function QuestionGeneratorPage() {
     pdfService.exportInterviewQuestions(candidateInfo, questionsByCategory);
   };
 
+  const handleSave = () => {
+    alert('Save functionality will be implemented soon!');
+  };
+
   return (
-    <div>
-      {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="p-8">
+      <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm border p-8">
         {/* Header Section */}
-        <div className="mb-8">
-          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 break-words">
-            {candidateInfo.name ? `${candidateInfo.name} – ${candidateInfo.title} – ${candidateInfo.seniorityLevel}` : `Technical Interview Questions for ${candidateInfo.title} (${candidateInfo.seniorityLevel})`}
-          </h1>
-          <p className="text-sm sm:text-base text-gray-600 break-words">
+        <div className="mb-6">
+          <div className="flex justify-between items-start mb-3">
+            <h1 className="text-xl sm:text-2xl font-bold text-gray-900 break-words">Resume Fit Analysis</h1>
+          </div>
+          {/* <h1 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 break-words">
+            Technical Interview Questions
+          </h1> */}
+          <div className="flex justify-between items-center mb-3">
+            <span className="text-xl sm:text-2xl text-gray-700 font-bold break-words">
+              {candidateInfo.name ? `${candidateInfo.name} - ${candidateInfo.title} - ${candidateInfo.seniorityLevel}` : `${candidateInfo.title} (${candidateInfo.seniorityLevel})`}
+            </span>
+            <span className="text-xl sm:text-2xl font-bold text-blue-600">
+              Match Score: 78%
+            </span>
+          </div>
+          <p className="text-sm sm:text-lg text-gray-600 break-words mt-2">
             {candidateInfo.interviewSimulator ? `${candidateInfo.interviewSimulator} Style | ` : ''}15 AI-Generated Questions Across 5 Technical Categories
           </p>
         </div>
@@ -181,11 +195,11 @@ export default function QuestionGeneratorPage() {
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
           <Button 
             variant="outline"
-            onClick={() => navigate('/preparation')}
+            onClick={handleSave}
             className="flex items-center justify-center space-x-2 w-full sm:w-auto"
           >
-            <FileText className="w-4 h-4" />
-            <span>New Preparation</span>
+            <Save className="w-4 h-4" />
+            <span>Save</span>
           </Button>
           <Button 
             onClick={handleSaveAsPDF}
@@ -195,7 +209,7 @@ export default function QuestionGeneratorPage() {
             <span>Save as PDF</span>
           </Button>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
