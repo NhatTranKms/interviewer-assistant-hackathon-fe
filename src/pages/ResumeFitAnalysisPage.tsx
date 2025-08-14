@@ -3,13 +3,10 @@ import { useState, useEffect } from 'react';
 import { useFloating, autoUpdate, offset, flip, shift, useHover, useFocus, useDismiss, useRole, useInteractions, FloatingPortal } from '@floating-ui/react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
-import { SkeletonLoader } from '../components/ui/SkeletonLoader';
-import { ProgressBar } from '../components/ui/ProgressBar';
-import { StreamingText } from '../components/ui/StreamingText';
-import { CheckCircle, XCircle, AlertTriangle, TrendingUp, User, Database, Loader2 } from 'lucide-react';
+import { CheckCircle, XCircle, AlertTriangle, TrendingUp, User, Database } from 'lucide-react';
 import { useInterviewStore } from '../store/useInterviewStore';
 import { generateInterviewQuestions } from '../services/mockLLMService';
-import { useStreamingAnalysis } from '../hooks/useStreamingAnalysis';
+import { useAnalysis } from '../hooks/useAnalysis';
 
 export default function ResumeFitAnalysisPage() {
   const navigate = useNavigate();
@@ -23,23 +20,7 @@ export default function ResumeFitAnalysisPage() {
     setCandidateInfo
   } = useInterviewStore();
   
-  const {
-    data: analysisData,
-    isStreaming,
-    isComplete,
-    error,
-    progress,
-    currentSection,
-    startAnalysis,
-    reset
-  } = useStreamingAnalysis();
-
-  // Start streaming analysis when component mounts
-  useEffect(() => {
-    if (jobDescription && resume && !isStreaming && !isComplete && !error) {
-      startAnalysis(jobDescription, resume);
-    }
-  }, [jobDescription, resume, startAnalysis, isStreaming, isComplete, error]);
+  const { data: analysisData, error } = useAnalysis();
 
   // Save candidate info to global state when analysis data is loaded
   useEffect(() => {
@@ -111,14 +92,23 @@ export default function ResumeFitAnalysisPage() {
       <div className="p-8">
         <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm border p-8">
           <div className="text-center">
-            <p className="text-red-600 mb-4">Failed to load analysis: {error}</p>
+            <p className="text-red-600 mb-4">Failed to load analysis: {error.message}</p>
             <div className="flex gap-3 justify-center">
               <Button variant="outline" onClick={() => navigate('/preparation')}>Go Back</Button>
-              <Button onClick={() => {
-                reset();
-                startAnalysis(jobDescription, resume);
-              }}>Retry Analysis</Button>
+              <Button onClick={() => window.location.reload()}>Retry Analysis</Button>
             </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!analysisData) {
+    return (
+      <div className="p-8">
+        <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm border p-8">
+          <div className="text-center">
+            <p className="text-gray-600 mb-4">Loading analysis...</p>
           </div>
         </div>
       </div>
@@ -155,61 +145,28 @@ export default function ResumeFitAnalysisPage() {
   };
 
   const handleReset = () => {
-    reset();
     navigate('/preparation');
   };
 
   return (
     <div className="p-8">
       <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm border p-8">
-        {/* Streaming Progress */}
-        {isStreaming && (
-          <div className="mb-6 p-4 bg-blue-50 rounded-lg">
-            <div className="flex items-center gap-3 mb-3">
-              <Loader2 className="w-5 h-5 text-blue-600 animate-spin" />
-              <span className="text-blue-800 font-medium">Analyzing Resume...</span>
-            </div>
-            <ProgressBar 
-              progress={progress} 
-              label={currentSection || ''} 
-              showPercentage 
-              className="mb-2"
-            />
-          </div>
-        )}
-
         {/* Header */}
         <div className="mb-6">
           <div className="flex justify-between items-start mb-3">
             <h1 className="text-xl sm:text-2xl font-bold text-gray-900 break-words">Resume Fit Analysis</h1>
           </div>
           <div className="flex justify-between items-center mb-3">
-            {analysisData.candidate ? (
-              <span className="text-xl sm:text-2xl text-gray-700 font-bold">
-                {analysisData.candidate.name} - {analysisData.candidate.title} - {analysisData.candidate.seniorityLevel}
-              </span>
-            ) : (
-              <SkeletonLoader className="w-96 h-8" />
-            )}
-            {analysisData.matchScore !== undefined ? (
-              <span className="text-xl sm:text-2xl font-bold text-blue-600">
-                Match Score: {matchScore}%
-              </span>
-            ) : (
-              <SkeletonLoader className="w-32 h-8" />
-            )}
+            <span className="text-xl sm:text-2xl text-gray-700 font-bold">
+              {analysisData.candidate.name} - {analysisData.candidate.title} - {analysisData.candidate.seniorityLevel}
+            </span>
+            <span className="text-xl sm:text-2xl font-bold text-blue-600">
+              Match Score: {matchScore}%
+            </span>
           </div>
-          {analysisData.summary ? (
-            <div className="text-sm sm:text-lg text-gray-600 break-words mt-2">
-              <StreamingText 
-                text={analysisData.summary} 
-                startStreaming={!isComplete && !!analysisData.summary}
-                speed={15}
-              />
-            </div>
-          ) : (
-            <SkeletonLoader count={3} className="mt-2" />
-          )}
+          <div className="text-sm sm:text-lg text-gray-600 break-words mt-2">
+            {analysisData.summary}
+          </div>
         </div>
 
         {/* Divider */}
@@ -241,9 +198,7 @@ export default function ResumeFitAnalysisPage() {
                     </Badge>
                   ))
                 ) : (
-                  <div className="flex flex-wrap gap-2">
-                    <SkeletonLoader variant="badge" count={6} className="mb-2" />
-                  </div>
+                  <div className="text-sm text-gray-500">Loading skills...</div>
                 )}
               </div>
             </div>
@@ -266,9 +221,7 @@ export default function ResumeFitAnalysisPage() {
                     </Badge>
                   ))
                 ) : (
-                  <div className="flex flex-wrap gap-2">
-                    <SkeletonLoader variant="badge" count={4} className="mb-2" />
-                  </div>
+                  <div className="text-sm text-gray-500">Loading skills...</div>
                 )}
               </div>
             </div>
@@ -291,9 +244,7 @@ export default function ResumeFitAnalysisPage() {
                     </Badge>
                   ))
                 ) : (
-                  <div className="flex flex-wrap gap-2">
-                    <SkeletonLoader variant="badge" count={3} className="mb-2" />
-                  </div>
+                  <div className="text-sm text-gray-500">Loading skills...</div>
                 )}
               </div>
             </div>
@@ -316,9 +267,7 @@ export default function ResumeFitAnalysisPage() {
                     </Badge>
                   ))
                 ) : (
-                  <div className="flex flex-wrap gap-2">
-                    <SkeletonLoader variant="badge" count={2} className="mb-2" />
-                  </div>
+                  <div className="text-sm text-gray-500">Loading skills...</div>
                 )}
               </div>
             </div>
@@ -361,23 +310,7 @@ export default function ResumeFitAnalysisPage() {
                 </tbody>
               </table>
             ) : (
-              <div className="space-y-3">
-                <div className="grid grid-cols-3 gap-4">
-                  <SkeletonLoader className="h-4" />
-                  <SkeletonLoader className="h-4" />
-                  <SkeletonLoader className="h-4 w-8 mx-auto" />
-                </div>
-                <div className="grid grid-cols-3 gap-4">
-                  <SkeletonLoader className="h-4" />
-                  <SkeletonLoader className="h-4" />
-                  <SkeletonLoader className="h-4 w-8 mx-auto" />
-                </div>
-                <div className="grid grid-cols-3 gap-4">
-                  <SkeletonLoader className="h-4" />
-                  <SkeletonLoader className="h-4" />
-                  <SkeletonLoader className="h-4 w-8 mx-auto" />
-                </div>
-              </div>
+              <div className="text-sm text-gray-500 text-center py-4">Loading criteria match...</div>
             )}
           </div>
         </div>
@@ -402,12 +335,7 @@ export default function ResumeFitAnalysisPage() {
               ))}
             </div>
           ) : (
-            <div className="space-y-2">
-              <SkeletonLoader className="w-80" />
-              <SkeletonLoader className="w-32" />
-              <SkeletonLoader className="w-64" />
-              <SkeletonLoader className="w-48" />
-            </div>
+            <div className="text-sm text-gray-500">Loading education information...</div>
           )}
         </div>
 
@@ -424,10 +352,7 @@ export default function ResumeFitAnalysisPage() {
               ))}
             </div>
           ) : (
-            <div className="space-y-1">
-              <SkeletonLoader className="w-96" />
-              <SkeletonLoader className="w-80" />
-            </div>
+            <div className="text-sm text-gray-500">Loading potential issues...</div>
           )}
         </div>
 
@@ -439,33 +364,28 @@ export default function ResumeFitAnalysisPage() {
           <Button 
             variant="outline" 
             onClick={handleReset}
-            disabled={isStreaming}
             className="px-6 py-2 w-full sm:w-auto"
           >
-            {isStreaming ? 'Analyzing...' : 'Reset'}
+            Reset
           </Button>
           
           <Tooltip 
-            content={!isComplete 
-              ? "Please wait for analysis to complete" 
-              : !isEligibleForInterview 
+            content={!isEligibleForInterview 
                 ? "Match score must be 80% or higher to generate interview questions. Current score is below the threshold." 
                 : ""
             }
-            showTooltip={!isComplete || !isEligibleForInterview}
+            showTooltip={!isEligibleForInterview}
           >
             <Button 
               onClick={handleGenerateQuestions}
-              disabled={isLoading || isStreaming || !isComplete || !isEligibleForInterview}
+              disabled={isLoading || !isEligibleForInterview}
               className={`px-6 py-2 w-full sm:w-auto ${
-                isComplete && isEligibleForInterview 
+                isEligibleForInterview 
                   ? 'bg-blue-600 hover:bg-blue-700 text-white' 
                   : 'bg-gray-300 text-gray-500 cursor-not-allowed hover:bg-gray-300'
               }`}
             >
-              {isLoading ? 'Generating...' : 
-               isStreaming ? 'Analyzing...' : 
-               'Generate Interview Questions'}
+              {isLoading ? 'Generating...' : 'Generate Interview Questions'}
             </Button>
           </Tooltip>
         </div>
