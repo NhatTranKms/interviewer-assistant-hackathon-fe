@@ -10,7 +10,7 @@ import type {
 } from '../models';
 
 // Use environment variable or fallback to the IP address
-const API_BASE_URL = 'http://52.221.250.230';
+const API_BASE_URL = '/api';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
