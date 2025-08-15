@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import type { CandidateInfo, SkillAnalysis, InterviewQuestion } from '../models';
-import type { SkillMatcherResponse, QuestionGeneratorResponse } from '../models/api';
+import type { SkillMatcherResponse, QuestionGeneratorResponse, CVAnalysis } from '../models/api';
 
 interface InterviewStore {
   // Form data
@@ -8,9 +8,10 @@ interface InterviewStore {
   jobDescription: string;
   resume: string;
   
-  // Analysis results - Split into two parts for better performance
+  // Analysis results - Split into three parts for better performance
   skillAnalysisData: SkillMatcherResponse | null; // For ResumeFitAnalysisPage
   questionData: QuestionGeneratorResponse | null; // For QuestionGeneratorPage
+  cvAnalysisData: CVAnalysis | null; // For candidate information
   
   // Legacy fields (keeping for compatibility)
   skillAnalysis: SkillAnalysis | null;
@@ -28,6 +29,7 @@ interface InterviewStore {
   setQuestions: (questions: InterviewQuestion[]) => void;
   setSkillAnalysisData: (data: SkillMatcherResponse) => void; // New: For skill analysis
   setQuestionData: (data: QuestionGeneratorResponse) => void; // New: For questions
+  setCVAnalysisData: (data: CVAnalysis) => void; // New: For CV analysis
   setCurrentStep: (step: number) => void;
   setIsLoading: (loading: boolean) => void;
   reset: () => void;
@@ -45,6 +47,7 @@ const initialState = {
   // Split data for better performance
   skillAnalysisData: null,
   questionData: null,
+  cvAnalysisData: null,
   // Legacy fields
   skillAnalysis: null,
   questions: [],
@@ -75,6 +78,9 @@ export const useInterviewStore = create<InterviewStore>((set) => ({
   
   setQuestionData: (data: QuestionGeneratorResponse) =>
     set({ questionData: data }),
+
+  setCVAnalysisData: (data: CVAnalysis) =>
+    set({ cvAnalysisData: data }),
   
   setCurrentStep: (step: number) =>
     set({ currentStep: step }),

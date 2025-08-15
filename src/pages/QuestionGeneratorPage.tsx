@@ -13,12 +13,14 @@ export default function QuestionGeneratorPage() {
   
   // Memoize the questions transformation to prevent infinite re-renders
   const questions = useMemo(() => {
-    if (!questionData?.interview_questions) {
+
+    
+    if (!questionData?.questions) {
       return [];
     }
     
     // Transform API questions to UI format inline
-    return questionData.interview_questions.map(apiQuestion => {
+    return questionData.questions.map(apiQuestion => {
       const categoryMap: Record<string, 'Core Knowledge' | 'Practical Skills' | 'Tools & Technology' | 'Scenario-Based' | 'Process & Best Practices'> = {
         'CORE KNOWLEDGE': 'Core Knowledge',
         'PRACTICAL SKILLS': 'Practical Skills', 
@@ -44,7 +46,7 @@ export default function QuestionGeneratorPage() {
 
       return {
         id: apiQuestion.id,
-        question: apiQuestion.question,
+        question: apiQuestion.question_text,
         category: categoryMap[apiQuestion.category] || 'Core Knowledge',
         expectedAnswer: apiQuestion.expected_answer,
         evaluationCriteria,
@@ -60,14 +62,36 @@ export default function QuestionGeneratorPage() {
 
   // Navigate to preparation page if no questions available
   useEffect(() => {
-    if (!questions.length) {
+    if (!questions.length && questionData !== null) {
       navigate('/preparation');
     }
-  }, [questions.length, navigate]);
+  }, [questions.length, questionData, navigate]);
+
+  // Show loading state if questionData is null (not yet loaded)
+  if (questionData === null) {
+    return (
+      <div className="p-8">
+        <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm border p-8">
+          <div className="text-center">
+            <p className="text-gray-600 mb-4">Loading questions...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   // Return early if no questions (but don't navigate during render)
   if (!questions.length) {
-    return null;
+    return (
+      <div className="p-8">
+        <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm border p-8">
+          <div className="text-center">
+            <p className="text-red-600 mb-4">No questions available. Please check the console for debugging info.</p>
+            <Button onClick={() => navigate('/preparation')}>Go Back to Preparation</Button>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   const questionsByCategory = {
