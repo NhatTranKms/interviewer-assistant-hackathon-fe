@@ -34,87 +34,137 @@ export interface InterviewSimulatorsResponse {
   total: number;
 }
 
-// New structure based on sample4.json
+// New structure based on sample5.json
 
-export interface ContactDetails {
-  contact_person: string;
-  email: string;
-  phone_number: string;
-  linkedin: string;
-  github: string;
-}
-
-export interface BasicInformation {
+export interface BasicInfo {
   job_title: string;
   company: string;
   location: string;
-  contact_details: ContactDetails;
+  job_type: string;
+  employment_type: string;
+  experience_level: string;
+  salary_range: string | null;
 }
 
 export interface RoleDetails {
-  responsibilities: string[];
-  qualifications: string[];
-  nice_to_have: string[];
+  department: string;
+  summary: string;
+  key_responsibilities: string[];
+  success_metrics: string[];
 }
 
-export interface SkillsAnalysis {
-  must_have: string[];
-  nice_to_have: string[];
+export interface TechnicalRequirements {
+  programming_languages: string[];
+  frameworks_tools: string[];
+  platforms: string[];
+  certifications: string[];
+  experience_years: {
+    min: number;
+    max: number | null;
+  };
 }
 
 export interface Qualifications {
   must_have: string[];
   nice_to_have: string[];
+  education: string;
+  certifications: string[];
+}
+
+export interface SkillPriority {
+  critical: string[];
+  important: string[];
+  beneficial: string[];
+}
+
+export interface SkillsAnalysis {
+  hard_skills: string[];
+  soft_skills: string[];
+  domain_expertise: string[];
+  skill_priority: SkillPriority;
 }
 
 export interface CompanyCulture {
-  description: string;
+  company_size: string;
+  values: string[];
+  benefits: string[];
+  work_environment: string;
+}
+
+export interface JDAnalysisDetails {
+  complexity_level: string;
+  market_competitiveness: string;
+  completeness_score: number;
+  red_flags: string[];
+  missing_info: string[];
+  key_insights: string[];
 }
 
 export interface JDAnalysis {
-  basic_information: BasicInformation;
+  basic_info: BasicInfo;
   role_details: RoleDetails;
-  skills_analysis: SkillsAnalysis;
+  technical_requirements: TechnicalRequirements;
   qualifications: Qualifications;
+  skills_analysis: SkillsAnalysis;
   company_culture: CompanyCulture;
-  analysis_insights: string[];
+  analysis: JDAnalysisDetails;
+  status: string;
+  timestamp: string | null;
+  processing_time: string | null;
+  agent_version: string;
 }
 
 export interface CandidateProfile {
-  name: string;
-  contact_information: {
-    email: string;
-    phone: string;
-    location: string;
-    linkedin: string;
-    github: string;
-  };
+  full_name: string;
+  email: string;
+  phone: string;
+  location: string;
+  linkedin: string;
+  github: string;
 }
 
 export interface ProfessionalSummary {
+  title: string;
+  years_experience: number;
   summary: string;
-  experience_level: string;
+  key_achievements: string[];
 }
 
 export interface WorkExperience {
-  position: string;
   company: string;
+  position: string;
   duration: string;
   responsibilities: string[];
+  achievements: string[];
+  technologies: string[];
 }
 
 export interface Education {
   degree: string;
-  university: string;
+  institution: string;
   graduation_year: string;
+  gpa: number | null;
+  relevant_coursework: string[];
+}
+
+export interface TechnicalSkills {
+  programming_languages: string[];
+  frameworks_tools: string[];
+  platforms: string[];
+  databases: string[];
+  certifications: string[];
+  skill_levels: Record<string, string | number>;
 }
 
 export interface CVSkillsAnalysis {
-  matched_skills: string[];
-  gaps: string[];
+  hard_skills: string[];
+  soft_skills: string[];
+  domain_expertise: string[];
+  skill_gaps: string[];
 }
 
-export interface OverallAnalysis {
+export interface CVAnalysisDetails {
+  experience_level: string;
   completeness_score: number;
   strengths: string[];
   weaknesses: string[];
@@ -127,69 +177,88 @@ export interface CVAnalysis {
   candidate_profile: CandidateProfile;
   professional_summary: ProfessionalSummary;
   work_experience: WorkExperience[];
-  education: Education;
-  technical_skills: string[];
-  certifications: string[];
+  education: Education[];
+  technical_skills: TechnicalSkills;
   skills_analysis: CVSkillsAnalysis;
-  overall_analysis: OverallAnalysis;
+  analysis: CVAnalysisDetails;
+  status: string;
+  timestamp: string;
+  processing_time: string;
+  agent_version: string;
 }
 
 export interface MatchedSkill {
-  skill: string;
+  skill_name: string;
   confidence_score: number;
+  jd_requirement_level: string;
+  cv_proficiency_level: string;
   match_quality: string;
+  evidence: string[];
 }
 
 export interface MissingCriticalSkill {
-  skill: string;
+  skill_name: string;
   impact_level: string;
-  learning_recommendation: string;
+  priority: string;
+  suggested_learning_path: string;
+  can_be_learned_quickly: boolean;
+  alternative_skills: string[];
 }
 
-export interface CompetencyGap {
-  area: string;
-  gap_description: string;
-  development_plan: string;
-}
-
-export interface LevelSpecificGapAnalysis {
-  candidate_level: string;
-  target_position_level: string;
-  competency_gaps: CompetencyGap[];
+export interface LevelGapAnalysis {
+  target_level: string;
+  candidate_current_level: string;
+  level_gap: string;
+  key_competencies_missing: string[];
+  development_areas: string[];
+  estimated_time_to_readiness: string;
 }
 
 export interface StrongArea {
-  area: string;
+  area_name: string;
   description: string;
+  exceeds_requirement_by: string;
+  competitive_advantage: boolean;
 }
 
 export interface RedFlag {
-  issue: string;
-  severity_level: string;
-}
-
-export interface ReadinessAssessmentBlocker {
-  blocker: string;
-  development_timeline: string;
+  concern: string;
+  severity: string;
+  potential_impact: string;
+  mitigation_strategy: string;
 }
 
 export interface ReadinessAssessment {
-  readiness_level: string;
+  overall_readiness: string;
   readiness_score: number;
-  blockers: ReadinessAssessmentBlocker[];
+  key_blockers: string[];
+  quick_wins: string[];
+  long_term_development: string[];
+  recommended_timeline: string;
 }
 
 export interface SkillMatcherResponse {
-  overall_matching_score: number;
+  overall_match_score: number;
   matched_skills: MatchedSkill[];
   missing_critical_skills: MissingCriticalSkill[];
-  level_specific_gap_analysis: LevelSpecificGapAnalysis;
+  level_gap_analysis: LevelGapAnalysis;
   strong_areas: StrongArea[];
   red_flags: RedFlag[];
   readiness_assessment: ReadinessAssessment;
+  total_required_skills: number;
+  matched_skills_count: number;
+  missing_skills_count: number;
+  match_percentage: number;
+  immediate_actions: string[];
+  skill_development_plan: string[];
+  interview_focus_areas: string[];
+  status: string;
+  timestamp: string;
+  processing_time: string;
+  agent_version: string;
 }
 
-export interface EvaluationCriteria {
+export interface EvaluationRubric {
   clarity: string;
   accuracy: string;
   depth: string;
@@ -197,36 +266,57 @@ export interface EvaluationCriteria {
 }
 
 export interface ScoringGuide {
-  "1_star": string;
-  "2_star": string;
-  "3_star": string;
-  "4_star": string;
-  "5_star": string;
+  score_1: string;
+  score_2: string;
+  score_3: string;
+  score_4: string;
+  score_5: string;
 }
 
 export interface InterviewQuestion {
-  id: string;
+  question_id: string;
   category: string;
-  difficulty: string;
+  difficulty_level: string;
   question_text: string;
+  context: string;
   expected_answer: string;
-  evaluation_rubric: EvaluationCriteria;
+  evaluation_rubric: EvaluationRubric;
   scoring_guide: ScoringGuide;
-  time_allocation: string;
-  skills_assessed: string[];
   follow_up_questions: string[];
+  time_allocation: number;
+  skills_assessed: string[];
 }
 
-export interface InterviewStrategy {
-  overall_guidance: string;
-  time_management: string;
-  key_decision_points: string[];
-  interviewer_preparation: string[];
+export interface CategorySummary {
+  category: string;
+  question_count: number;
+  total_time: number;
+  focus_areas: string[];
+  rationale: string;
 }
 
 export interface QuestionGeneratorResponse {
   questions: InterviewQuestion[];
-  interview_strategy: InterviewStrategy;
+  category_summaries: CategorySummary[];
+  target_position: string;
+  candidate_level: string;
+  total_interview_time: number;
+  interview_focus: string[];
+  strengths_to_validate: string[];
+  gaps_to_assess: string[];
+  red_flags_to_investigate: string[];
+  core_knowledge_count: number;
+  practical_skills_count: number;
+  tools_technology_count: number;
+  scenario_problem_solving_count: number;
+  process_best_practices_count: number;
+  interview_strategy: string;
+  key_decision_points: string[];
+  preparation_notes: string[];
+  status: string;
+  timestamp: string | null;
+  processing_time: string | null;
+  agent_version: string;
 }
 
 export interface AnalysisResponse {

@@ -1,5 +1,5 @@
 import jsPDF from 'jspdf';
-import type { InterviewQuestion, CandidateInfo } from '../models';
+import type { UIInterviewQuestion, CandidateInfo } from '../models';
 
 interface PDFConfig {
   pageHeight: number;
@@ -111,7 +111,7 @@ export class PDFExportService {
     }
   }
 
-  private addCategorySection(category: string, questions: InterviewQuestion[]): void {
+  private addCategorySection(category: string, questions: UIInterviewQuestion[]): void {
     if (questions.length === 0) return;
 
     const categoryColor = this.getCategoryColor(category);
@@ -133,7 +133,7 @@ export class PDFExportService {
     this.yPosition += 5;
   }
 
-  private addQuestion(question: InterviewQuestion, questionNumber: number): void {
+  private addQuestion(question: UIInterviewQuestion, questionNumber: number): void {
     // Question text
     this.addText(
       `Q${questionNumber}. ${question.question}`,
@@ -178,7 +178,7 @@ export class PDFExportService {
 
   public exportInterviewQuestions(
     candidateInfo: CandidateInfo,
-    questionsByCategory: Record<string, InterviewQuestion[]>
+    questionsByCategory: Record<string, UIInterviewQuestion[]>
   ): void {
     this.addHeader(candidateInfo);
 

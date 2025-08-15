@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { useFloating, autoUpdate, offset, flip, shift, useHover, useFocus, useDismiss, useRole, useInteractions, FloatingPortal } from '@floating-ui/react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
+import { SkeletonLoader } from '../components/ui/SkeletonLoader';
+import { ProgressBar } from '../components/ui/ProgressBar';
 import { CheckCircle, XCircle, AlertTriangle, TrendingUp, User, Database } from 'lucide-react';
 import { useInterviewStore } from '../store/useInterviewStore';
 import { useAnalysis } from '../hooks/useAnalysis';
@@ -12,7 +14,8 @@ export default function ResumeFitAnalysisPage() {
   const navigate = useNavigate();
   const {
     // candidateInfo,
-    skillAnalysisData
+    skillAnalysisData,
+    isLoading
   } = useInterviewStore();
   
   const { data: analysisData, error } = useAnalysis() as { 
@@ -20,12 +23,92 @@ export default function ResumeFitAnalysisPage() {
     error: Error | null 
   };
 
+  // Fake loading progress state
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [loadingStage, setLoadingStage] = useState('Orchestrator Routing . . .');
+
+  // Reset loading progress when component mounts
+  useEffect(() => {
+    setLoadingProgress(0);
+    setLoadingStage('Orchestrator Routing . . .');
+  }, []);
+
   // Navigate to preparation page if no skill analysis data
   useEffect(() => {
-    if (!skillAnalysisData) {
+    if (!skillAnalysisData && !isLoading) {
       navigate('/preparation');
     }
-  }, [skillAnalysisData, navigate]);
+  }, [skillAnalysisData, isLoading, navigate]);
+
+  // Simulate loading progress with specific stages and timing
+  useEffect(() => {
+    console.log('Loading effect triggered:', { isLoading, skillAnalysisData: !!skillAnalysisData });
+    
+    if (!isLoading) {
+      return;
+    }
+
+    // Reset progress when loading starts
+    setLoadingProgress(0);
+    setLoadingStage('Orchestrator Routing');
+
+    const stages = [
+      { progress: 10, message: 'Orchestrator Routing . . .', duration: 10000 }, // 10 seconds
+      { progress: 20, message: 'JD & Resume Analyzing . . .', duration: 20000 }, // 20 seconds
+      { progress: 50, message: 'Skill Matches and Gaps Detecting . . .', duration: 30000 }, // 40 seconds
+      { progress: 95, message: 'Interview Question Generating . . .', duration: 15000 } // 15 seconds
+    ];
+
+    let currentStageIndex = 0;
+    let stageStartTime = Date.now();
+    let isActive = true;
+
+    // Set initial stage
+    setLoadingStage(stages[0].message);
+
+    const updateProgress = () => {
+      if (!isActive || currentStageIndex >= stages.length) return;
+
+      const currentStage = stages[currentStageIndex];
+      const elapsed = Date.now() - stageStartTime;
+      const progress = Math.min(elapsed / currentStage.duration, 1);
+      
+      // Calculate the progress value for this stage
+      const prevProgress = currentStageIndex === 0 ? 0 : stages[currentStageIndex - 1].progress;
+      const targetProgress = currentStage.progress;
+      const progressDiff = targetProgress - prevProgress;
+      const newProgress = prevProgress + (progressDiff * progress);
+      
+      setLoadingProgress(newProgress);
+
+      // Check if current stage is complete
+      if (progress >= 1) {
+        currentStageIndex++;
+        if (currentStageIndex < stages.length) {
+          setLoadingStage(stages[currentStageIndex].message);
+          stageStartTime = Date.now();
+          console.log(`Starting stage ${currentStageIndex + 1}:`, stages[currentStageIndex].message);
+        }
+      }
+    };
+
+    // Update progress every 200ms (less intensive)
+    const intervalId = setInterval(updateProgress, 200);
+
+    return () => {
+      console.log('Cleaning up loading effect');
+      isActive = false;
+      clearInterval(intervalId);
+    };
+  }, [isLoading]);
+
+  // Handle completion when data arrives
+  useEffect(() => {
+    if (!isLoading && skillAnalysisData) {
+      setLoadingProgress(100);
+      setLoadingStage('Analysis complete!');
+    }
+  }, [isLoading, skillAnalysisData]);
 
 
 
@@ -77,6 +160,167 @@ export default function ResumeFitAnalysisPage() {
     return <>{children}</>;
   };
 
+  // Skeleton Loading Component
+  const SkeletonLoading = () => (
+    <div className="min-h-screen p-4 sm:p-6 lg:p-8">
+      <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm border p-4 sm:p-6 lg:p-8 w-full">
+        {/* Loading Progress Bar */}
+        <div className="mb-8">
+          <div className="text-center mb-4">
+                         <h1 className="text-xl sm:text-3xl font-bold text-gray-900 mb-4">Processing Resume Fit Analysis...</h1>
+             <div className="flex items-center justify-center gap-3 mb-6">
+               <p className="text-gray-600 font-mono text-2xl">{loadingStage}</p>
+               
+
+             </div>
+            <div className="max-w-md mx-auto">
+              <ProgressBar 
+                progress={loadingProgress} 
+                showPercentage={true}
+                className="mb-4"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Header Skeleton */}
+        <div className="mb-6">
+          <div className="flex justify-between items-start mb-3">
+            <SkeletonLoader variant="text" className="w-48 h-6" />
+          </div>
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-3 mb-3">
+            <div className="flex-1 min-w-0">
+              <SkeletonLoader variant="text" className="w-72 h-8" />
+            </div>
+            <div className="flex-shrink-0">
+              <SkeletonLoader variant="text" className="w-32 h-8" />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <SkeletonLoader variant="text" className="w-full" />
+            <SkeletonLoader variant="text" className="w-5/6" />
+            <SkeletonLoader variant="text" className="w-4/5" />
+          </div>
+        </div>
+
+        <hr className="border-gray-200 mb-8" />
+
+        {/* Skills Overview Skeleton */}
+        <div className="mb-8">
+          <div className="flex items-center gap-2 mb-6">
+            <User className="w-5 h-5 text-blue-600" />
+            <SkeletonLoader variant="text" className="w-32 h-6" />
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Matched Skills Skeleton */}
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <CheckCircle className="w-4 h-4 text-green-600" />
+                <SkeletonLoader variant="text" className="w-28 h-5" />
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <SkeletonLoader variant="badge" count={6} />
+              </div>
+            </div>
+
+            {/* Extra Skills Skeleton */}
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <TrendingUp className="w-4 h-4 text-blue-600" />
+                <SkeletonLoader variant="text" className="w-24 h-5" />
+              </div>
+              <div className="space-y-2">
+                <SkeletonLoader variant="rectangle" className="h-12" />
+                <SkeletonLoader variant="rectangle" className="h-12" />
+              </div>
+            </div>
+
+            {/* Missing Skills Skeleton */}
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <XCircle className="w-4 h-4 text-red-600" />
+                <SkeletonLoader variant="text" className="w-28 h-5" />
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <SkeletonLoader variant="badge" count={4} />
+              </div>
+            </div>
+
+            {/* Skill Gaps Skeleton */}
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <AlertTriangle className="w-4 h-4 text-yellow-600" />
+                <SkeletonLoader variant="text" className="w-24 h-5" />
+              </div>
+              <div className="space-y-2">
+                <SkeletonLoader variant="rectangle" className="h-12" />
+                <SkeletonLoader variant="rectangle" className="h-12" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr className="border-gray-200 mb-8" />
+
+        {/* Criteria Match Skeleton */}
+        <div className="mb-8">
+          <div className="flex items-center gap-2 mb-6">
+            <Database className="w-5 h-5 text-blue-600" />
+            <SkeletonLoader variant="text" className="w-32 h-6" />
+          </div>
+          <div className="bg-gray-50 rounded-lg p-4">
+            <div className="space-y-4">
+              {[...Array(3)].map((_, index) => (
+                <div key={index} className="bg-white rounded-lg border border-gray-200 p-4">
+                  <SkeletonLoader variant="text" className="w-full mb-2" />
+                  <SkeletonLoader variant="text" className="w-4/5 mb-2" />
+                  <SkeletonLoader variant="text" className="w-3/5" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <hr className="border-gray-200 mb-8" />
+
+        {/* Education Skeleton */}
+        <div className="mb-8">
+          <SkeletonLoader variant="text" className="w-48 h-6 mb-4" />
+          <div className="space-y-3">
+            <SkeletonLoader variant="text" className="w-full" />
+            <SkeletonLoader variant="text" className="w-3/4" />
+            <SkeletonLoader variant="text" className="w-5/6" />
+          </div>
+        </div>
+
+        <hr className="border-gray-200 mb-8" />
+
+        {/* Red Flags Skeleton */}
+        <div className="mb-8">
+          <SkeletonLoader variant="text" className="w-40 h-6 mb-4" />
+          <div className="space-y-2">
+            <SkeletonLoader variant="text" className="w-full" />
+            <SkeletonLoader variant="text" className="w-4/5" />
+          </div>
+        </div>
+
+        <hr className="border-gray-200 mb-8" />
+
+        {/* Action Buttons Skeleton */}
+        <div className="flex flex-col sm:flex-row justify-end gap-3">
+          <SkeletonLoader variant="rectangle" className="w-full sm:w-24 h-10" />
+          <SkeletonLoader variant="rectangle" className="w-full sm:w-48 h-10" />
+        </div>
+      </div>
+    </div>
+  );
+
+  // Show loading state when analysis is being processed
+  if (isLoading) {
+    return <SkeletonLoading />;
+  }
+
   // Early return if no data (navigation handled by useEffect above)
   if (!skillAnalysisData) {
     return null;
@@ -110,7 +354,7 @@ export default function ResumeFitAnalysisPage() {
     );
   }
 
-  const matchScore = 90;
+  const matchScore = analysisData?.matchScore || 0;
   const isEligibleForInterview = matchScore >= 80;
 
   const handleGenerateQuestions = () => {

@@ -1,0 +1,870 @@
+{
+  "status": "completed",
+  "execution_time": 313.3064441680908,
+  "timestamp": "2025-08-15 13:08:55",
+  "jd_analysis": {
+    "basic_info": {
+      "job_title": "Senior Java Developer",
+      "company": "KMS Technology",
+      "location": "Mexico",
+      "job_type": "Full-Time",
+      "employment_type": "Permanent",
+      "experience_level": "Senior",
+      "salary_range": null
+    },
+    "role_details": {
+      "department": "Engineering",
+      "summary": "Design, develop, and maintain enterprise-grade applications using Java. Collaborate with cross-functional teams including frontend, DevOps, QA, and Product.",
+      "key_responsibilities": [
+        "Design, develop, and maintain enterprise-grade applications using Java.",
+        "Collaborate with cross-functional teams including frontend, DevOps, QA, and Product.",
+        "Participate in the full software development lifecycle: planning, design, development, testing, and deployment.",
+        "Write clean, scalable, and well-documented code.",
+        "Perform code reviews, troubleshoot production issues, and contribute to continuous improvements.",
+        "Implement and maintain RESTful APIs and integration services.",
+        "Mentor junior developers and share technical expertise across the team."
+      ],
+      "success_metrics": []
+    },
+    "technical_requirements": {
+      "programming_languages": ["Java"],
+      "frameworks_tools": [
+        "Spring Framework",
+        "CI/CD tools (e.g., Jenkins, GitHub Actions)"
+      ],
+      "platforms": [],
+      "certifications": [],
+      "experience_years": { "min": 5, "max": null }
+    },
+    "qualifications": {
+      "must_have": [
+        "Bachelor’s degree in Computer Science, Engineering, or related field.",
+        "5+ years of experience in backend development with Java (preferably Java 8 or higher).",
+        "Solid understanding of Spring Framework (Spring Boot, Spring Data, etc.).",
+        "Experience with RESTful API design and integration.",
+        "Proficiency in working with relational databases (e.g., PostgreSQL, MySQL, Oracle).",
+        "Familiarity with CI/CD tools (e.g., Jenkins, GitHub Actions, or similar).",
+        "Experience working in Agile/Scrum environments.",
+        "Good communication skills in English (written and spoken)."
+      ],
+      "nice_to_have": [
+        "Experience with Microservices architecture.",
+        "Knowledge of Docker, Kubernetes, or other container/orchestration tools.",
+        "Exposure to cloud platforms like AWS, Azure, or GCP.",
+        "Familiarity with messaging systems (Kafka, RabbitMQ, etc.).",
+        "Experience with frontend technologies (e.g., Angular, React or Vue.js) is a plus."
+      ],
+      "education": "Bachelor’s degree in Computer Science, Engineering, or related field",
+      "certifications": []
+    },
+    "skills_analysis": {
+      "hard_skills": [
+        "Java",
+        "Spring Framework",
+        "RESTful API design",
+        "Relational databases (e.g., PostgreSQL, MySQL, Oracle)",
+        "CI/CD tools (e.g., Jenkins, GitHub Actions)",
+        "Agile/Scrum"
+      ],
+      "soft_skills": ["Team collaboration", "Communication skills"],
+      "domain_expertise": [
+        "Backend development",
+        "Enterprise-grade applications"
+      ],
+      "skill_priority": {
+        "critical": [
+          "Java",
+          "Spring Framework",
+          "RESTful API design",
+          "Relational databases (e.g., PostgreSQL, MySQL, Oracle)",
+          "CI/CD tools (e.g., Jenkins, GitHub Actions)",
+          "Agile/Scrum"
+        ],
+        "important": ["Team collaboration", "Communication skills"],
+        "beneficial": [
+          "Microservices architecture",
+          "Docker, Kubernetes",
+          "Cloud platforms (AWS, Azure, GCP)",
+          "Messaging systems (Kafka, RabbitMQ)",
+          "Frontend technologies (e.g., Angular, React or Vue.js)"
+        ]
+      }
+    },
+    "company_culture": {
+      "company_size": "Not specified",
+      "values": ["Collaborative", "Inclusive", "Growth-oriented"],
+      "benefits": [
+        "Can work from anywhere within Mexico (working from the office will be required time to time)"
+      ],
+      "work_environment": "Collaborative and inclusive environment"
+    },
+    "analysis": {
+      "complexity_level": "High",
+      "market_competitiveness": "Competitive",
+      "completeness_score": 1,
+      "red_flags": [],
+      "missing_info": ["Salary range", "Company size"],
+      "key_insights": [
+        "The role requires strong backend expertise and experience with modern architectures.",
+        "The company emphasizes a collaborative and inclusive work environment.",
+        "The candidate should have solid experience with Java, Spring Framework, and RESTful APIs."
+      ]
+    },
+    "status": "completed",
+    "timestamp": null,
+    "processing_time": null,
+    "agent_version": "1.0.0"
+  },
+  "cv_analysis": {
+    "candidate_profile": {
+      "full_name": "James [Last Name]",
+      "email": "james.email@example.com",
+      "phone": "[Country Code] [Phone Number]",
+      "location": "[City, Country]",
+      "linkedin": "https://linkedin.com/in/james",
+      "github": "https://github.com/james"
+    },
+    "professional_summary": {
+      "title": "Senior Software Engineer – Java Specialist",
+      "years_experience": 16,
+      "summary": "Senior Software Engineer with over 16 years of experience in software development, specializing in Java and mobile development (iOS). Proven track record of delivering enterprise-scale solutions, including industrial quality assurance systems and large-scale data tracking platforms. Adept at designing robust architectures, optimizing performance, and working across diverse technology stacks.",
+      "key_achievements": [
+        "16+ years of continuous professional software engineering experience.",
+        "Hands-on expertise in hardware-software integration and industrial automation systems.",
+        "Recognized in interview feedback as a “great developer” with strong problem-solving abilities."
+      ]
+    },
+    "work_experience": [
+      {
+        "company": "FPT Software / Coca-Cola Africa Project",
+        "position": "Software Engineer",
+        "duration": "2007 – [Year]",
+        "responsibilities": [
+          "Developed an environmental data tracking website using Java Struts, JSP, and Servlets.",
+          "Enabled bottling plants across Africa to monitor and report environmental metrics.",
+          "Collaborated with distributed teams to ensure scalability and accuracy of reporting."
+        ],
+        "achievements": [],
+        "technologies": ["Java", "Struts", "JSP", "Servlets"]
+      },
+      {
+        "company": "Filtec QA Systems",
+        "position": "Senior Java Developer",
+        "duration": "[Year] – [Year]",
+        "responsibilities": [
+          "Built a Java-based Linux application to configure QA machinery for beverage bottling plants.",
+          "Integrated with custom hardware sensors to measure bottle and can pressure, detect floating objects, and identify defects.",
+          "Deployed and tested over Ethernet-connected hardware for real-time QA data collection."
+        ],
+        "achievements": [],
+        "technologies": ["Java", "Linux"]
+      },
+      {
+        "company": "[Company Name]",
+        "position": "Mobile Developer (iOS)",
+        "duration": "[Years unspecified]",
+        "responsibilities": [
+          "Designed and developed native iOS applications with strong focus on usability and performance.",
+          "Applied backend development knowledge to create efficient, scalable mobile architectures."
+        ],
+        "achievements": [],
+        "technologies": ["iOS Development"]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor’s Degree in Computer Science",
+        "institution": "[University Name]",
+        "graduation_year": "[Year]",
+        "gpa": null,
+        "relevant_coursework": []
+      }
+    ],
+    "technical_skills": {
+      "programming_languages": ["Java", "iOS Development"],
+      "frameworks_tools": ["Struts", "JSP", "Servlets"],
+      "platforms": ["Linux"],
+      "databases": [],
+      "certifications": [],
+      "skill_levels": {}
+    },
+    "skills_analysis": {
+      "hard_skills": [
+        "Java",
+        "Struts",
+        "JSP",
+        "Servlets",
+        "iOS Development",
+        "REST APIs",
+        "Distributed Systems",
+        "Multithreading",
+        "Linux",
+        "Sensors & Hardware Integration",
+        "Garbage Collection Tuning",
+        "OOP",
+        "Constructor Overloading",
+        "Exception Handling",
+        "Applet Lifecycle",
+        "RMI Architecture",
+        "Team Collaboration"
+      ],
+      "soft_skills": [],
+      "domain_expertise": [
+        "Industrial automation systems",
+        "Hardware-software integration",
+        "Enterprise-scale solutions"
+      ],
+      "skill_gaps": [
+        "Microservices architecture",
+        "Docker",
+        "Kubernetes",
+        "CI/CD tools",
+        "Agile/Scrum environments"
+      ]
+    },
+    "analysis": {
+      "experience_level": "Senior",
+      "completeness_score": 8,
+      "strengths": [
+        "Extensive experience in Java and backend development.",
+        "Proven track record of delivering large-scale solutions.",
+        "Strong problem-solving abilities and recognized expertise."
+      ],
+      "weaknesses": [
+        "Lack of specific experience with Microservices architecture and containerization tools.",
+        "Limited experience with CI/CD tools and Agile/Scrum environments."
+      ],
+      "red_flags": [],
+      "missing_sections": [
+        "Certifications",
+        "Soft skills",
+        "Specific achievements in recent roles"
+      ],
+      "recommendations": [
+        "Highlight experience with Microservices architecture and containerization tools.",
+        "Include certifications related to Java and backend development.",
+        "Provide specific achievements and contributions in recent roles.",
+        "Expand on experience with CI/CD tools and Agile/Scrum methodologies."
+      ]
+    },
+    "status": "completed",
+    "timestamp": "2024-06-18T12:34:56Z",
+    "processing_time": "0.023456",
+    "agent_version": "1.0.0"
+  },
+  "skill_matcher": {
+    "overall_match_score": 85,
+    "matched_skills": [
+      {
+        "skill_name": "Java",
+        "confidence_score": 95,
+        "jd_requirement_level": "Critical",
+        "cv_proficiency_level": "Expert",
+        "match_quality": "Excellent",
+        "evidence": [
+          "Extensive experience in Java development.",
+          "Multiple projects involving Java."
+        ]
+      },
+      {
+        "skill_name": "Spring Framework",
+        "confidence_score": 70,
+        "jd_requirement_level": "Critical",
+        "cv_proficiency_level": "Intermediate",
+        "match_quality": "Good",
+        "evidence": ["Mentioned in CV but not explicitly detailed."]
+      },
+      {
+        "skill_name": "RESTful API design",
+        "confidence_score": 80,
+        "jd_requirement_level": "Critical",
+        "cv_proficiency_level": "Expert",
+        "match_quality": "Good",
+        "evidence": ["Experience with REST APIs mentioned in CV."]
+      },
+      {
+        "skill_name": "Relational databases (e.g., PostgreSQL, MySQL, Oracle)",
+        "confidence_score": 60,
+        "jd_requirement_level": "Critical",
+        "cv_proficiency_level": "Intermediate",
+        "match_quality": "Moderate",
+        "evidence": ["Not explicitly mentioned in CV."]
+      },
+      {
+        "skill_name": "Agile/Scrum",
+        "confidence_score": 50,
+        "jd_requirement_level": "Critical",
+        "cv_proficiency_level": "Intermediate",
+        "match_quality": "Moderate",
+        "evidence": ["Not explicitly mentioned in CV."]
+      },
+      {
+        "skill_name": "CI/CD tools (e.g., Jenkins, GitHub Actions)",
+        "confidence_score": 40,
+        "jd_requirement_level": "Critical",
+        "cv_proficiency_level": "Intermediate",
+        "match_quality": "Moderate",
+        "evidence": ["Not explicitly mentioned in CV."]
+      }
+    ],
+    "missing_critical_skills": [
+      {
+        "skill_name": "Microservices architecture",
+        "impact_level": "High",
+        "priority": "High",
+        "suggested_learning_path": "Online courses and certifications on Microservices",
+        "can_be_learned_quickly": true,
+        "alternative_skills": []
+      },
+      {
+        "skill_name": "Docker",
+        "impact_level": "Medium",
+        "priority": "High",
+        "suggested_learning_path": "Docker training and certification",
+        "can_be_learned_quickly": true,
+        "alternative_skills": []
+      },
+      {
+        "skill_name": "Kubernetes",
+        "impact_level": "Medium",
+        "priority": "High",
+        "suggested_learning_path": "Kubernetes training and certification",
+        "can_be_learned_quickly": true,
+        "alternative_skills": []
+      },
+      {
+        "skill_name": "Agile/Scrum environments",
+        "impact_level": "High",
+        "priority": "High",
+        "suggested_learning_path": "Agile and Scrum training",
+        "can_be_learned_quickly": true,
+        "alternative_skills": []
+      },
+      {
+        "skill_name": "CI/CD tools (e.g., Jenkins, GitHub Actions)",
+        "impact_level": "High",
+        "priority": "High",
+        "suggested_learning_path": "CI/CD tools training",
+        "can_be_learned_quickly": true,
+        "alternative_skills": []
+      }
+    ],
+    "level_gap_analysis": {
+      "target_level": "Senior",
+      "candidate_current_level": "Senior",
+      "level_gap": "None",
+      "key_competencies_missing": [
+        "Microservices architecture",
+        "Docker",
+        "Kubernetes",
+        "CI/CD tools",
+        "Agile/Scrum environments"
+      ],
+      "development_areas": [
+        "Microservices architecture",
+        "Docker",
+        "Kubernetes",
+        "CI/CD tools",
+        "Agile/Scrum environments"
+      ],
+      "estimated_time_to_readiness": "3-6 months"
+    },
+    "strong_areas": [
+      {
+        "area_name": "Java Development",
+        "description": "Extensive experience in Java development with multiple projects.",
+        "exceeds_requirement_by": "Yes",
+        "competitive_advantage": true
+      },
+      {
+        "area_name": "Backend Development",
+        "description": "Proven track record of delivering large-scale backend solutions.",
+        "exceeds_requirement_by": "Yes",
+        "competitive_advantage": true
+      },
+      {
+        "area_name": "Problem-Solving",
+        "description": "Recognized in interview feedback as a “great developer” with strong problem-solving abilities.",
+        "exceeds_requirement_by": "Yes",
+        "competitive_advantage": true
+      }
+    ],
+    "red_flags": [
+      {
+        "concern": "Lack of specific experience with Microservices architecture and containerization tools.",
+        "severity": "Medium",
+        "potential_impact": "Could affect ability to work with modern architectures.",
+        "mitigation_strategy": "Recommend training and certification in Microservices, Docker, and Kubernetes."
+      },
+      {
+        "concern": "Limited experience with CI/CD tools and Agile/Scrum environments.",
+        "severity": "Medium",
+        "potential_impact": "Could affect ability to integrate and deploy solutions efficiently.",
+        "mitigation_strategy": "Recommend training and certification in CI/CD tools and Agile/Scrum methodologies."
+      }
+    ],
+    "readiness_assessment": {
+      "overall_readiness": "High",
+      "readiness_score": 85,
+      "key_blockers": [
+        "Microservices architecture",
+        "Docker",
+        "Kubernetes",
+        "CI/CD tools",
+        "Agile/Scrum environments"
+      ],
+      "quick_wins": [
+        "Complete training and certification in Microservices architecture.",
+        "Gain hands-on experience with Docker and Kubernetes.",
+        "Learn CI/CD tools and Agile/Scrum methodologies."
+      ],
+      "long_term_development": [
+        "Continue to build experience with modern architectures and tools.",
+        "Stay updated with industry trends and best practices."
+      ],
+      "recommended_timeline": "3-6 months"
+    },
+    "total_required_skills": 10,
+    "matched_skills_count": 6,
+    "missing_skills_count": 4,
+    "match_percentage": 60,
+    "immediate_actions": [
+      "Highlight experience with Microservices architecture and containerization tools.",
+      "Include certifications related to Java and backend development.",
+      "Provide specific achievements and contributions in recent roles.",
+      "Expand on experience with CI/CD tools and Agile/Scrum methodologies."
+    ],
+    "skill_development_plan": [
+      "Enroll in online courses for Microservices architecture.",
+      "Complete Docker and Kubernetes training.",
+      "Learn CI/CD tools and Agile/Scrum methodologies.",
+      "Obtain relevant certifications."
+    ],
+    "interview_focus_areas": [
+      "Explain experience with Microservices architecture.",
+      "Discuss familiarity with Docker and Kubernetes.",
+      "Describe experience with CI/CD tools and Agile/Scrum environments.",
+      "Highlight problem-solving abilities and past project achievements."
+    ],
+    "status": "completed",
+    "timestamp": "2024-06-18T12:34:56Z",
+    "processing_time": "0.023456",
+    "agent_version": "1.0.0"
+  },
+  "question_generator": {
+    "questions": [
+      {
+        "question_id": "CK-001",
+        "category": "CORE KNOWLEDGE",
+        "difficulty_level": "Medium",
+        "question_text": "Can you explain the key differences between Java 8 and more recent Java versions, and how these changes might impact application development?",
+        "context": "The JD requires Java 8 or higher, and the candidate has extensive Java experience.",
+        "expected_answer": "A strong answer should cover major Java evolution points including: Lambda expressions and functional interfaces in Java 8, Module System in Java 9, Local-Variable Type Inference in Java 10, Switch expressions in Java 12-13, Records and Pattern Matching in Java 14-16, Sealed Classes in Java 17, and performance improvements across versions. The candidate should articulate how these features improve code quality, maintainability, and performance.",
+        "evaluation_rubric": {
+          "clarity": "Evaluates ability to clearly articulate complex Java evolution concepts",
+          "accuracy": "Assesses technical correctness of Java version features described",
+          "depth": "Measures understanding of practical implications beyond superficial knowledge",
+          "practical_application": "Evaluates ability to connect language features to real development scenarios"
+        },
+        "scoring_guide": {
+          "score_1": "Shows minimal knowledge of Java versions beyond Java 8, unable to identify key differences",
+          "score_2": "Names a few features of newer Java versions but lacks depth in understanding their significance",
+          "score_3": "Demonstrates solid understanding of major Java evolution points with some practical insights",
+          "score_4": "Provides comprehensive overview of Java evolution with clear practical application examples",
+          "score_5": "Exhibits expert-level understanding with nuanced insights into how features impact architecture decisions and development practices"
+        },
+        "follow_up_questions": [
+          "Which Java features have you personally used in production environments?",
+          "How would you approach migrating a Java 8 application to a more recent version?"
+        ],
+        "time_allocation": 5,
+        "skills_assessed": [
+          "Java Core Knowledge",
+          "Language Evolution Understanding",
+          "Technical Depth"
+        ]
+      },
+      {
+        "question_id": "CK-002",
+        "category": "CORE KNOWLEDGE",
+        "difficulty_level": "Medium",
+        "question_text": "Explain the concept of multithreading in Java. What synchronization mechanisms are available in Java, and when would you use each one?",
+        "context": "The candidate lists multithreading as a core skill, and enterprise applications often require concurrent processing.",
+        "expected_answer": "A strong answer should cover: Thread creation approaches (extending Thread vs implementing Runnable), thread lifecycle, synchronization keywords (synchronized), locks (ReentrantLock, ReadWriteLock), atomic variables, thread-safe collections, CountDownLatch, CyclicBarrier, Semaphore, ThreadLocal, and CompletableFuture. The candidate should explain common concurrency issues (race conditions, deadlocks, thread starvation) and when to use different synchronization mechanisms based on performance needs, access patterns, and thread safety requirements.",
+        "evaluation_rubric": {
+          "clarity": "Measures ability to explain complex concurrent programming concepts clearly",
+          "accuracy": "Evaluates technical correctness of multithreading concepts described",
+          "depth": "Assesses understanding of concurrency challenges and appropriate solutions",
+          "practical_application": "Gauges ability to select appropriate mechanisms for different scenarios"
+        },
+        "scoring_guide": {
+          "score_1": "Shows only basic awareness of threads with limited understanding of synchronization",
+          "score_2": "Describes basic thread creation and synchronized keyword but lacks deeper knowledge",
+          "score_3": "Demonstrates good understanding of multiple synchronization mechanisms and their use cases",
+          "score_4": "Provides comprehensive coverage of Java concurrency utilities with practical scenarios",
+          "score_5": "Exhibits expert-level understanding with nuanced insights into performance implications and advanced concurrency patterns"
+        },
+        "follow_up_questions": [
+          "How would you troubleshoot a deadlock situation in a production environment?",
+          "What's your experience with the Java Memory Model and how it impacts thread safety?"
+        ],
+        "time_allocation": 5,
+        "skills_assessed": [
+          "Multithreading",
+          "Concurrency Control",
+          "Performance Optimization"
+        ]
+      },
+      {
+        "question_id": "PS-001",
+        "category": "PRACTICAL SKILLS",
+        "difficulty_level": "Medium",
+        "question_text": "Describe how you would design and implement a rate limiting system for a RESTful API. What approaches would you consider, and how would you handle rate limit exceeding scenarios?",
+        "context": "The JD emphasizes RESTful API design and scalability, which often requires implementing rate limiting.",
+        "expected_answer": "A strong answer should cover: Different rate limiting algorithms (Token Bucket, Leaky Bucket, Fixed Window, Sliding Window), implementation approaches (in-memory vs. distributed using Redis/similar), configuration parameters (limits per endpoint/user/IP, time windows), handling rate limit exceeding (HTTP 429 responses, retry headers, backoff strategies), monitoring and alerting for abuse patterns, and graceful degradation strategies. The candidate should consider scaling challenges in distributed environments and discuss trade-offs between accuracy and performance.",
+        "evaluation_rubric": {
+          "clarity": "Evaluates ability to articulate a complex system design clearly",
+          "accuracy": "Assesses technical correctness of rate limiting approaches described",
+          "depth": "Measures understanding of implementation challenges and solutions",
+          "practical_application": "Gauges ability to implement a solution that balances security and user experience"
+        },
+        "scoring_guide": {
+          "score_1": "Provides only vague understanding of rate limiting with no concrete implementation ideas",
+          "score_2": "Describes basic rate limiting concepts but lacks detailed implementation knowledge",
+          "score_3": "Demonstrates solid understanding of rate limiting algorithms and implementation approaches",
+          "score_4": "Provides comprehensive design with consideration for distributed environments and edge cases",
+          "score_5": "Exhibits expert-level design thinking with nuanced insights into scaling challenges, fault tolerance, and monitoring considerations"
+        },
+        "follow_up_questions": [
+          "How would your implementation change in a microservices architecture?",
+          "How would you test the effectiveness of your rate limiting system?"
+        ],
+        "time_allocation": 7,
+        "skills_assessed": [
+          "API Design",
+          "System Design",
+          "Scalability",
+          "Security"
+        ]
+      },
+      {
+        "question_id": "PS-002",
+        "category": "PRACTICAL SKILLS",
+        "difficulty_level": "Hard",
+        "question_text": "You need to optimize a Java application that is experiencing performance issues with high memory usage and frequent garbage collection pauses. Describe your approach to diagnosing and resolving these issues.",
+        "context": "The candidate mentions experience with garbage collection tuning in their CV.",
+        "expected_answer": "A strong answer should cover: Profiling tools (JVisualVM, JProfiler, YourKit), heap dump analysis, GC log analysis, memory leak detection, common memory issues (large object allocations, excessive temp objects, caching issues), JVM tuning parameters (heap size, GC algorithm selection), application-level optimizations (object pooling, reducing allocations, weak references), monitoring strategies, and testing methodology to validate improvements. The candidate should demonstrate a systematic approach to performance diagnosis and optimization.",
+        "evaluation_rubric": {
+          "clarity": "Evaluates ability to articulate a structured performance optimization approach",
+          "accuracy": "Assesses technical correctness of JVM internals and optimization techniques",
+          "depth": "Measures understanding of memory management and garbage collection mechanisms",
+          "practical_application": "Gauges ability to apply diagnostic tools and optimization techniques effectively"
+        },
+        "scoring_guide": {
+          "score_1": "Shows minimal knowledge of JVM internals with basic suggestions like 'increase heap size'",
+          "score_2": "Names some tools or techniques but lacks a coherent methodology for diagnosing issues",
+          "score_3": "Demonstrates solid approach to performance tuning with appropriate tools and techniques",
+          "score_4": "Provides comprehensive methodology with detailed explanations of diagnosis steps and targeted optimizations",
+          "score_5": "Exhibits expert-level understanding with nuanced insights into GC algorithms, memory patterns, and advanced optimization techniques"
+        },
+        "follow_up_questions": [
+          "What specific GC tuning parameters have you found most effective in production environments?",
+          "How would you approach performance optimization differently between a web application and a batch processing system?"
+        ],
+        "time_allocation": 8,
+        "skills_assessed": [
+          "Performance Optimization",
+          "Garbage Collection",
+          "Memory Management",
+          "Troubleshooting"
+        ]
+      },
+      {
+        "question_id": "TT-001",
+        "category": "TOOLS & TECHNOLOGY",
+        "difficulty_level": "Medium",
+        "question_text": "Describe your experience with the Spring Framework ecosystem. Which components have you used, and how have they helped solve specific development challenges?",
+        "context": "The JD explicitly requires solid understanding of Spring Framework, while the CV mentions it implicitly.",
+        "expected_answer": "A strong answer should cover: Spring Core (DI, IoC), Spring Boot, Spring MVC, Spring Data, Spring Security, Spring Cloud, and testing support. The candidate should explain how these components solve challenges like configuration complexity, database access, API development, security implementation, and microservices communication. Examples of real-world usage should demonstrate depth of understanding rather than just familiarity with terms.",
+        "evaluation_rubric": {
+          "clarity": "Evaluates ability to explain Spring concepts and their practical applications",
+          "accuracy": "Assesses technical correctness of Spring component descriptions",
+          "depth": "Measures understanding of Spring's value beyond surface-level usage",
+          "practical_application": "Gauges ability to connect Spring features to specific development challenges"
+        },
+        "scoring_guide": {
+          "score_1": "Shows only name recognition of Spring with minimal understanding of components",
+          "score_2": "Describes basic Spring usage but lacks depth in understanding architectural benefits",
+          "score_3": "Demonstrates solid experience with multiple Spring components and their practical applications",
+          "score_4": "Provides comprehensive coverage of Spring ecosystem with clear examples of solving complex challenges",
+          "score_5": "Exhibits expert-level understanding with nuanced insights into Spring internals, advanced configurations, and architectural patterns"
+        },
+        "follow_up_questions": [
+          "How do you approach Spring Boot application configuration for different environments?",
+          "What challenges have you encountered with Spring and how did you overcome them?"
+        ],
+        "time_allocation": 6,
+        "skills_assessed": [
+          "Spring Framework",
+          "Architecture",
+          "Backend Development"
+        ]
+      },
+      {
+        "question_id": "TT-002",
+        "category": "TOOLS & TECHNOLOGY",
+        "difficulty_level": "Medium",
+        "question_text": "Explain your approach to implementing CI/CD pipelines for a Java application. What tools would you use, and how would you structure the pipeline stages?",
+        "context": "The JD requires CI/CD tools experience, which was identified as a potential gap in the candidate's profile.",
+        "expected_answer": "A strong answer should cover: CI/CD tool selection (Jenkins, GitHub Actions, GitLab CI, etc.), pipeline structure (build, test, quality analysis, security scan, deployment stages), build tools integration (Maven/Gradle), test automation (unit, integration, E2E), code quality gates (SonarQube), artifact management, deployment strategies (blue-green, canary, rolling), and environment management. The candidate should demonstrate understanding of pipeline as code, secrets management, and how CI/CD improves software quality and delivery speed.",
+        "evaluation_rubric": {
+          "clarity": "Evaluates ability to articulate a comprehensive CI/CD approach",
+          "accuracy": "Assesses technical correctness of CI/CD concepts and tools described",
+          "depth": "Measures understanding of CI/CD best practices and implementation challenges",
+          "practical_application": "Gauges ability to design pipelines appropriate for different project needs"
+        },
+        "scoring_guide": {
+          "score_1": "Shows only basic awareness of CI/CD concepts with limited tool knowledge",
+          "score_2": "Describes some CI/CD components but lacks a coherent end-to-end pipeline vision",
+          "score_3": "Demonstrates solid understanding of CI/CD pipeline structure with appropriate tool selection",
+          "score_4": "Provides comprehensive CI/CD strategy with considerations for quality, security, and deployment",
+          "score_5": "Exhibits expert-level pipeline design with nuanced insights into advanced techniques, optimizations, and measurement of CI/CD effectiveness"
+        },
+        "follow_up_questions": [
+          "How do you handle database schema changes in your CI/CD pipeline?",
+          "What strategies do you use to keep CI/CD pipeline execution times manageable?"
+        ],
+        "time_allocation": 6,
+        "skills_assessed": ["CI/CD", "DevOps", "Automation", "Build Management"]
+      },
+      {
+        "question_id": "SP-001",
+        "category": "SCENARIO-BASED / PROBLEM-SOLVING",
+        "difficulty_level": "Hard",
+        "question_text": "Your team needs to migrate a monolithic Java application to a microservices architecture. Describe your approach to this migration, including how you would identify service boundaries, handle data consistency, and manage the transition.",
+        "context": "The JD mentions microservices architecture as a nice-to-have, which was identified as a skill gap.",
+        "expected_answer": "A strong answer should cover: Analysis of the monolith (code dependencies, business domains, data access patterns), service boundary identification strategies (DDD, bounded contexts), migration patterns (strangler pattern, parallel implementations), data management approaches (database per service vs. shared database, event sourcing, CQRS), inter-service communication (synchronous vs. asynchronous), handling distributed transactions, API gateway implementation, service discovery, deployment strategies, and monitoring. The candidate should demonstrate awareness of challenges and propose pragmatic solutions with a phased approach.",
+        "evaluation_rubric": {
+          "clarity": "Evaluates ability to articulate a complex architectural transformation strategy",
+          "accuracy": "Assesses technical correctness of microservices concepts and migration patterns",
+          "depth": "Measures understanding of migration challenges and appropriate solutions",
+          "practical_application": "Gauges ability to design a realistic migration path with minimal disruption"
+        },
+        "scoring_guide": {
+          "score_1": "Shows superficial understanding of microservices with unrealistic 'big bang' migration approach",
+          "score_2": "Describes some microservices concepts but lacks comprehensive migration strategy",
+          "score_3": "Demonstrates solid understanding of microservices architecture and incremental migration approach",
+          "score_4": "Provides comprehensive migration strategy addressing technical, organizational, and operational aspects",
+          "score_5": "Exhibits expert-level architectural thinking with nuanced insights into trade-offs, potential pitfalls, and strategies to maximize business value throughout transition"
+        },
+        "follow_up_questions": [
+          "How would you handle authentication and authorization across microservices?",
+          "What metrics would you monitor to ensure the migration is successful?"
+        ],
+        "time_allocation": 10,
+        "skills_assessed": [
+          "Microservices Architecture",
+          "System Design",
+          "Migration Planning",
+          "Distributed Systems"
+        ]
+      },
+      {
+        "question_id": "SP-002",
+        "category": "SCENARIO-BASED / PROBLEM-SOLVING",
+        "difficulty_level": "Medium",
+        "question_text": "You're tasked with integrating a new third-party payment service into your Java application. The service occasionally experiences downtime and high latency. Design a robust integration that ensures reliability for your users.",
+        "context": "The JD mentions RESTful API design and integration, which relates to this scenario.",
+        "expected_answer": "A strong answer should cover: Resilient integration design (circuit breaker pattern, retry mechanisms, fallbacks), timeout configurations, asynchronous processing for non-critical operations, queueing systems for transaction persistence, idempotency handling, comprehensive logging and monitoring, error handling strategies (user-facing vs. internal), alerting mechanisms, and business continuity plans (alternative payment methods during outages). The candidate should demonstrate understanding of distributed system challenges and how to design for partial failures.",
+        "evaluation_rubric": {
+          "clarity": "Evaluates ability to articulate a complex integration strategy",
+          "accuracy": "Assesses technical correctness of resilience patterns and approaches",
+          "depth": "Measures understanding of distributed system failure modes and mitigation strategies",
+          "practical_application": "Gauges ability to design practical solutions that prioritize user experience"
+        },
+        "scoring_guide": {
+          "score_1": "Shows minimal awareness of resilient design with simplistic integration approach",
+          "score_2": "Describes basic retry logic but lacks comprehensive resilience strategy",
+          "score_3": "Demonstrates solid understanding of resilience patterns and appropriate error handling",
+          "score_4": "Provides comprehensive integration design with detailed handling of various failure scenarios",
+          "score_5": "Exhibits expert-level design thinking with nuanced insights into cascading failures, recovery strategies, and business impact minimization"
+        },
+        "follow_up_questions": [
+          "How would you test the resilience of your integration?",
+          "What metrics would you monitor to detect and address integration issues proactively?"
+        ],
+        "time_allocation": 8,
+        "skills_assessed": [
+          "System Integration",
+          "Resilience Patterns",
+          "Error Handling",
+          "API Design"
+        ]
+      },
+      {
+        "question_id": "PP-001",
+        "category": "PROCESS & BEST PRACTICES",
+        "difficulty_level": "Medium",
+        "question_text": "Describe your approach to code reviews. What do you look for when reviewing others' code, and how do you handle disagreements about implementation approaches?",
+        "context": "The JD mentions code reviews as a responsibility, which is crucial for maintaining code quality.",
+        "expected_answer": "A strong answer should cover: Code review focus areas (functionality, performance, security, maintainability, test coverage), automated vs. manual reviews, constructive feedback techniques, balancing thoroughness with team velocity, establishing team standards and review checklists, knowledge sharing through reviews, handling disagreements professionally, review tools and integrations with CI/CD, and metrics for effective reviews. The candidate should demonstrate a balanced approach between technical rigor and team collaboration.",
+        "evaluation_rubric": {
+          "clarity": "Evaluates ability to articulate a comprehensive code review approach",
+          "accuracy": "Assesses understanding of code quality dimensions and review best practices",
+          "depth": "Measures recognition of both technical and interpersonal aspects of reviews",
+          "practical_application": "Gauges ability to implement effective review processes that improve code quality"
+        },
+        "scoring_guide": {
+          "score_1": "Shows minimal understanding of code reviews, focusing only on syntax or formatting",
+          "score_2": "Describes basic code review concepts but lacks depth in approach or conflict resolution",
+          "score_3": "Demonstrates solid review methodology with balanced technical and collaborative focus",
+          "score_4": "Provides comprehensive code review strategy addressing quality, team dynamics, and process efficiency",
+          "score_5": "Exhibits expert-level approach with nuanced insights into optimizing reviews for team growth, knowledge sharing, and continuous improvement"
+        },
+        "follow_up_questions": [
+          "How do you ensure code reviews don't become bottlenecks in the development process?",
+          "What strategies have you used to make code reviews a learning opportunity for junior developers?"
+        ],
+        "time_allocation": 5,
+        "skills_assessed": [
+          "Code Quality",
+          "Collaboration",
+          "Mentorship",
+          "Technical Leadership"
+        ]
+      },
+      {
+        "question_id": "PP-002",
+        "category": "PROCESS & BEST PRACTICES",
+        "difficulty_level": "Medium",
+        "question_text": "How do you approach working in an Agile/Scrum environment? Describe your experience with sprint planning, daily stand-ups, and retrospectives, and how you ensure delivery of high-quality software within these frameworks.",
+        "context": "The JD requires experience working in Agile/Scrum environments, which was identified as a potential gap.",
+        "expected_answer": "A strong answer should cover: Practical experience with Agile ceremonies (sprint planning, daily stand-ups, reviews, retrospectives), balancing technical debt with feature delivery, definition of done, estimation techniques, team collaboration approaches, adapting Agile practices to team needs, quality assurance within sprints, metrics for measuring team performance and health, and continuous improvement mindset. The candidate should demonstrate understanding of Agile principles beyond just following processes.",
+        "evaluation_rubric": {
+          "clarity": "Evaluates ability to articulate practical Agile implementation experience",
+          "accuracy": "Assesses understanding of Agile principles and Scrum framework",
+          "depth": "Measures recognition of challenges in Agile implementation and solutions",
+          "practical_application": "Gauges ability to adapt Agile practices to different team contexts"
+        },
+        "scoring_guide": {
+          "score_1": "Shows minimal understanding of Agile with superficial knowledge of ceremonies",
+          "score_2": "Describes basic Agile ceremonies but lacks insight into their purpose and value",
+          "score_3": "Demonstrates solid understanding of Agile practices with examples of practical application",
+          "score_4": "Provides comprehensive view of Agile implementation with focus on outcomes over processes",
+          "score_5": "Exhibits expert-level Agile thinking with nuanced insights into balancing process discipline with adaptability and continuous improvement"
+        },
+        "follow_up_questions": [
+          "How do you handle situations where technical debt conflicts with sprint commitments?",
+          "What strategies have you used to improve the effectiveness of retrospectives?"
+        ],
+        "time_allocation": 5,
+        "skills_assessed": [
+          "Agile Methodologies",
+          "Team Collaboration",
+          "Process Improvement",
+          "Software Delivery"
+        ]
+      }
+    ],
+    "category_summaries": [
+      {
+        "category": "CORE KNOWLEDGE",
+        "question_count": 2,
+        "total_time": 10,
+        "focus_areas": [
+          "Java Core Knowledge",
+          "Multithreading",
+          "Language Evolution"
+        ],
+        "rationale": "These questions validate the candidate's strong Java background while exploring depth of knowledge in critical areas required for the role."
+      },
+      {
+        "category": "PRACTICAL SKILLS",
+        "question_count": 2,
+        "total_time": 15,
+        "focus_areas": [
+          "API Design",
+          "Performance Optimization",
+          "System Design"
+        ],
+        "rationale": "These questions assess the candidate's ability to apply Java knowledge to real-world problems that are central to the role's responsibilities."
+      },
+      {
+        "category": "TOOLS & TECHNOLOGY",
+        "question_count": 2,
+        "total_time": 12,
+        "focus_areas": ["Spring Framework", "CI/CD", "DevOps"],
+        "rationale": "These questions target specific technologies mentioned in the JD, particularly focusing on areas where the candidate may have skill gaps."
+      },
+      {
+        "category": "SCENARIO-BASED / PROBLEM-SOLVING",
+        "question_count": 2,
+        "total_time": 18,
+        "focus_areas": [
+          "Microservices Architecture",
+          "System Integration",
+          "Resilience Patterns"
+        ],
+        "rationale": "These complex scenarios assess the candidate's architectural thinking and problem-solving abilities, particularly in areas identified as potential gaps."
+      },
+      {
+        "category": "PROCESS & BEST PRACTICES",
+        "question_count": 2,
+        "total_time": 10,
+        "focus_areas": ["Code Quality", "Agile Methodologies", "Collaboration"],
+        "rationale": "These questions evaluate the candidate's understanding of software development processes that are critical for team collaboration and code quality."
+      }
+    ],
+    "target_position": "Senior Java Developer",
+    "candidate_level": "Senior (16+ years experience)",
+    "total_interview_time": 65,
+    "interview_focus": [
+      "Validating deep Java expertise",
+      "Assessing architectural design capabilities",
+      "Evaluating knowledge of modern development practices",
+      "Identifying familiarity with technologies mentioned in JD"
+    ],
+    "strengths_to_validate": [
+      "Extensive Java development experience",
+      "Backend development expertise",
+      "Problem-solving abilities",
+      "RESTful API design experience"
+    ],
+    "gaps_to_assess": [
+      "Spring Framework depth of knowledge",
+      "Microservices architecture experience",
+      "CI/CD tools familiarity",
+      "Agile/Scrum methodology understanding",
+      "Container technologies (Docker/Kubernetes)"
+    ],
+    "red_flags_to_investigate": [
+      "Limited experience with modern Java ecosystem (Spring Boot, etc.)",
+      "Lack of exposure to CI/CD and DevOps practices",
+      "Potential gaps in microservices and containerization knowledge"
+    ],
+    "core_knowledge_count": 2,
+    "practical_skills_count": 2,
+    "tools_technology_count": 2,
+    "scenario_problem_solving_count": 2,
+    "process_best_practices_count": 2,
+    "interview_strategy": "This interview is designed to thoroughly evaluate the candidate's Java expertise while exploring potential gaps identified in the skill matching analysis. The questions progress from core knowledge validation to more complex scenarios that test architectural thinking. Special emphasis is placed on technologies and methodologies specifically mentioned in the job description that weren't clearly evidenced in the CV. The interview structure allows for comprehensive assessment while giving the candidate opportunities to demonstrate strengths in problem-solving and Java development.",
+    "key_decision_points": [
+      "Depth of Spring Framework knowledge (critical for role)",
+      "Understanding of microservices architecture concepts (even without direct experience)",
+      "Familiarity with CI/CD principles and practices (gap in CV)",
+      "Ability to articulate Agile methodologies and team processes",
+      "Architectural thinking and system design capabilities"
+    ],
+    "preparation_notes": [
+      "Review candidate's 16+ years of Java experience - focus questions on depth rather than basics",
+      "Be prepared to dig deeper on Spring Framework knowledge as it's critical for the role",
+      "Allow candidate to demonstrate problem-solving abilities highlighted in previous feedback",
+      "Consider experience with industrial systems may translate to enterprise-scale applications",
+      "Evaluate whether knowledge gaps (microservices, CI/CD) can be readily addressed through mentoring"
+    ],
+    "status": "completed",
+    "timestamp": null,
+    "processing_time": null,
+    "agent_version": "1.0.0"
+  }
+}

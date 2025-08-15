@@ -29,34 +29,34 @@ export default function QuestionGeneratorPage() {
         'PROCESS & BEST PRACTICES': 'Process & Best Practices'
       };
 
-      const scoringGuide = [
-        { stars: 1, description: apiQuestion.scoring_guide["1_star"] },
-        { stars: 2, description: apiQuestion.scoring_guide["2_star"] },
-        { stars: 3, description: apiQuestion.scoring_guide["3_star"] },
-        { stars: 4, description: apiQuestion.scoring_guide["4_star"] },
-        { stars: 5, description: apiQuestion.scoring_guide["5_star"] }
-      ];
+              const scoringGuide = [
+          { stars: 1, description: apiQuestion.scoring_guide.score_1 },
+          { stars: 2, description: apiQuestion.scoring_guide.score_2 },
+          { stars: 3, description: apiQuestion.scoring_guide.score_3 },
+          { stars: 4, description: apiQuestion.scoring_guide.score_4 },
+          { stars: 5, description: apiQuestion.scoring_guide.score_5 }
+        ];
 
-      const evaluationCriteria = [
-        apiQuestion.evaluation_rubric.clarity,
-        apiQuestion.evaluation_rubric.accuracy,
-        apiQuestion.evaluation_rubric.depth,
-        apiQuestion.evaluation_rubric.practical_application
-      ];
+        const evaluationCriteria = [
+          apiQuestion.evaluation_rubric.clarity,
+          apiQuestion.evaluation_rubric.accuracy,
+          apiQuestion.evaluation_rubric.depth,
+          apiQuestion.evaluation_rubric.practical_application
+        ];
 
-      return {
-        id: apiQuestion.id,
-        question: apiQuestion.question_text,
-        category: categoryMap[apiQuestion.category] || 'Core Knowledge',
-        expectedAnswer: apiQuestion.expected_answer,
-        evaluationCriteria,
-        scoringGuide
-      };
+        return {
+          id: apiQuestion.question_id,
+          question: apiQuestion.question_text,
+          category: categoryMap[apiQuestion.category] || 'Core Knowledge',
+          expectedAnswer: apiQuestion.expected_answer,
+          evaluationCriteria,
+          scoringGuide
+        };
     });
   }, [questionData]);
   
   // Get match score from skill analysis data
-  const matchScore = skillAnalysisData?.overall_matching_score || 0;
+  const matchScore = skillAnalysisData?.overall_match_score || 0;
   const [activeTab, setActiveTab] = useState<'Core Knowledge' | 'Practical Skills' | 'Tools & Technology' | 'Scenario-Based' | 'Process & Best Practices'>('Core Knowledge');
   const [expandedQuestions, setExpandedQuestions] = useState<Set<string>>(new Set());
 

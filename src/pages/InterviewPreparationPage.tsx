@@ -12,7 +12,6 @@ import { prepareInterview } from '../services/apiService';
 // Hardcoded dropdown options
 const JOB_TITLES = ['Software Engineer', 'Testing Engineer', 'Business Analyst'];
 const SENIORITY_LEVELS = ['Junior', 'Senior', 'Principle'];
-const INTERVIEW_SIMULATORS = ['Tough Technical Lead', 'Engineering Manager'];
 
 export default function InterviewPreparationPage() {
   const navigate = useNavigate();
@@ -34,7 +33,6 @@ export default function InterviewPreparationPage() {
   const [formData, setFormData] = useState({
     title: candidateInfo.title || '',
     seniorityLevel: candidateInfo.seniorityLevel || '',
-    interviewSimulator: candidateInfo.interviewSimulator || '',
     jobDescription: jobDescription || '',
     resume: resume || ''
   });
@@ -55,8 +53,7 @@ export default function InterviewPreparationPage() {
     setFormData(prev => ({
       ...prev,
       title: prev.title || JOB_TITLES[0],
-      seniorityLevel: prev.seniorityLevel || SENIORITY_LEVELS[0],
-      interviewSimulator: prev.interviewSimulator || INTERVIEW_SIMULATORS[0]
+      seniorityLevel: prev.seniorityLevel || SENIORITY_LEVELS[0]
     }));
   }, []);
 
@@ -171,23 +168,27 @@ export default function InterviewPreparationPage() {
       name: '', // Name will be extracted from resume analysis
       title: formData.title,
       seniorityLevel: formData.seniorityLevel,
-      interviewSimulator: formData.interviewSimulator
+      interviewSimulator: ''
     });
     setJobDescription(formData.jobDescription);
     setResume(formData.resume);
 
     // Call the new API with only job description and resume file
     setIsLoading(true);
+    
+    // Navigate to analysis page immediately to show loading state
+    navigate('/analysis');
+    
     try {
       const analysisData = await prepareInterview(formData.jobDescription, uploadedResumeFile);
       
       // Update candidate info from CV analysis if available
       if (analysisData.cv_analysis?.candidate_profile) {
         setCandidateInfo({
-          name: analysisData.cv_analysis.candidate_profile.name,
+          name: analysisData.cv_analysis.candidate_profile.full_name,
           title: formData.title, // Keep the selected title from form
           seniorityLevel: formData.seniorityLevel, // Keep the selected seniority level from form
-          interviewSimulator: formData.interviewSimulator
+          interviewSimulator: ''
         });
       }
       
@@ -203,11 +204,11 @@ export default function InterviewPreparationPage() {
         setCVAnalysisData(analysisData.cv_analysis);
       }
 
-      // Navigate to analysis page
-      navigate('/analysis');
     } catch (error) {
       console.error('Error:', error);
       alert('Error processing your request. Please check your connection and try again.');
+      // Navigate back to preparation page on error
+      navigate('/preparation');
     } finally {
       setIsLoading(false);
     }
@@ -217,7 +218,6 @@ export default function InterviewPreparationPage() {
     setFormData({
       title: JOB_TITLES[0],
       seniorityLevel: SENIORITY_LEVELS[0],
-      interviewSimulator: INTERVIEW_SIMULATORS[0],
       jobDescription: '',
       resume: ''
     });
@@ -379,27 +379,7 @@ export default function InterviewPreparationPage() {
               </div>
             </div>
 
-            {/* Row 2: Interview Simulator (optional) */}
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-700">
-                Interview Simulator <span className="text-gray-400">(optional)</span>
-              </label>
-              <Select 
-                value={formData.interviewSimulator} 
-                onValueChange={(value) => handleInputChange('interviewSimulator', value)}
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="Select interview style..." />
-                </SelectTrigger>
-                <SelectContent>
-                  {INTERVIEW_SIMULATORS.map((simulator) => (
-                    <SelectItem key={simulator} value={simulator}>
-                      {simulator}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 pt-4">

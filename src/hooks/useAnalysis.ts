@@ -15,35 +15,37 @@ export const useAnalysis = () => {
     
     return {
       candidate: {
-        name: 'Candidate',
-        title: skillMatcher.level_specific_gap_analysis.candidate_level,
-        seniorityLevel: skillMatcher.level_specific_gap_analysis.candidate_level
+        name: cvAnalysisData?.candidate_profile?.full_name || 'Candidate',
+        title: skillMatcher.level_gap_analysis?.candidate_current_level || 'Not specified',
+        seniorityLevel: skillMatcher.level_gap_analysis?.candidate_current_level || 'Not specified'
       },
-      matchScore: skillMatcher.overall_matching_score,
-      summary: `Overall readiness: ${skillMatcher.readiness_assessment.readiness_level}. Readiness score: ${skillMatcher.readiness_assessment.readiness_score}%`,
+      matchScore: skillMatcher.overall_match_score,
+      summary: `Overall readiness: ${skillMatcher.readiness_assessment.overall_readiness}. Readiness score: ${skillMatcher.readiness_assessment.readiness_score}%`,
       skills: {
-        matched: skillMatcher.matched_skills.map(skill => skill.skill),
+        matched: skillMatcher.matched_skills.map(skill => skill.skill_name),
         extra: skillMatcher.strong_areas.map(area => area.description),
-        missing: skillMatcher.missing_critical_skills.map(skill => skill.skill),
-        gaps: skillMatcher.level_specific_gap_analysis.competency_gaps.map(gap => `${gap.area}: ${gap.gap_description}`)
+        missing: skillMatcher.missing_critical_skills.map(skill => skill.skill_name),
+        gaps: skillMatcher.level_gap_analysis?.development_areas || []
       },
       criteriaMatch: [
         ...skillMatcher.matched_skills.map(skill => ({
-          requirement: skill.skill,
-          evidence: `Confidence: ${skill.confidence_score}% - ${skill.match_quality}`,
+          requirement: skill.skill_name,
+          evidence: skill.evidence.join('; '),
           status: 'matched' as const
         })),
         ...skillMatcher.missing_critical_skills.map(skill => ({
-          requirement: skill.skill,
-          evidence: skill.learning_recommendation,
+          requirement: skill.skill_name,
+          evidence: skill.suggested_learning_path,
           status: 'missing' as const
         }))
       ],
       education: {
-        degree: cvAnalysisData?.education?.degree || 'Not specified',
-        certifications: cvAnalysisData?.certifications || []
+        degree: Array.isArray(cvAnalysisData?.education) && cvAnalysisData.education.length > 0 
+          ? cvAnalysisData.education[0].degree || 'Not specified' 
+          : 'Not specified',
+        certifications: cvAnalysisData?.technical_skills?.certifications || []
       },
-      redFlags: skillMatcher.red_flags.map(flag => `${flag.issue} (${flag.severity_level} severity)`)
+      redFlags: skillMatcher.red_flags.map(flag => `${flag.concern} (${flag.severity} severity): ${flag.potential_impact}`)
     };
   }, [skillAnalysisData, cvAnalysisData]);
 
