@@ -1,0 +1,468 @@
+{
+    "status": "completed",
+    "execution_time": 119.05088067054749,
+    "timestamp": "2025-08-14 23:55:18",
+    "skill_matcher": {
+        "overall_matching_score": 85,
+        "matched_skills": [
+            {
+                "skill": "Java",
+                "confidence_score": 95,
+                "match_quality_assessment": "High"
+            },
+            {
+                "skill": "Spring Framework",
+                "confidence_score": 70,
+                "match_quality_assessment": "Moderate"
+            },
+            {
+                "skill": "RESTful API design and integration",
+                "confidence_score": 85,
+                "match_quality_assessment": "High"
+            },
+            {
+                "skill": "Relational databases",
+                "confidence_score": 80,
+                "match_quality_assessment": "High"
+            },
+            {
+                "skill": "CI/CD tools",
+                "confidence_score": 60,
+                "match_quality_assessment": "Moderate"
+            },
+            {
+                "skill": "Agile/Scrum",
+                "confidence_score": 85,
+                "match_quality_assessment": "High"
+            },
+            {
+                "skill": "English communication skills",
+                "confidence_score": 90,
+                "match_quality_assessment": "High"
+            }
+        ],
+        "missing_critical_skills": [
+            {
+                "skill": "Microservices architecture",
+                "impact_level": "High",
+                "learning_recommendation": "Recommend taking a course on Microservices architecture and gaining practical experience through projects."
+            },
+            {
+                "skill": "Docker, Kubernetes",
+                "impact_level": "Medium",
+                "learning_recommendation": "Recommend completing a certification course on Docker and Kubernetes and working on containerized applications."
+            },
+            {
+                "skill": "Cloud platforms (AWS, Azure, GCP)",
+                "impact_level": "Medium",
+                "learning_recommendation": "Recommend gaining experience with at least one cloud platform through hands-on projects or courses."
+            }
+        ],
+        "level_specific_gap_analysis": {
+            "candidate_level": "Senior",
+            "target_position_level": "Senior",
+            "competency_gaps": [
+                {
+                    "area": "Cloud platforms and container/orchestration tools",
+                    "gap_description": "Limited experience with cloud platforms and container/orchestration tools."
+                }
+            ]
+        },
+        "strong_areas": [
+            {
+                "area": "Backend development with Java",
+                "description": "Extensive experience in Java and backend development with a proven track record of delivering enterprise-scale solutions."
+            },
+            {
+                "area": "Hardware-software integration",
+                "description": "Experience with hardware-software integration and industrial automation systems."
+            },
+            {
+                "area": "Agile/Scrum methodologies",
+                "description": "Experience working in Agile/Scrum environments."
+            }
+        ],
+        "red_flags": [
+            {
+                "issue": "Inconsistent year details in work experience",
+                "severity_level": "Medium"
+            },
+            {
+                "issue": "Lack of specific details on cloud platforms and container/orchestration tools",
+                "severity_level": "Medium"
+            }
+        ],
+        "readiness_assessment": {
+            "readiness_level": "High",
+            "readiness_score": 85,
+            "blockers": [
+                {
+                    "blocker": "Lack of experience with Microservices architecture, Docker, Kubernetes, and cloud platforms.",
+                    "development_timeline": "3-6 months to gain proficiency in missing areas."
+                }
+            ],
+            "development_timeline": "3-6 months to gain proficiency in missing areas."
+        }
+    },
+    "question_generator": {
+        "interview_questions": [
+            {
+                "question_id": "CK-001",
+                "category": "CORE KNOWLEDGE",
+                "difficulty": "Medium",
+                "question_text": "Given your extensive experience with Java, can you explain how Java's garbage collection works and some strategies you've implemented for tuning garbage collection in high-throughput enterprise applications?",
+                "expected_answer": "A strong answer should cover: (1) Different garbage collection algorithms in JVM (Serial, Parallel, CMS, G1GC, ZGC) (2) Memory generations (Young/Eden, Survivor spaces, Old/Tenured) (3) GC tuning parameters like heap size configurations (-Xms, -Xmx), survivor ratio, etc. (4) How to analyze GC logs to identify issues (5) Real-world example of a GC tuning problem they solved and the measurable performance improvement achieved (6) Trade-offs between throughput, latency, and footprint in GC tuning decisions.",
+                "evaluation_rubric": {
+                    "clarity": "Can the candidate articulate complex JVM internals clearly?",
+                    "accuracy": "Is the technical explanation of GC processes correct?",
+                    "depth": "Does the answer demonstrate deep understanding beyond surface knowledge?",
+                    "practical_application": "Has the candidate actually applied this knowledge in production?"
+                },
+                "scoring_guide": {
+                    "1_star": "Basic understanding of garbage collection with no practical tuning experience",
+                    "2_star": "Can explain major GC algorithms but limited experience with tuning",
+                    "3_star": "Good understanding of GC mechanisms and some tuning experience",
+                    "4_star": "In-depth knowledge of GC internals with documented tuning experience",
+                    "5_star": "Expert-level understanding with proven optimization techniques and measured performance improvements"
+                },
+                "time_allocation": "5-7 minutes",
+                "skills_assessed": [
+                    "Java internals",
+                    "Performance optimization",
+                    "Memory management"
+                ],
+                "follow_up_questions": [
+                    "How would you approach diagnosing an OutOfMemoryError in a production environment?",
+                    "What changes have you seen in garbage collection approaches in recent Java versions?"
+                ]
+            },
+            {
+                "question_id": "CK-002",
+                "category": "CORE KNOWLEDGE",
+                "difficulty": "Hard",
+                "question_text": "You mentioned experience with multithreading in Java. Can you explain the Java Memory Model, how it ensures thread safety, and common concurrency patterns you've implemented in your projects?",
+                "expected_answer": "A comprehensive answer should cover: (1) Java Memory Model fundamentals including happens-before relationships (2) Synchronization primitives (synchronized, volatile, locks) (3) Thread safety mechanisms (immutability, thread confinement, synchronized collections, atomic classes) (4) Higher-level concurrency utilities (ExecutorService, CompletableFuture, ForkJoinPool) (5) Common concurrency patterns they've personally implemented (producer-consumer, read-write locks, etc.) (6) Approaches to deadlock prevention and detection (7) Real examples from their experience debugging concurrency issues.",
+                "evaluation_rubric": {
+                    "clarity": "Can the candidate explain complex concurrency concepts clearly?",
+                    "accuracy": "Is the technical explanation of the Java Memory Model correct?",
+                    "depth": "Does the answer show deep understanding of concurrency patterns?",
+                    "practical_application": "Has the candidate implemented thread-safe systems in production?"
+                },
+                "scoring_guide": {
+                    "1_star": "Basic understanding of threads with no knowledge of JMM specifics",
+                    "2_star": "Knows synchronization primitives but limited pattern implementation",
+                    "3_star": "Good understanding of JMM and common concurrency utilities",
+                    "4_star": "In-depth knowledge with examples of implemented patterns and solved issues",
+                    "5_star": "Expert-level understanding of JMM internals, patterns, and demonstrated ability to design complex thread-safe systems"
+                },
+                "time_allocation": "7-10 minutes",
+                "skills_assessed": [
+                    "Java concurrency",
+                    "Multithreading",
+                    "System design"
+                ],
+                "follow_up_questions": [
+                    "How has your approach to concurrency changed with Java's newer versions?",
+                    "How would you design a thread-safe caching solution with high read throughput?"
+                ]
+            },
+            {
+                "question_id": "PS-001",
+                "category": "PRACTICAL SKILLS",
+                "difficulty": "Medium",
+                "question_text": "Based on your experience with the Coca-Cola Africa project, walk me through how you would design a new RESTful API for an environmental data tracking system. Focus on resource modeling, endpoint design, authentication, and handling large volumes of time-series data efficiently.",
+                "expected_answer": "A strong answer should include: (1) RESTful resource modeling approach (entities, collections, relationships) (2) Clear URI structure and naming conventions (3) Proper HTTP method usage (GET, POST, PUT, DELETE, etc.) (4) Authentication and authorization strategy (OAuth 2.0, API keys, JWT) (5) Pagination, filtering, and sorting strategies for large datasets (6) Handling time-series data efficiently (compression, aggregation, partitioning) (7) API versioning approach (8) Documentation strategy (OpenAPI/Swagger) (9) Rate limiting and throttling considerations (10) Caching strategy for improved performance.",
+                "evaluation_rubric": {
+                    "clarity": "Is the API design approach clearly explained and logical?",
+                    "accuracy": "Does the design follow RESTful principles correctly?",
+                    "depth": "Does the answer address advanced concerns like scaling and security?",
+                    "practical_application": "Is the solution practical for real-world implementation?"
+                },
+                "scoring_guide": {
+                    "1_star": "Basic understanding of REST with significant gaps in design principles",
+                    "2_star": "Acceptable resource modeling but inadequate handling of advanced concerns",
+                    "3_star": "Good API design with solid authentication and basic scaling considerations",
+                    "4_star": "Comprehensive design addressing most concerns with thoughtful trade-offs",
+                    "5_star": "Expert design with advanced considerations for performance, security, and maintainability"
+                },
+                "time_allocation": "10-12 minutes",
+                "skills_assessed": [
+                    "API design",
+                    "RESTful architecture",
+                    "System design",
+                    "Data modeling"
+                ],
+                "follow_up_questions": [
+                    "How would your design change if this system needed near real-time data processing?",
+                    "What strategies would you employ to ensure this API can scale to handle thousands of bottling plants?"
+                ]
+            },
+            {
+                "question_id": "PS-002",
+                "category": "PRACTICAL SKILLS",
+                "difficulty": "Hard",
+                "question_text": "You mentioned experience with Java Struts, JSP, and Servlets. How would you modernize a legacy monolithic application built with these technologies to a more maintainable architecture using Spring Boot and potentially microservices? Please outline your migration strategy, challenges, and how you'd ensure zero downtime.",
+                "expected_answer": "A comprehensive answer should include: (1) Assessment strategy for the legacy codebase (2) Incremental migration approach versus complete rewrite trade-offs (3) Strangler pattern implementation details (4) Service boundary identification methodology (5) Database migration strategy (6) Testing approach for ensuring functional equivalence (7) Feature flagging for safe deployment (8) Blue/green or canary deployment strategies (9) Monitoring and observability considerations (10) Team structure and knowledge transfer approach (11) Specific Spring Boot features that replace legacy functionality (12) Timeline and risk management considerations.",
+                "evaluation_rubric": {
+                    "clarity": "Is the migration strategy clearly articulated and logical?",
+                    "accuracy": "Are the technical approaches for migration sound and current?",
+                    "depth": "Does the answer address both technical and organizational challenges?",
+                    "practical_application": "Is the solution realistic and implementable?"
+                },
+                "scoring_guide": {
+                    "1_star": "Suggests complete rewrite with limited understanding of migration strategies",
+                    "2_star": "Basic understanding of modernization but missing critical considerations",
+                    "3_star": "Solid incremental approach with good technical foundation but some gaps",
+                    "4_star": "Comprehensive strategy addressing most technical and organizational challenges",
+                    "5_star": "Expert migration roadmap with risk mitigation, business continuity planning, and clear technical path"
+                },
+                "time_allocation": "12-15 minutes",
+                "skills_assessed": [
+                    "Legacy migration",
+                    "Spring Boot",
+                    "Architecture design",
+                    "Project planning"
+                ],
+                "follow_up_questions": [
+                    "How would you handle sessions and state management during the migration?",
+                    "What specific Spring Boot features would you leverage to improve performance over the legacy system?"
+                ]
+            },
+            {
+                "question_id": "TT-001",
+                "category": "TOOLS & TECHNOLOGY",
+                "difficulty": "Medium",
+                "question_text": "Describe your experience with Spring Framework. How have you leveraged Spring Boot, Spring Data, and other Spring components in your previous projects? What specific advantages did they provide over alternative approaches?",
+                "expected_answer": "A strong answer should include: (1) Specific Spring modules used (Boot, Data, Security, Cloud, etc.) (2) Configuration approaches (Java config vs XML, auto-configuration, properties) (3) Dependency injection patterns implemented (4) Database access strategies with Spring Data (JPA, JDBC, etc.) (5) Testing approaches with Spring Test (6) Application lifecycle management (7) Integration with other frameworks and services (8) Concrete examples from projects showing value delivered (9) Performance optimizations implemented (10) Comparisons with alternatives and why Spring was chosen.",
+                "evaluation_rubric": {
+                    "clarity": "Can the candidate clearly articulate Spring concepts and benefits?",
+                    "accuracy": "Is their understanding of Spring modules and patterns correct?",
+                    "depth": "Does their answer show hands-on experience beyond basics?",
+                    "practical_application": "Can they provide concrete examples of Spring implementation?"
+                },
+                "scoring_guide": {
+                    "1_star": "Basic familiarity with Spring concepts but limited practical experience",
+                    "2_star": "Has used Spring but cannot articulate advanced patterns or benefits",
+                    "3_star": "Good working knowledge with specific examples from real projects",
+                    "4_star": "Strong understanding across multiple Spring modules with performance considerations",
+                    "5_star": "Expert-level knowledge with custom extensions, optimizations, and architectural decisions"
+                },
+                "time_allocation": "7-10 minutes",
+                "skills_assessed": [
+                    "Spring Framework",
+                    "Java EE",
+                    "Architecture patterns"
+                ],
+                "follow_up_questions": [
+                    "How do you typically configure and manage Spring Bean lifecycle?",
+                    "How would you integrate Spring Security in a microservices architecture?"
+                ]
+            },
+            {
+                "question_id": "TT-002",
+                "category": "TOOLS & TECHNOLOGY",
+                "difficulty": "Medium",
+                "question_text": "Your CV indicates experience with hardware-software integration. How would you design a Java-based system to interface with industrial sensors, ensuring real-time data processing, fault tolerance, and scalability?",
+                "expected_answer": "A strong answer should include: (1) Communication protocols for industrial IoT (Modbus, MQTT, OPC UA) (2) Java libraries and frameworks for hardware interfacing (3) Thread management for real-time processing (4) Buffering strategies for handling data bursts (5) Error handling and fault detection approaches (6) Calibration and data validation techniques (7) Scaling approach for multiple sensors/factories (8) Data storage considerations for time-series data (9) Monitoring and alerting design (10) Concrete examples from their experience with the QA machinery at Filtec.",
+                "evaluation_rubric": {
+                    "clarity": "Can the candidate clearly explain the integration architecture?",
+                    "accuracy": "Is their understanding of industrial protocols and Java integration correct?",
+                    "depth": "Does their answer demonstrate experience with actual hardware integration?",
+                    "practical_application": "Do they address real-world challenges like network failures and data integrity?"
+                },
+                "scoring_guide": {
+                    "1_star": "Theoretical knowledge only with no practical hardware integration experience",
+                    "2_star": "Basic understanding of integration points but limited system design knowledge",
+                    "3_star": "Good working knowledge with examples from actual implemented systems",
+                    "4_star": "Comprehensive understanding with fault tolerance and scaling considerations",
+                    "5_star": "Expert-level knowledge demonstrating full system lifecycle experience and optimization"
+                },
+                "time_allocation": "8-10 minutes",
+                "skills_assessed": [
+                    "Hardware integration",
+                    "Real-time systems",
+                    "Industrial IoT",
+                    "System design"
+                ],
+                "follow_up_questions": [
+                    "How would you handle sensor calibration and data validation in a distributed system?",
+                    "What approaches have you used for processing real-time data streams from hundreds of sensors?"
+                ]
+            },
+            {
+                "question_id": "SB-001",
+                "category": "SCENARIO-BASED / PROBLEM-SOLVING",
+                "difficulty": "Hard",
+                "question_text": "Your team has been tasked with building a new microservices-based backend for a high-traffic e-commerce platform. The system needs to handle inventory management, order processing, user profiles, and payment processing. How would you architect this solution using Java technologies, considering scalability, reliability, and maintainability?",
+                "expected_answer": "A comprehensive answer should include: (1) Service boundary identification methodology (2) Communication patterns between microservices (sync vs async) (3) API gateway design (4) Database choices and data consistency approaches (5) Event sourcing and/or CQRS considerations (6) Message broker selection and configuration (7) Resilience patterns (circuit breakers, retries, bulkheads) (8) Observability strategy (distributed tracing, logging, metrics) (9) CI/CD pipeline design (10) Containerization and orchestration approach (11) Security considerations across services (12) Specific Java frameworks for implementation (Spring Boot, Quarkus, etc.)",
+                "evaluation_rubric": {
+                    "clarity": "Can the candidate articulate a clear architecture vision?",
+                    "accuracy": "Are the proposed technologies and patterns appropriate?",
+                    "depth": "Does the answer demonstrate understanding of microservices challenges?",
+                    "practical_application": "Is the solution realistic and implementable?"
+                },
+                "scoring_guide": {
+                    "1_star": "Proposes monolithic thinking disguised as microservices",
+                    "2_star": "Basic understanding of microservices but missing critical considerations",
+                    "3_star": "Solid architecture with appropriate service boundaries and patterns",
+                    "4_star": "Comprehensive design addressing most distributed systems challenges",
+                    "5_star": "Exceptional architecture with advanced patterns, clear rationales, and operational considerations"
+                },
+                "time_allocation": "15-20 minutes",
+                "skills_assessed": [
+                    "System design",
+                    "Microservices architecture",
+                    "Distributed systems",
+                    "Java ecosystem"
+                ],
+                "follow_up_questions": [
+                    "How would you handle data consistency across services in this architecture?",
+                    "What monitoring and alerting strategy would you implement?"
+                ]
+            },
+            {
+                "question_id": "SB-002",
+                "category": "SCENARIO-BASED / PROBLEM-SOLVING",
+                "difficulty": "Hard",
+                "question_text": "You've been called to help diagnose a production issue in a Java-based application. Users are reporting intermittent slowdowns and occasionally receiving 500 errors. The application uses Spring Boot, connects to PostgreSQL, and processes data from a message queue. Walk me through your approach to diagnosing and resolving this issue.",
+                "expected_answer": "A strong answer should include: (1) Initial information gathering process (logs, metrics, recent changes) (2) Systematic troubleshooting approach (3) Specific tools and commands for Java application diagnostics (JVM flags, profilers, thread dumps) (4) Database connection analysis (connection pools, query performance) (5) Resource utilization checks (CPU, memory, network, disk) (6) Message queue behavior analysis (7) Thread contention investigation (8) Logging level adjustment for more information (9) Potential solutions based on identified issues (10) Post-resolution monitoring and prevention strategies.",
+                "evaluation_rubric": {
+                    "clarity": "Is the troubleshooting methodology clear and logical?",
+                    "accuracy": "Are the diagnostic approaches technically sound?",
+                    "depth": "Does the answer show familiarity with production troubleshooting?",
+                    "practical_application": "Does the approach balance quick resolution with root cause analysis?"
+                },
+                "scoring_guide": {
+                    "1_star": "Trial-and-error approach with little methodology",
+                    "2_star": "Basic checks but limited diagnostic depth",
+                    "3_star": "Solid troubleshooting methodology with good technical knowledge",
+                    "4_star": "Comprehensive approach with clear prioritization and advanced diagnostics",
+                    "5_star": "Expert-level response demonstrating systematic troubleshooting, deep technical knowledge, and production experience"
+                },
+                "time_allocation": "12-15 minutes",
+                "skills_assessed": [
+                    "Troubleshooting",
+                    "Performance optimization",
+                    "Production support",
+                    "System knowledge"
+                ],
+                "follow_up_questions": [
+                    "How would you implement preventative measures to catch similar issues before they impact users?",
+                    "What metrics would you set up to provide early warning of similar problems?"
+                ]
+            },
+            {
+                "question_id": "BP-001",
+                "category": "PROCESS & BEST PRACTICES",
+                "difficulty": "Medium",
+                "question_text": "Describe your experience with code quality practices and tools in Java development. How do you ensure maintainability, readability, and testability in large codebases?",
+                "expected_answer": "A comprehensive answer should include: (1) Static analysis tools used (SonarQube, PMD, FindBugs, etc.) (2) Code style and formatting standards (3) Code review practices and tools (4) Unit testing frameworks and approaches (JUnit, TestNG, Mockito) (5) Test coverage tools and targets (6) Integration testing strategies (7) Documentation practices (Javadoc, architecture documentation) (8) Refactoring approaches for legacy code (9) Design patterns commonly applied (10) Build tool configurations for quality gates (11) Specific examples from their experience implementing these practices.",
+                "evaluation_rubric": {
+                    "clarity": "Can the candidate articulate clear code quality principles?",
+                    "accuracy": "Are the tools and approaches mentioned appropriate and current?",
+                    "depth": "Does the answer show practical experience implementing quality practices?",
+                    "practical_application": "Can they provide examples of quality improvements they've made?"
+                },
+                "scoring_guide": {
+                    "1_star": "Basic understanding of code quality concepts but limited tool knowledge",
+                    "2_star": "Familiar with common tools but no systematic quality approach",
+                    "3_star": "Good knowledge of tools and practices with some implementation experience",
+                    "4_star": "Comprehensive quality strategy with measurable improvements demonstrated",
+                    "5_star": "Expert-level response showing leadership in establishing quality practices and measurable results"
+                },
+                "time_allocation": "8-10 minutes",
+                "skills_assessed": [
+                    "Code quality",
+                    "Testing",
+                    "DevOps integration",
+                    "Development best practices"
+                ],
+                "follow_up_questions": [
+                    "How do you balance code quality requirements against delivery deadlines?",
+                    "How would you introduce quality practices to a team that hasn't previously focused on them?"
+                ]
+            },
+            {
+                "question_id": "BP-002",
+                "category": "PROCESS & BEST PRACTICES",
+                "difficulty": "Medium",
+                "question_text": "You mentioned experience with Agile/Scrum methodologies. How have you implemented CI/CD practices in your Java projects, and what benefits did they bring to your development workflow?",
+                "expected_answer": "A strong answer should include: (1) CI tools used (Jenkins, GitHub Actions, CircleCI, etc.) (2) Pipeline stages and configurations (3) Automated testing integration (unit, integration, performance) (4) Code quality gates implementation (5) Deployment automation approaches (6) Environment management (dev, staging, production) (7) Infrastructure as Code integration (8) Feature flagging for safe deployments (9) Monitoring and rollback strategies (10) Concrete examples of CI/CD improvements they've implemented (11) Metrics showing benefits (deployment frequency, lead time, etc.).",
+                "evaluation_rubric": {
+                    "clarity": "Can the candidate clearly explain their CI/CD approach?",
+                    "accuracy": "Are the tools and practices described correctly implemented?",
+                    "depth": "Does the answer show hands-on experience with CI/CD?",
+                    "practical_application": "Can they demonstrate measurable benefits from CI/CD?"
+                },
+                "scoring_guide": {
+                    "1_star": "Basic understanding of CI/CD concepts but minimal implementation experience",
+                    "2_star": "Has used CI/CD tools but in limited capacity without full pipeline automation",
+                    "3_star": "Good working knowledge with examples from implemented pipelines",
+                    "4_star": "Comprehensive CI/CD strategy with advanced practices and measured improvements",
+                    "5_star": "Expert-level response showing leadership in establishing modern CI/CD practices with quantifiable business impact"
+                },
+                "time_allocation": "8-10 minutes",
+                "skills_assessed": [
+                    "CI/CD",
+                    "DevOps practices",
+                    "Automation",
+                    "Agile methodologies"
+                ],
+                "follow_up_questions": [
+                    "How would you set up a CI/CD pipeline for a microservices architecture?",
+                    "What strategies have you used for database changes in your CI/CD process?"
+                ]
+            }
+        ],
+        "interview_strategy": {
+            "overall_approach": "This interview should focus on validating the candidate's extensive Java experience while probing for depth in modern frameworks and architectures. The candidate has strong experience with Java and hardware integration but may need development in cloud and containerization areas. Balance technical depth questions with scenario-based questions that test adaptability to new technologies.",
+            "time_management": {
+                "total_duration": "90 minutes",
+                "recommended_distribution": [
+                    {
+                        "section": "Introduction and rapport building",
+                        "time": "5 minutes"
+                    },
+                    {
+                        "section": "Core technical questions",
+                        "time": "60 minutes"
+                    },
+                    {
+                        "section": "Candidate questions",
+                        "time": "15 minutes"
+                    },
+                    {
+                        "section": "Next steps and closing",
+                        "time": "10 minutes"
+                    }
+                ]
+            },
+            "key_decision_points": [
+                "Depth of Java expertise beyond claimed 16 years experience",
+                "Spring Framework proficiency despite moderate confidence score",
+                "Ability to design modern architectures despite background in older technologies",
+                "Willingness and ability to learn cloud platforms and container orchestration",
+                "Problem-solving approach when faced with unfamiliar scenarios"
+            ],
+            "interviewer_preparation": {
+                "focus_areas": [
+                    "Validate deep Java knowledge through detailed technical questions",
+                    "Assess Spring Framework experience through practical scenarios",
+                    "Probe for real-world experience with microservices and modern architectures",
+                    "Evaluate candidate's approach to learning new technologies like Docker and Kubernetes",
+                    "Watch for inconsistencies in work history timeline as flagged in CV analysis"
+                ],
+                "recommended_materials": [
+                    "Review candidate's GitHub repositories if available",
+                    "Prepare whiteboard or collaborative tool for design questions",
+                    "Have Java and Spring ecosystem knowledge ready to evaluate technical depth"
+                ],
+                "potential_concerns": [
+                    "Candidate has extensive experience but may be set in older development patterns",
+                    "Missing experience with cloud platforms could impact ability to work in modern environments",
+                    "Inconsistent work history details may need clarification"
+                ]
+            }
+        }
+    }
+}

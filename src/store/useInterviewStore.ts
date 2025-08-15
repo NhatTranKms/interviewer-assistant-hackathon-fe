@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import type { CandidateInfo, SkillAnalysis, InterviewQuestion } from '../models';
+import type { SkillMatcherResponse, QuestionGeneratorResponse, CVAnalysis } from '../models/api';
 
 interface InterviewStore {
   // Form data
@@ -7,7 +8,12 @@ interface InterviewStore {
   jobDescription: string;
   resume: string;
   
-  // Analysis results
+  // Analysis results - Split into three parts for better performance
+  skillAnalysisData: SkillMatcherResponse | null; // For ResumeFitAnalysisPage
+  questionData: QuestionGeneratorResponse | null; // For QuestionGeneratorPage
+  cvAnalysisData: CVAnalysis | null; // For candidate information
+  
+  // Legacy fields (keeping for compatibility)
   skillAnalysis: SkillAnalysis | null;
   questions: InterviewQuestion[];
   
@@ -21,6 +27,9 @@ interface InterviewStore {
   setResume: (resume: string) => void;
   setSkillAnalysis: (analysis: SkillAnalysis) => void;
   setQuestions: (questions: InterviewQuestion[]) => void;
+  setSkillAnalysisData: (data: SkillMatcherResponse) => void; // New: For skill analysis
+  setQuestionData: (data: QuestionGeneratorResponse) => void; // New: For questions
+  setCVAnalysisData: (data: CVAnalysis) => void; // New: For CV analysis
   setCurrentStep: (step: number) => void;
   setIsLoading: (loading: boolean) => void;
   reset: () => void;
@@ -35,6 +44,11 @@ const initialState = {
   },
   jobDescription: '',
   resume: '',
+  // Split data for better performance
+  skillAnalysisData: null,
+  questionData: null,
+  cvAnalysisData: null,
+  // Legacy fields
   skillAnalysis: null,
   questions: [],
   currentStep: 0,
@@ -58,6 +72,15 @@ export const useInterviewStore = create<InterviewStore>((set) => ({
   
   setQuestions: (questions: InterviewQuestion[]) =>
     set({ questions }),
+  
+  setSkillAnalysisData: (data: SkillMatcherResponse) =>
+    set({ skillAnalysisData: data }),
+  
+  setQuestionData: (data: QuestionGeneratorResponse) =>
+    set({ questionData: data }),
+
+  setCVAnalysisData: (data: CVAnalysis) =>
+    set({ cvAnalysisData: data }),
   
   setCurrentStep: (step: number) =>
     set({ currentStep: step }),

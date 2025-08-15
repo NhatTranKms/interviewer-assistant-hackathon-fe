@@ -1,0 +1,678 @@
+{
+  "status": "completed",
+  "execution_time": 113.53129029273987,
+  "timestamp": "2025-08-15 00:24:34",
+  "jd_analysis": {
+    "basic_information": {
+      "job_title": "Senior Java Developer",
+      "company": "KMS Technology",
+      "location": "Mexico",
+      "contact_details": {
+        "contact_person": "James",
+        "email": "james.email@example.com",
+        "phone_number": "[Country Code] [Phone Number]",
+        "linkedin": "https://linkedin.com/in/james",
+        "github": "https://github.com/james"
+      }
+    },
+    "role_details": {
+      "responsibilities": [
+        "Design, develop, and maintain enterprise-grade applications using Java.",
+        "Collaborate with cross-functional teams including frontend, DevOps, QA, and Product.",
+        "Participate in the full software development lifecycle: planning, design, development, testing, and deployment.",
+        "Write clean, scalable, and well-documented code.",
+        "Perform code reviews, troubleshoot production issues, and contribute to continuous improvements.",
+        "Implement and maintain RESTful APIs and integration services.",
+        "Mentor junior developers and share technical expertise across the team."
+      ],
+      "qualifications": [
+        "Bachelor’s degree in Computer Science, Engineering, or related field.",
+        "5+ years of experience in backend development with Java (preferably Java 8 or higher).",
+        "Solid understanding of Spring Framework (Spring Boot, Spring Data, etc.).",
+        "Experience with RESTful API design and integration.",
+        "Proficiency in working with relational databases (e.g., PostgreSQL, MySQL, Oracle).",
+        "Familiarity with CI/CD tools (e.g., Jenkins, GitHub Actions, or similar).",
+        "Experience working in Agile/Scrum environments.",
+        "Good communication skills in English (written and spoken)."
+      ],
+      "nice_to_have": [
+        "Experience with Microservices architecture.",
+        "Knowledge of Docker, Kubernetes, or other container/orchestration tools.",
+        "Exposure to cloud platforms like AWS, Azure, or GCP.",
+        "Familiarity with messaging systems (Kafka, RabbitMQ, etc.).",
+        "Experience with frontend technologies (e.g., Angular, React or Vue.js) is a plus."
+      ]
+    },
+    "skills_analysis": {
+      "must_have": [
+        "Java Development",
+        "RESTful API Design and Integration",
+        "Proficiency in Relational Databases (e.g., PostgreSQL, MySQL)",
+        "Experience with CI/CD Tools (e.g., Jenkins, GitHub Actions)",
+        "Agile/Scrum Methodology",
+        "Team Collaboration and Mentorship",
+        "Code Review and Troubleshooting"
+      ],
+      "nice_to_have": [
+        "Spring Framework (Spring Boot, Spring Data)",
+        "Microservices architecture",
+        "Docker, Kubernetes, or other container/orchestration tools",
+        "Cloud platforms (AWS, Azure, GCP)",
+        "Messaging systems (Kafka, RabbitMQ)"
+      ]
+    },
+    "qualifications": {
+      "must_have": [
+        "Bachelor’s degree in Computer Science, Engineering, or related field.",
+        "5+ years of experience in backend development with Java (preferably Java 8 or higher).",
+        "Solid understanding of Spring Framework (Spring Boot, Spring Data, etc.).",
+        "Experience with RESTful API design and integration.",
+        "Proficiency in working with relational databases (e.g., PostgreSQL, MySQL, Oracle).",
+        "Familiarity with CI/CD tools (e.g., Jenkins, GitHub Actions, or similar).",
+        "Experience working in Agile/Scrum environments.",
+        "Good communication skills in English (written and spoken)."
+      ],
+      "nice_to_have": [
+        "Experience with Microservices architecture.",
+        "Knowledge of Docker, Kubernetes, or other container/orchestration tools.",
+        "Exposure to cloud platforms like AWS, Azure, or GCP.",
+        "Familiarity with messaging systems (Kafka, RabbitMQ, etc.).",
+        "Experience with frontend technologies (e.g., Angular, React or Vue.js) is a plus."
+      ]
+    },
+    "company_culture": {
+      "description": "KMS Technology offers a collaborative and inclusive environment where your ideas matter and your growth is our priority. As part of an international tech company, we are passionate about building innovative software solutions that drive impact."
+    },
+    "analysis_insights": [
+      "The candidate has extensive experience in Java development and backend systems, which aligns well with the job requirements.",
+      "The candidate's experience with RESTful API design and relational databases matches the must-have qualifications.",
+      "There are some gaps in the candidate's experience with Spring Framework, Microservices architecture, Docker, Kubernetes, cloud platforms, and messaging systems, which are listed as nice-to-have skills.",
+      "The candidate's experience in mentoring junior developers and working in Agile/Scrum environments is a strong match for the role.",
+      "The candidate's experience with iOS development and mobile architectures is not directly relevant to the job but showcases versatility in software development."
+    ]
+  },
+  "cv_analysis": {
+    "candidate_profile": {
+      "name": "James",
+      "contact_information": {
+        "email": "james.email@example.com",
+        "phone": "[Country Code] [Phone Number]",
+        "location": "[City, Country]",
+        "linkedin": "https://linkedin.com/in/james",
+        "github": "https://github.com/james"
+      }
+    },
+    "professional_summary": {
+      "summary": "Senior Software Engineer with over 16 years of experience in software development, specializing in Java and mobile development (iOS). Proven track record of delivering enterprise-scale solutions, including industrial quality assurance systems and large-scale data tracking platforms. Adept at designing robust architectures, optimizing performance, and working across diverse technology stacks.",
+      "experience_level": "Senior"
+    },
+    "work_experience": [
+      {
+        "position": "Software Engineer",
+        "company": "FPT Software / Coca-Cola Africa Project",
+        "duration": "2007 – [Year]",
+        "responsibilities": [
+          "Developed an environmental data tracking website using Java Struts, JSP, and Servlets.",
+          "Enabled bottling plants across Africa to monitor and report environmental metrics.",
+          "Collaborated with distributed teams to ensure scalability and accuracy of reporting."
+        ]
+      },
+      {
+        "position": "Senior Java Developer",
+        "company": "Filtec QA Systems",
+        "duration": "[Year] – [Year]",
+        "responsibilities": [
+          "Built a Java-based Linux application to configure QA machinery for beverage bottling plants.",
+          "Integrated with custom hardware sensors to measure bottle and can pressure, detect floating objects, and identify defects.",
+          "Deployed and tested over Ethernet-connected hardware for real-time QA data collection."
+        ]
+      },
+      {
+        "position": "Mobile Developer (iOS)",
+        "company": "[Company Name]",
+        "duration": "[Years unspecified]",
+        "responsibilities": [
+          "Designed and developed native iOS applications with strong focus on usability and performance.",
+          "Applied backend development knowledge to create efficient, scalable mobile architectures."
+        ]
+      }
+    ],
+    "education": {
+      "degree": "Bachelor’s Degree in Computer Science or related field",
+      "university": "[University Name]",
+      "graduation_year": "[Year]"
+    },
+    "technical_skills": [
+      "Java",
+      "Struts",
+      "JSP",
+      "Servlets",
+      "iOS Development",
+      "REST APIs",
+      "RMI",
+      "Distributed Systems",
+      "Multithreading",
+      "Linux",
+      "Sensors & Hardware Integration",
+      "Garbage Collection Tuning",
+      "OOP",
+      "Constructor Overloading",
+      "Exception Handling",
+      "Applet Lifecycle",
+      "RMI Architecture",
+      "Team Collaboration"
+    ],
+    "certifications": [],
+    "skills_analysis": {
+      "matched_skills": [
+        "Java Development",
+        "RESTful API Design and Integration",
+        "Proficiency in Relational Databases (e.g., PostgreSQL, MySQL)",
+        "Experience with CI/CD Tools (e.g., Jenkins, GitHub Actions)",
+        "Agile/Scrum Methodology",
+        "Team Collaboration and Mentorship",
+        "Code Review and Troubleshooting"
+      ],
+      "gaps": [
+        "Specific experience with Spring Framework (Spring Boot, Spring Data)",
+        "Experience with Microservices architecture",
+        "Familiarity with Docker, Kubernetes, or other container/orchestration tools",
+        "Exposure to cloud platforms like AWS, Azure, or GCP",
+        "Familiarity with messaging systems (Kafka, RabbitMQ)"
+      ]
+    },
+    "overall_analysis": {
+      "completeness_score": 8,
+      "strengths": [
+        "Extensive experience in Java and backend development.",
+        "Proven track record of delivering large-scale, enterprise-grade solutions.",
+        "Strong collaboration and mentorship skills.",
+        "Experience with hardware-software integration and industrial automation systems."
+      ],
+      "weaknesses": [
+        "Lack of specific experience with Spring Framework.",
+        "Limited experience with modern cloud platforms and container orchestration tools.",
+        "No mention of experience with messaging systems."
+      ],
+      "red_flags": [],
+      "missing_sections": ["Certifications", "Specific project timelines"],
+      "recommendations": [
+        "Highlight specific experience with Spring Framework, particularly Spring Boot and Spring Data.",
+        "Include experience with cloud platforms like AWS, Azure, or GCP and container orchestration tools like Docker and Kubernetes.",
+        "Mention any experience with messaging systems such as Kafka or RabbitMQ.",
+        "Add any relevant certifications to strengthen the CV.",
+        "Include specific project timelines to provide a clearer picture of professional growth and experience."
+      ]
+    }
+  },
+  "skill_matcher": {
+    "overall_matching_score": 75,
+    "matched_skills": [
+      {
+        "skill": "Java Development",
+        "confidence_score": 90,
+        "match_quality": "High"
+      },
+      {
+        "skill": "RESTful API Design and Integration",
+        "confidence_score": 85,
+        "match_quality": "High"
+      },
+      {
+        "skill": "Proficiency in Relational Databases (e.g., PostgreSQL, MySQL)",
+        "confidence_score": 80,
+        "match_quality": "High"
+      },
+      {
+        "skill": "Experience with CI/CD Tools (e.g., Jenkins, GitHub Actions)",
+        "confidence_score": 70,
+        "match_quality": "Medium"
+      },
+      {
+        "skill": "Agile/Scrum Methodology",
+        "confidence_score": 85,
+        "match_quality": "High"
+      },
+      {
+        "skill": "Team Collaboration and Mentorship",
+        "confidence_score": 90,
+        "match_quality": "High"
+      },
+      {
+        "skill": "Code Review and Troubleshooting",
+        "confidence_score": 80,
+        "match_quality": "High"
+      }
+    ],
+    "missing_critical_skills": [
+      {
+        "skill": "Solid understanding of Spring Framework (Spring Boot, Spring Data, etc.)",
+        "impact_level": "High",
+        "learning_recommendation": "Recommend completing a course or project focused on Spring Framework to gain proficiency."
+      },
+      {
+        "skill": "Experience with Microservices architecture",
+        "impact_level": "Medium",
+        "learning_recommendation": "Suggest participating in workshops or online courses on Microservices architecture."
+      },
+      {
+        "skill": "Knowledge of Docker, Kubernetes, or other container/orchestration tools",
+        "impact_level": "Medium",
+        "learning_recommendation": "Encourage obtaining hands-on experience with Docker and Kubernetes through practical projects."
+      },
+      {
+        "skill": "Exposure to cloud platforms like AWS, Azure, or GCP",
+        "impact_level": "Medium",
+        "learning_recommendation": "Recommend completing cloud certifications (e.g., AWS Certified Developer) to build expertise."
+      },
+      {
+        "skill": "Familiarity with messaging systems (Kafka, RabbitMQ, etc.)",
+        "impact_level": "Low",
+        "learning_recommendation": "Suggest exploring messaging systems through online tutorials or courses."
+      }
+    ],
+    "level_specific_gap_analysis": {
+      "candidate_level": "Senior",
+      "target_position_level": "Senior",
+      "competency_gaps": [
+        {
+          "area": "Spring Framework",
+          "gap_description": "Lack of specific experience with Spring Framework.",
+          "development_plan": "Complete a project using Spring Boot and Spring Data to gain practical experience."
+        },
+        {
+          "area": "Microservices architecture",
+          "gap_description": "Limited experience with Microservices architecture.",
+          "development_plan": "Participate in a workshop or online course focused on Microservices."
+        },
+        {
+          "area": "Container orchestration tools",
+          "gap_description": "No experience with Docker, Kubernetes, or similar tools.",
+          "development_plan": "Enroll in a certification course for Docker and Kubernetes."
+        },
+        {
+          "area": "Cloud platforms",
+          "gap_description": "No exposure to cloud platforms like AWS, Azure, or GCP.",
+          "development_plan": "Obtain cloud certifications and work on cloud-based projects."
+        },
+        {
+          "area": "Messaging systems",
+          "gap_description": "No mention of experience with messaging systems.",
+          "development_plan": "Explore messaging systems through online tutorials and practical projects."
+        }
+      ]
+    },
+    "strong_areas": [
+      {
+        "area": "Extensive experience in Java and backend development",
+        "description": "The candidate has over 16 years of experience in Java and backend systems, which is a significant strength for the role."
+      },
+      {
+        "area": "Proven track record of delivering large-scale, enterprise-grade solutions",
+        "description": "The candidate has a history of successful projects, including industrial quality assurance systems and large-scale data tracking platforms."
+      },
+      {
+        "area": "Strong collaboration and mentorship skills",
+        "description": "The candidate has experience mentoring junior developers and collaborating with cross-functional teams, which is crucial for the role."
+      },
+      {
+        "area": "Experience with hardware-software integration and industrial automation systems",
+        "description": "The candidate has hands-on experience in hardware-software integration and industrial automation, which adds value to the role."
+      }
+    ],
+    "red_flags": [
+      {
+        "issue": "Lack of specific experience with Spring Framework",
+        "severity_level": "High"
+      },
+      {
+        "issue": "Limited experience with modern cloud platforms and container orchestration tools",
+        "severity_level": "Medium"
+      },
+      {
+        "issue": "No mention of experience with messaging systems",
+        "severity_level": "Low"
+      }
+    ],
+    "readiness_assessment": {
+      "readiness_level": "High",
+      "readiness_score": 85,
+      "blockers": [
+        {
+          "blocker": "Lack of specific experience with Spring Framework",
+          "development_timeline": "3-6 months to gain proficiency"
+        },
+        {
+          "blocker": "Limited experience with Microservices architecture",
+          "development_timeline": "2-3 months to gain foundational knowledge"
+        },
+        {
+          "blocker": "No experience with Docker, Kubernetes, or cloud platforms",
+          "development_timeline": "3-6 months to obtain certifications and practical experience"
+        },
+        {
+          "blocker": "No mention of experience with messaging systems",
+          "development_timeline": "1-2 months to gain basic understanding"
+        }
+      ]
+    }
+  },
+  "question_generator": {
+    "interview_questions": [
+      {
+        "id": "CORE-001",
+        "category": "CORE KNOWLEDGE",
+        "difficulty": "Medium",
+        "question": "Explain how Java's Garbage Collection works and what strategies can be used to optimize it in a high-throughput enterprise application. What GC algorithms are available in modern JVMs and how would you choose between them?",
+        "expected_answer": "A strong answer should cover:\n- Generational garbage collection model (young/old generations)\n- Major GC algorithms (Serial, Parallel, CMS, G1, ZGC)\n- GC tuning parameters (-Xms, -Xmx, survivor spaces)\n- Monitoring tools (jstat, VisualVM, JConsole)\n- Memory leak detection and prevention\n- When to use different collectors based on application requirements (low latency vs throughput)\n- How to analyze GC logs for optimization",
+        "evaluation_criteria": {
+          "clarity": "Explanation should be clear and methodical",
+          "accuracy": "Correct technical details about GC mechanisms",
+          "depth": "Understanding of performance implications",
+          "practical_application": "Real-world optimization examples"
+        },
+        "scoring_guide": {
+          "1": "Only basic understanding of GC as automatic memory management",
+          "2": "Explains young/old generations but limited knowledge of GC types",
+          "3": "Correctly describes multiple GC algorithms and basic tuning parameters",
+          "4": "Demonstrates strong knowledge of GC mechanics, tuning options, and monitoring tools",
+          "5": "Expert-level understanding with practical optimization strategies for different workloads and thorough knowledge of trade-offs"
+        },
+        "time_allocation": "5-7 minutes",
+        "skills_assessed": [
+          "Java internals",
+          "Performance optimization",
+          "Memory management"
+        ],
+        "follow_up_questions": [
+          "How would you identify and fix a memory leak in a Java application?",
+          "What GC strategy would you implement for a low-latency financial transaction system?"
+        ]
+      },
+      {
+        "id": "CORE-002",
+        "category": "CORE KNOWLEDGE",
+        "difficulty": "Medium",
+        "question": "Given your 16 years of experience with Java, can you explain the evolution of Java concurrency models from traditional threads to the modern concurrency utilities? How would you implement a thread-safe producer-consumer pattern with bounded buffer?",
+        "expected_answer": "A strong answer should cover:\n- Evolution from basic Thread class to Executor framework\n- Understanding of synchronized blocks/methods and their limitations\n- Java Memory Model and visibility guarantees\n- Atomic classes and lock-free concurrency\n- CompletableFuture and asynchronous programming\n- Implementation should demonstrate BlockingQueue (ArrayBlockingQueue) for bounded buffer\n- ExecutorService for managing producer/consumer threads\n- Proper exception handling and shutdown procedures",
+        "evaluation_criteria": {
+          "clarity": "Clear explanation of concurrency concepts",
+          "accuracy": "Correct usage of concurrency primitives",
+          "depth": "Understanding of synchronization issues and solutions",
+          "practical_application": "Implementation that avoids race conditions"
+        },
+        "scoring_guide": {
+          "1": "Basic knowledge of threads but lack of understanding of synchronization",
+          "2": "Can explain synchronized keyword and basic thread safety",
+          "3": "Demonstrates knowledge of java.util.concurrent package with proper usage",
+          "4": "Shows strong understanding of concurrency models with appropriate implementation patterns",
+          "5": "Expert-level understanding with optimization techniques, deadlock prevention strategies, and scalable implementation"
+        },
+        "time_allocation": "7-10 minutes",
+        "skills_assessed": [
+          "Java concurrency",
+          "Multithreading",
+          "Thread safety"
+        ],
+        "follow_up_questions": [
+          "How would you debug a deadlock situation?",
+          "What are the performance implications of different synchronization approaches?"
+        ]
+      },
+      {
+        "id": "PRACTICAL-001",
+        "category": "PRACTICAL SKILLS",
+        "difficulty": "Hard",
+        "question": "You need to migrate a monolithic Java application to a service-oriented architecture. The current system uses Struts, JSP, and direct JDBC connections. Outline your approach for incrementally breaking this down into services, focusing on database access patterns, service boundaries, and how to handle transactional integrity across services.",
+        "expected_answer": "A strong answer should cover:\n- Strangler pattern for incremental migration\n- Domain-Driven Design principles for service boundary identification\n- Implementation of an API layer as the first step\n- Database decomposition strategies (schema per service, shared DB with clear boundaries)\n- Transaction handling across services (Saga pattern, eventual consistency, distributed transactions)\n- Circuit breaker patterns for resilience\n- Monitoring and observability considerations\n- Data synchronization patterns during migration\n- Testing strategies for ensuring functionality during migration",
+        "evaluation_criteria": {
+          "clarity": "Clear, structured migration approach",
+          "accuracy": "Technically sound architecture decisions",
+          "depth": "Understanding of distributed systems challenges",
+          "practical_application": "Realistic implementation plan with risk mitigation"
+        },
+        "scoring_guide": {
+          "1": "Suggests big-bang rewrite with little incremental approach",
+          "2": "Basic understanding of service extraction but weak on data consistency",
+          "3": "Solid approach with consideration for incremental steps and testing",
+          "4": "Comprehensive plan addressing major challenges with specific patterns and solutions",
+          "5": "Expert strategy with risk analysis, fallback mechanisms, detailed phases, and metrics for success"
+        },
+        "time_allocation": "10-12 minutes",
+        "skills_assessed": [
+          "System design",
+          "Microservices architecture",
+          "Migration planning"
+        ],
+        "follow_up_questions": [
+          "How would you handle authentication and authorization across services?",
+          "What metrics would you monitor to ensure successful migration?"
+        ]
+      },
+      {
+        "id": "PRACTICAL-002",
+        "category": "PRACTICAL SKILLS",
+        "difficulty": "Medium",
+        "question": "Based on your experience with environmental data tracking systems, design a RESTful API for a system that collects and analyzes environmental metrics from multiple plant locations. Include endpoints, data models, error handling, and scaling considerations.",
+        "expected_answer": "A strong answer should cover:\n- RESTful resource modeling (plants, metrics, reports)\n- API versioning strategy\n- Authentication and authorization approach\n- Endpoints for data ingestion, analysis, and reporting\n- Data validation and error response formats\n- Rate limiting and throttling strategies\n- Caching considerations for read-heavy operations\n- Pagination and filtering for large data sets\n- Documentation approach (Swagger/OpenAPI)\n- Data models with appropriate normalization",
+        "evaluation_criteria": {
+          "clarity": "Clear and intuitive API design",
+          "accuracy": "Adherence to REST principles",
+          "depth": "Consideration of real-world challenges",
+          "practical_application": "Scalable and secure design"
+        },
+        "scoring_guide": {
+          "1": "Basic endpoints with little consideration for standards or scaling",
+          "2": "Proper resource modeling but weak on error handling or security",
+          "3": "Well-designed API with proper status codes, error handling, and basic auth",
+          "4": "Comprehensive design with caching, rate limiting, and data validation",
+          "5": "Expert design addressing all aspects including documentation, versioning, security, and high-throughput scenarios"
+        },
+        "time_allocation": "8-10 minutes",
+        "skills_assessed": [
+          "API design",
+          "System architecture",
+          "RESTful principles"
+        ],
+        "follow_up_questions": [
+          "How would you handle real-time updates for dashboard applications?",
+          "What monitoring would you implement to ensure API performance?"
+        ]
+      },
+      {
+        "id": "TOOLS-001",
+        "category": "TOOLS & TECHNOLOGY",
+        "difficulty": "Medium",
+        "question": "While you don't have explicit Spring Framework experience, describe how you would approach learning and implementing a Spring Boot application with Spring Data for a new project. What key Spring concepts would you need to understand, and how would you design a layered architecture for a data-intensive application?",
+        "expected_answer": "A strong answer should cover:\n- Spring Core concepts (IoC, dependency injection, beans)\n- Spring Boot auto-configuration and starters\n- Spring Data repositories and query methods\n- Controller-Service-Repository pattern\n- Configuration approaches (annotations vs XML)\n- Spring profiles for different environments\n- Spring AOP concepts\n- Testing strategies for Spring applications\n- Integration with existing Java knowledge\n- Learning plan with specific resources and timeline",
+        "evaluation_criteria": {
+          "clarity": "Clear understanding of learning goals",
+          "accuracy": "Correct understanding of Spring concepts",
+          "depth": "Systematic approach to learning",
+          "practical_application": "Realistic implementation plan"
+        },
+        "scoring_guide": {
+          "1": "Vague understanding of Spring with no clear learning strategy",
+          "2": "Basic recognition of Spring components but limited architecture knowledge",
+          "3": "Good grasp of core concepts and reasonable learning approach",
+          "4": "Strong understanding of Spring architecture with clear learning timeline",
+          "5": "Comprehensive learning plan with detailed architecture design showing transferable skills from previous experience"
+        },
+        "time_allocation": "7-8 minutes",
+        "skills_assessed": [
+          "Learning agility",
+          "Architecture design",
+          "Spring Framework concepts"
+        ],
+        "follow_up_questions": [
+          "How would you implement transaction management in a Spring application?",
+          "How would Spring security integrate with your application design?"
+        ]
+      },
+      {
+        "id": "TOOLS-002",
+        "category": "TOOLS & TECHNOLOGY",
+        "difficulty": "Medium",
+        "question": "Describe your experience integrating software with hardware sensors and how you would approach a modern implementation using containerized microservices. How would you handle sensor data collection, validation, and real-time processing in a cloud environment?",
+        "expected_answer": "A strong answer should cover:\n- Sensor data protocols (MQTT, OPC-UA, Modbus)\n- Edge computing concepts for data preprocessing\n- Message queuing for reliable data ingestion (Kafka/RabbitMQ)\n- Containerization of processing components\n- Data validation and anomaly detection strategies\n- Time-series database considerations\n- Scaling strategies for varying data volumes\n- Resilience patterns for hardware connectivity issues\n- Monitoring and alerting for sensor health\n- Security considerations for device communication",
+        "evaluation_criteria": {
+          "clarity": "Clear explanation of the integration architecture",
+          "accuracy": "Technically sound approach to data handling",
+          "depth": "Understanding of IoT/industrial data challenges",
+          "practical_application": "Realistic implementation based on experience"
+        },
+        "scoring_guide": {
+          "1": "Basic understanding of sensor integration with minimal modernization",
+          "2": "Can describe data collection but weak on processing architecture",
+          "3": "Solid approach with appropriate protocols and basic containerization",
+          "4": "Comprehensive design with messaging, validation, and scaling considerations",
+          "5": "Expert-level solution addressing edge computing, resilience, security, and analytics pipeline"
+        },
+        "time_allocation": "7-8 minutes",
+        "skills_assessed": [
+          "Hardware integration",
+          "IoT architecture",
+          "Containerization"
+        ],
+        "follow_up_questions": [
+          "How would you handle sensor calibration and maintenance in a distributed system?",
+          "What strategies would you use for handling intermittent connectivity from remote sensors?"
+        ]
+      },
+      {
+        "id": "SCENARIO-001",
+        "category": "SCENARIO-BASED / PROBLEM-SOLVING",
+        "difficulty": "Hard",
+        "question": "Your team is experiencing frequent OutOfMemoryError exceptions in a production Java application that processes large datasets for environmental reporting. The application runs in a containerized environment with limited resources. How would you diagnose the issue and what steps would you take to resolve it while ensuring minimal downtime?",
+        "expected_answer": "A strong answer should cover:\n- Systematic approach to diagnostics (heap dumps, GC logs, thread dumps)\n- Tools for analysis (jmap, MAT, VisualVM, JProfiler)\n- Common causes of memory leaks in Java\n- JVM tuning parameters for containerized environments\n- Data processing optimizations (streaming vs loading)\n- Implementation of circuit breakers for graceful degradation\n- Blue/green deployment strategy for fixes\n- Monitoring improvements to catch issues earlier\n- Testing approach to verify fixes\n- Communication plan for stakeholders during resolution",
+        "evaluation_criteria": {
+          "clarity": "Clear, structured troubleshooting approach",
+          "accuracy": "Correct diagnostic techniques and solutions",
+          "depth": "Understanding of JVM memory model and containerization",
+          "practical_application": "Realistic steps that minimize business impact"
+        },
+        "scoring_guide": {
+          "1": "Suggests only increasing heap size without proper analysis",
+          "2": "Basic understanding of diagnostic tools but limited solution depth",
+          "3": "Good diagnostic approach with specific tools and reasonable solutions",
+          "4": "Comprehensive troubleshooting strategy with multiple solution paths and verification",
+          "5": "Expert-level analysis covering root cause determination, short and long-term fixes, and preventive measures with minimal downtime"
+        },
+        "time_allocation": "8-10 minutes",
+        "skills_assessed": [
+          "Problem solving",
+          "Performance tuning",
+          "Production support"
+        ],
+        "follow_up_questions": [
+          "How would you implement a permanent monitoring solution to prevent recurrence?",
+          "What changes to the application architecture might prevent this issue?"
+        ]
+      },
+      {
+        "id": "SCENARIO-002",
+        "category": "SCENARIO-BASED / PROBLEM-SOLVING",
+        "difficulty": "Medium",
+        "question": "You are tasked with improving the performance of a slow API endpoint that retrieves and processes environmental data from multiple sources. The current implementation uses synchronous processing and takes too long to respond. Design an approach to optimize this endpoint while maintaining data consistency and reliability.",
+        "expected_answer": "A strong answer should cover:\n- Identification of performance bottlenecks (I/O bound vs CPU bound)\n- Implementation of asynchronous processing (CompletableFuture, WebFlux)\n- Caching strategies (Redis, Caffeine) with appropriate invalidation\n- Database query optimization techniques\n- Connection pooling configuration\n- Parallel data retrieval from multiple sources\n- Result aggregation strategies\n- Pagination or streaming for large result sets\n- Circuit breakers for external dependencies\n- Monitoring and observability improvements",
+        "evaluation_criteria": {
+          "clarity": "Clear performance improvement strategy",
+          "accuracy": "Technically sound optimization approaches",
+          "depth": "Understanding of performance bottlenecks",
+          "practical_application": "Implementable solutions with consideration for trade-offs"
+        },
+        "scoring_guide": {
+          "1": "Suggests basic optimizations without analysis of root causes",
+          "2": "Identifies some bottlenecks but limited solution depth",
+          "3": "Good analysis with practical optimization techniques",
+          "4": "Comprehensive approach with multiple optimization strategies and consideration of trade-offs",
+          "5": "Expert-level solution with performance modeling, benchmarking approach, and layered optimizations from code to infrastructure"
+        },
+        "time_allocation": "7-8 minutes",
+        "skills_assessed": [
+          "Performance optimization",
+          "Asynchronous programming",
+          "API design"
+        ],
+        "follow_up_questions": [
+          "How would you measure the impact of your optimization efforts?",
+          "How would you handle fallback scenarios if a data source is unavailable?"
+        ]
+      },
+      {
+        "id": "PROCESS-001",
+        "category": "PROCESS & BEST PRACTICES",
+        "difficulty": "Medium",
+        "question": "As a senior developer expected to mentor junior team members, describe your approach to code reviews. How do you balance constructive feedback with team velocity, and what specific practices do you follow to ensure code quality while fostering developer growth?",
+        "expected_answer": "A strong answer should cover:\n- Systematic review process with clear guidelines\n- Focus areas (architecture, performance, security, maintainability)\n- Automated vs. manual review components\n- Tone and approach for different experience levels\n- Knowledge sharing through reviews (patterns, anti-patterns)\n- Tools to streamline the process (linters, static analysis)\n- Metrics for code quality and review effectiveness\n- Balancing thoroughness with delivery timelines\n- Follow-up mechanisms for learning\n- Creating a psychologically safe review culture",
+        "evaluation_criteria": {
+          "clarity": "Clear review philosophy and process",
+          "accuracy": "Focus on relevant code quality aspects",
+          "depth": "Thoughtful approach to developer mentorship",
+          "practical_application": "Actionable review practices"
+        },
+        "scoring_guide": {
+          "1": "Focuses only on syntax or style issues with limited mentorship",
+          "2": "Basic process but lacks balance between feedback and velocity",
+          "3": "Good approach with consideration for both quality and team dynamics",
+          "4": "Comprehensive strategy with specific techniques for different scenarios",
+          "5": "Expert mentorship approach with nuanced feedback methods, long-term growth focus, and measurable quality improvements"
+        },
+        "time_allocation": "6-8 minutes",
+        "skills_assessed": ["Code review", "Mentorship", "Quality assurance"],
+        "follow_up_questions": [
+          "How do you handle situations where team members consistently resist feedback?",
+          "How would you approach reviewing code in areas where you lack deep expertise?"
+        ]
+      },
+      {
+        "id": "PROCESS-002",
+        "category": "PROCESS & BEST PRACTICES",
+        "difficulty": "Medium",
+        "question": "Describe your experience with Agile/Scrum methodologies and how you would implement best practices in a team transitioning from a waterfall approach. What challenges would you anticipate and how would you address them to ensure successful delivery of a complex Java backend project?",
+        "expected_answer": "A strong answer should cover:\n- Core Agile principles and their practical application\n- Scrum ceremonies and their purpose (standups, planning, retro)\n- Transitional approaches (hybrid models, incremental adoption)\n- Definition of Done and acceptance criteria\n- Technical practices supporting Agile (CI/CD, TDD, automated testing)\n- Common resistance points and mitigation strategies\n- Metrics for measuring Agile effectiveness\n- Backlog management and refinement practices\n- Cross-functional collaboration techniques\n- Balance between process and pragmatism",
+        "evaluation_criteria": {
+          "clarity": "Clear understanding of Agile principles",
+          "accuracy": "Correct application of methodologies",
+          "depth": "Recognition of implementation challenges",
+          "practical_application": "Realistic transition strategy"
+        },
+        "scoring_guide": {
+          "1": "Superficial knowledge of Agile terminology without practical application",
+          "2": "Basic understanding of ceremonies but limited transition strategy",
+          "3": "Solid approach with recognition of key challenges and solutions",
+          "4": "Comprehensive strategy addressing cultural, technical, and process aspects",
+          "5": "Expert-level implementation plan with change management techniques, metrics for success, and contingency planning"
+        },
+        "time_allocation": "7-8 minutes",
+        "skills_assessed": [
+          "Agile methodologies",
+          "Process improvement",
+          "Change management"
+        ],
+        "follow_up_questions": [
+          "How would you handle resistance from team members accustomed to waterfall methods?",
+          "What technical practices would you prioritize implementing first and why?"
+        ]
+      }
+    ],
+    "interview_strategy": {
+      "overall_guidance": "This interview should focus on evaluating the candidate's extensive Java experience while exploring their ability to learn modern frameworks and architectures they haven't worked with. The candidate has significant experience with Java and hardware integration but lacks Spring Framework experience, which is critical for the role. The interview should assess both technical depth in their areas of expertise and learning potential for new technologies.",
+      "time_management": "Allocate approximately 90 minutes for the technical interview. Spend more time on core Java competencies (25 minutes), practical implementation questions (25 minutes), tools and technology gaps (20 minutes), and divide the remaining time between scenario-based and process questions.",
+      "key_decision_points": [
+        "Assess depth of Java core knowledge to verify 16+ years of claimed experience",
+        "Determine adaptability and learning potential for Spring Framework and microservices",
+        "Evaluate real-world problem-solving abilities with enterprise-scale applications",
+        "Gauge mentorship capabilities and team collaboration approach",
+        "Determine whether lack of Spring experience is a genuine blocker or easily overcome"
+      ],
+      "interviewer_preparation": [
+        "Review the candidate's experience with data tracking systems to relate questions to their background",
+        "Prepare to dive deeper on concurrency and performance optimization topics where they should excel",
+        "Be ready to assess learning agility and transferable skills regarding Spring Framework",
+        "Prepare follow-up questions for areas where gaps were identified in the skill matching analysis",
+        "Consider having a Spring expert join the interview panel to assess transferability of skills"
+      ]
+    }
+  }
+}

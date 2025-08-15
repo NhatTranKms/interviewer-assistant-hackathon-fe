@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
@@ -9,13 +9,89 @@ import { PDFExportService } from '../services/pdfExportService';
 
 export default function QuestionGeneratorPage() {
   const navigate = useNavigate();
-  const { questions, candidateInfo } = useInterviewStore();
+  const { candidateInfo, questionData, skillAnalysisData } = useInterviewStore();
+  
+  // Memoize the questions transformation to prevent infinite re-renders
+  const questions = useMemo(() => {
+
+    
+    if (!questionData?.questions) {
+      return [];
+    }
+    
+    // Transform API questions to UI format inline
+    return questionData.questions.map(apiQuestion => {
+      const categoryMap: Record<string, 'Core Knowledge' | 'Practical Skills' | 'Tools & Technology' | 'Scenario-Based' | 'Process & Best Practices'> = {
+        'CORE KNOWLEDGE': 'Core Knowledge',
+        'PRACTICAL SKILLS': 'Practical Skills', 
+        'TOOLS & TECHNOLOGY': 'Tools & Technology',
+        'SCENARIO-BASED / PROBLEM-SOLVING': 'Scenario-Based',
+        'PROCESS & BEST PRACTICES': 'Process & Best Practices'
+      };
+
+              const scoringGuide = [
+          { stars: 1, description: apiQuestion.scoring_guide.score_1 },
+          { stars: 2, description: apiQuestion.scoring_guide.score_2 },
+          { stars: 3, description: apiQuestion.scoring_guide.score_3 },
+          { stars: 4, description: apiQuestion.scoring_guide.score_4 },
+          { stars: 5, description: apiQuestion.scoring_guide.score_5 }
+        ];
+
+        const evaluationCriteria = [
+          apiQuestion.evaluation_rubric.clarity,
+          apiQuestion.evaluation_rubric.accuracy,
+          apiQuestion.evaluation_rubric.depth,
+          apiQuestion.evaluation_rubric.practical_application
+        ];
+
+        return {
+          id: apiQuestion.question_id,
+          question: apiQuestion.question_text,
+          category: categoryMap[apiQuestion.category] || 'Core Knowledge',
+          expectedAnswer: apiQuestion.expected_answer,
+          evaluationCriteria,
+          scoringGuide
+        };
+    });
+  }, [questionData]);
+  
+  // Get match score from skill analysis data
+  const matchScore = skillAnalysisData?.overall_match_score || 0;
   const [activeTab, setActiveTab] = useState<'Core Knowledge' | 'Practical Skills' | 'Tools & Technology' | 'Scenario-Based' | 'Process & Best Practices'>('Core Knowledge');
   const [expandedQuestions, setExpandedQuestions] = useState<Set<string>>(new Set());
 
+  // Navigate to preparation page if no questions available
+  useEffect(() => {
+    if (!questions.length && questionData !== null) {
+      navigate('/preparation');
+    }
+  }, [questions.length, questionData, navigate]);
+
+  // Show loading state if questionData is null (not yet loaded)
+  if (questionData === null) {
+    return (
+      <div className="p-8">
+        <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm border p-8">
+          <div className="text-center">
+            <p className="text-gray-600 mb-4">Loading questions...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Return early if no questions (but don't navigate during render)
   if (!questions.length) {
-    navigate('/preparation');
-    return null;
+    return (
+      <div className="p-8">
+        <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm border p-8">
+          <div className="text-center">
+            <p className="text-red-600 mb-4">No questions available. Please check the console for debugging info.</p>
+            <Button onClick={() => navigate('/preparation')}>Go Back to Preparation</Button>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   const questionsByCategory = {
@@ -61,11 +137,11 @@ export default function QuestionGeneratorPage() {
               {candidateInfo.name ? `${candidateInfo.name} - ${candidateInfo.title} - ${candidateInfo.seniorityLevel}` : `${candidateInfo.title} (${candidateInfo.seniorityLevel})`}
             </span>
             <span className="text-xl sm:text-2xl font-bold text-blue-600">
-              Match Score: 78%
+              Match Score: {matchScore}%
             </span>
           </div>
           <p className="text-sm sm:text-lg text-gray-600 break-words mt-2">
-            {candidateInfo.interviewSimulator ? `${candidateInfo.interviewSimulator} Style | ` : ''}15 AI-Generated Questions Across 5 Technical Categories
+            {candidateInfo.interviewSimulator ? `${candidateInfo.interviewSimulator} Style | ` : ''}{questions.length} AI-Generated Questions Across 5 Technical Categories
           </p>
         </div>
 

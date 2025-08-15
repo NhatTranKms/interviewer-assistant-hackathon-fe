@@ -17,7 +17,7 @@ export interface ScoringItem {
   description: string;
 }
 
-export interface InterviewQuestion {
+export interface UIInterviewQuestion {
   id: string;
   question: string;
   category: 'Core Knowledge' | 'Practical Skills' | 'Tools & Technology' | 'Scenario-Based' | 'Process & Best Practices';

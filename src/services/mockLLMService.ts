@@ -1,10 +1,10 @@
-import type { SkillAnalysis, InterviewQuestion } from '../models';
+import type { SkillAnalysis, UIInterviewQuestion } from '../models';
 
 
 import mockInterviewQuestionsData from '../data/mockInterviewQuestions.json';
 
 // Export the questions array directly
-export const mockInterviewQuestions: InterviewQuestion[] = mockInterviewQuestionsData as InterviewQuestion[];
+export const mockInterviewQuestions: UIInterviewQuestion[] = mockInterviewQuestionsData as UIInterviewQuestion[];
 
 
 
@@ -23,7 +23,7 @@ export const generateInterviewQuestions = async (
   _seniorityLevel: string,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _interviewSimulator?: string
-): Promise<InterviewQuestion[]> => {
+): Promise<UIInterviewQuestion[]> => {
   // Simulate API delay
   await new Promise(resolve => setTimeout(resolve, 3000));
   
