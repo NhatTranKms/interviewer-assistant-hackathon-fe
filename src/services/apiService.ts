@@ -9,7 +9,8 @@ import type {
   AnalysisResponse
 } from '../models';
 
-const API_BASE_URL = '/api';
+// Use environment variable or fallback to the IP address
+const API_BASE_URL = 'http://52.221.250.230';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
